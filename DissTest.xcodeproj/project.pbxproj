@@ -9,21 +9,65 @@
 /* Begin PBXBuildFile section */
 		5A72D85D23F9D25600441B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D85C23F9D25600441B9B /* AppDelegate.swift */; };
 		5A72D85F23F9D25600441B9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D85E23F9D25600441B9B /* SceneDelegate.swift */; };
-		5A72D86123F9D25600441B9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D86023F9D25600441B9B /* ViewController.swift */; };
+		5A72D86123F9D25600441B9B /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D86023F9D25600441B9B /* LogsViewController.swift */; };
 		5A72D86423F9D25600441B9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A72D86223F9D25600441B9B /* Main.storyboard */; };
 		5A72D86623F9D26700441B9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A72D86523F9D26700441B9B /* Assets.xcassets */; };
 		5A72D86923F9D26700441B9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A72D86723F9D26700441B9B /* LaunchScreen.storyboard */; };
+		5A7C5B04240BEFD90047CD0B /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B03240BEFD90047CD0B /* NotesViewController.swift */; };
+		5A7C5B10240D3FE80047CD0B /* DBAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B0F240D3FE80047CD0B /* DBAccess.swift */; };
+		5A7C5B142416C64C0047CD0B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B132416C64C0047CD0B /* DataStore.swift */; };
+		5A7C5B16241A7E9E0047CD0B /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B15241A7E9E0047CD0B /* MoodEntry.swift */; };
+		5A7C5B18241BB4F50047CD0B /* MoodEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B17241BB4F40047CD0B /* MoodEntryViewController.swift */; };
+		5A7C5B1A241BBD190047CD0B /* LifestyleEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */; };
+		5A7C5B1E241BCB510047CD0B /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B1D241BCB510047CD0B /* ActivitiesViewController.swift */; };
+		5A844DF4241E79E70048EDD0 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A844DF3241E79E70048EDD0 /* NavViewController.swift */; };
+		5A844DF6241E9A4B0048EDD0 /* createNewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */; };
+		5A844DF8241E9F950048EDD0 /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */; };
+		5A95EB1C241FB713007F2E93 /* table.db in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB1B241FB713007F2E93 /* table.db */; };
+		5A95EB1E241FB839007F2E93 /* new.db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB1D241FB838007F2E93 /* new.db.sql */; };
+		5A95EB20241FB871007F2E93 /* newDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB1F241FB871007F2E93 /* newDatabase.swift */; };
+		5A95EB22241FBC4D007F2E93 /* anothertest in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB21241FBC4D007F2E93 /* anothertest */; };
+		5A95EB24241FC130007F2E93 /* anothertest.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB23241FC130007F2E93 /* anothertest.sql */; };
+		5A95EB26241FC1EE007F2E93 /* hello.db in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB25241FC1EE007F2E93 /* hello.db */; };
+		5A95EB4E241FE1C0007F2E93 /* DataStoreRebuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB4D241FE1C0007F2E93 /* DataStoreRebuild.swift */; };
+		5A95EB50241FE1D4007F2E93 /* databaseForNewProject.db in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB4F241FE1D4007F2E93 /* databaseForNewProject.db */; };
+		5A95EB5224213033007F2E93 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB5124213033007F2E93 /* TrendsViewController.swift */; };
+		5A95EB5424216E70007F2E93 /* ActivityPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB5324216E70007F2E93 /* ActivityPlanViewController.swift */; };
+		5A95EB562421881C007F2E93 /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */; };
+		5A95EB5824218B9E007F2E93 /* activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB5724218B9E007F2E93 /* activity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5A72D85923F9D25600441B9B /* DissTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DissTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A72D85C23F9D25600441B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A72D85E23F9D25600441B9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5A72D86023F9D25600441B9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5A72D86023F9D25600441B9B /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
 		5A72D86323F9D25600441B9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A72D86523F9D26700441B9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A72D86823F9D26700441B9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A72D86A23F9D26700441B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A7C5B03240BEFD90047CD0B /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		5A7C5B0F240D3FE80047CD0B /* DBAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAccess.swift; sourceTree = "<group>"; };
+		5A7C5B132416C64C0047CD0B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		5A7C5B15241A7E9E0047CD0B /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
+		5A7C5B17241BB4F40047CD0B /* MoodEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryViewController.swift; sourceTree = "<group>"; };
+		5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestyleEntryViewController.swift; sourceTree = "<group>"; };
+		5A7C5B1D241BCB510047CD0B /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		5A844DF3241E79E70048EDD0 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
+		5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewActivityViewController.swift; sourceTree = "<group>"; };
+		5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
+		5A95EB1B241FB713007F2E93 /* table.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = table.db; path = ../../../table.db; sourceTree = "<group>"; };
+		5A95EB1D241FB838007F2E93 /* new.db.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = new.db.sql; sourceTree = "<group>"; };
+		5A95EB1F241FB871007F2E93 /* newDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newDatabase.swift; sourceTree = "<group>"; };
+		5A95EB21241FBC4D007F2E93 /* anothertest */ = {isa = PBXFileReference; lastKnownFileType = file; name = anothertest; path = ../../../anothertest; sourceTree = "<group>"; };
+		5A95EB23241FC130007F2E93 /* anothertest.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = anothertest.sql; path = ../../../anothertest.sql; sourceTree = "<group>"; };
+		5A95EB25241FC1EE007F2E93 /* hello.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = hello.db; path = ../../../hello.db; sourceTree = "<group>"; };
+		5A95EB4D241FE1C0007F2E93 /* DataStoreRebuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreRebuild.swift; sourceTree = "<group>"; };
+		5A95EB4F241FE1D4007F2E93 /* databaseForNewProject.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = databaseForNewProject.db; path = ../../../databaseForNewProject.db; sourceTree = "<group>"; };
+		5A95EB5124213033007F2E93 /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
+		5A95EB5324216E70007F2E93 /* ActivityPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPlanViewController.swift; sourceTree = "<group>"; };
+		5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
+		5A95EB5724218B9E007F2E93 /* activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +102,33 @@
 			children = (
 				5A72D85C23F9D25600441B9B /* AppDelegate.swift */,
 				5A72D85E23F9D25600441B9B /* SceneDelegate.swift */,
-				5A72D86023F9D25600441B9B /* ViewController.swift */,
+				5A72D86023F9D25600441B9B /* LogsViewController.swift */,
+				5A844DF3241E79E70048EDD0 /* NavViewController.swift */,
+				5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */,
 				5A72D86223F9D25600441B9B /* Main.storyboard */,
+				5A95EB5124213033007F2E93 /* TrendsViewController.swift */,
+				5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */,
+				5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */,
+				5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */,
+				5A7C5B1D241BCB510047CD0B /* ActivitiesViewController.swift */,
+				5A7C5B17241BB4F40047CD0B /* MoodEntryViewController.swift */,
+				5A7C5B03240BEFD90047CD0B /* NotesViewController.swift */,
 				5A72D86523F9D26700441B9B /* Assets.xcassets */,
+				5A7C5B0F240D3FE80047CD0B /* DBAccess.swift */,
 				5A72D86723F9D26700441B9B /* LaunchScreen.storyboard */,
 				5A72D86A23F9D26700441B9B /* Info.plist */,
+				5A7C5B132416C64C0047CD0B /* DataStore.swift */,
+				5A95EB1F241FB871007F2E93 /* newDatabase.swift */,
+				5A7C5B15241A7E9E0047CD0B /* MoodEntry.swift */,
+				5A95EB4F241FE1D4007F2E93 /* databaseForNewProject.db */,
+				5A95EB4D241FE1C0007F2E93 /* DataStoreRebuild.swift */,
+				5A95EB5724218B9E007F2E93 /* activity.swift */,
+				5A95EB25241FC1EE007F2E93 /* hello.db */,
+				5A95EB1B241FB713007F2E93 /* table.db */,
+				5A95EB21241FBC4D007F2E93 /* anothertest */,
+				5A95EB23241FC130007F2E93 /* anothertest.sql */,
+				5A95EB1D241FB838007F2E93 /* new.db.sql */,
+				5A95EB5324216E70007F2E93 /* ActivityPlanViewController.swift */,
 			);
 			path = DissTest;
 			sourceTree = "<group>";
@@ -125,8 +191,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A95EB26241FC1EE007F2E93 /* hello.db in Resources */,
+				5A95EB50241FE1D4007F2E93 /* databaseForNewProject.db in Resources */,
+				5A95EB22241FBC4D007F2E93 /* anothertest in Resources */,
 				5A72D86923F9D26700441B9B /* LaunchScreen.storyboard in Resources */,
+				5A95EB24241FC130007F2E93 /* anothertest.sql in Resources */,
 				5A72D86623F9D26700441B9B /* Assets.xcassets in Resources */,
+				5A95EB1C241FB713007F2E93 /* table.db in Resources */,
+				5A95EB1E241FB839007F2E93 /* new.db.sql in Resources */,
 				5A72D86423F9D25600441B9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +210,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A72D86123F9D25600441B9B /* ViewController.swift in Sources */,
+				5A7C5B18241BB4F50047CD0B /* MoodEntryViewController.swift in Sources */,
+				5A7C5B04240BEFD90047CD0B /* NotesViewController.swift in Sources */,
+				5A844DF6241E9A4B0048EDD0 /* createNewActivityViewController.swift in Sources */,
+				5A95EB20241FB871007F2E93 /* newDatabase.swift in Sources */,
+				5A95EB5224213033007F2E93 /* TrendsViewController.swift in Sources */,
+				5A844DF4241E79E70048EDD0 /* NavViewController.swift in Sources */,
+				5A7C5B142416C64C0047CD0B /* DataStore.swift in Sources */,
+				5A7C5B1E241BCB510047CD0B /* ActivitiesViewController.swift in Sources */,
+				5A95EB5824218B9E007F2E93 /* activity.swift in Sources */,
+				5A7C5B10240D3FE80047CD0B /* DBAccess.swift in Sources */,
+				5A7C5B16241A7E9E0047CD0B /* MoodEntry.swift in Sources */,
+				5A95EB4E241FE1C0007F2E93 /* DataStoreRebuild.swift in Sources */,
+				5A95EB5424216E70007F2E93 /* ActivityPlanViewController.swift in Sources */,
+				5A72D86123F9D25600441B9B /* LogsViewController.swift in Sources */,
+				5A844DF8241E9F950048EDD0 /* ActivitiesTableViewController.swift in Sources */,
 				5A72D85D23F9D25600441B9B /* AppDelegate.swift in Sources */,
 				5A72D85F23F9D25600441B9B /* SceneDelegate.swift in Sources */,
+				5A95EB562421881C007F2E93 /* ActivitiesTableViewCell.swift in Sources */,
+				5A7C5B1A241BBD190047CD0B /* LifestyleEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
