@@ -9,6 +9,8 @@
 import UIKit
 
 class EntryTableViewCell: UITableViewCell {
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +22,13 @@ class EntryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBOutlet weak var dateLbl: UILabel!
+    
+    @IBOutlet weak var moodValueLbl: UILabel!
+    
+    @IBOutlet weak var stressValueLbl: UILabel!
+    
+    @IBOutlet weak var productivityValueLbl: UILabel!
+    
 }

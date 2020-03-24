@@ -30,6 +30,7 @@ let test = Mood(Date: "18-03-2020", Sleep: 5, Water: 5, Stress: 5, Exercise: 5, 
     
         super.viewDidLoad()
         //hello.readRows()
+        hello.getAllEntries()
         hello.getAverages(moodLevel: 3)
        // self.presentedViewController?.title = dateString
         self.navigationController?.navigationBar.topItem?.title = dateString

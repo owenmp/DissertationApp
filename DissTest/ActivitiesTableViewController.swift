@@ -66,6 +66,9 @@ class ActivitiesTableViewController: UITableViewController {
         cell.nameLbl.text = wantedName
         cell.descriptionLbl.text = wantedDescription
         
+        
+        
+        
 
         // Configure the cell...
 
