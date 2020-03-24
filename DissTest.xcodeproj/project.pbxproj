@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,9 +35,16 @@
 		5A95EB5424216E70007F2E93 /* ActivityPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB5324216E70007F2E93 /* ActivityPlanViewController.swift */; };
 		5A95EB562421881C007F2E93 /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */; };
 		5A95EB5824218B9E007F2E93 /* activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB5724218B9E007F2E93 /* activity.swift */; };
+		5AB2FBEC2428D37B009336E7 /* chartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2FBEB2428D37B009336E7 /* chartsViewController.swift */; };
+		5ABAC1D02428EDC10019D62A /* pieChartDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAC1CF2428EDC10019D62A /* pieChartDatePickerViewController.swift */; };
+		5ABAC1D2242903F60019D62A /* pieChartResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAC1D1242903F60019D62A /* pieChartResultViewController.swift */; };
+		5ABAC1D4242A3FD40019D62A /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAC1D3242A3FD30019D62A /* EntriesTableViewController.swift */; };
+		5ABAC1D6242A402E0019D62A /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAC1D5242A402D0019D62A /* EntryTableViewCell.swift */; };
+		E5EBC7FE22717F752E90F28F /* Pods_DissTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EC025DE24703C6E234DBD9E /* Pods-DissTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DissTest.release.xcconfig"; path = "Target Support Files/Pods-DissTest/Pods-DissTest.release.xcconfig"; sourceTree = "<group>"; };
 		5A72D85923F9D25600441B9B /* DissTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DissTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A72D85C23F9D25600441B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A72D85E23F9D25600441B9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +75,13 @@
 		5A95EB5324216E70007F2E93 /* ActivityPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPlanViewController.swift; sourceTree = "<group>"; };
 		5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
 		5A95EB5724218B9E007F2E93 /* activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activity.swift; sourceTree = "<group>"; };
+		5AB2FBEB2428D37B009336E7 /* chartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chartsViewController.swift; sourceTree = "<group>"; };
+		5ABAC1CF2428EDC10019D62A /* pieChartDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pieChartDatePickerViewController.swift; sourceTree = "<group>"; };
+		5ABAC1D1242903F60019D62A /* pieChartResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pieChartResultViewController.swift; sourceTree = "<group>"; };
+		5ABAC1D3242A3FD30019D62A /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
+		5ABAC1D5242A402D0019D62A /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
+		DC0CC1B5C0625E2D5C460747 /* Pods-DissTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DissTest.debug.xcconfig"; path = "Target Support Files/Pods-DissTest/Pods-DissTest.debug.xcconfig"; sourceTree = "<group>"; };
+		DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DissTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5EBC7FE22717F752E90F28F /* Pods_DissTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +101,8 @@
 			children = (
 				5A72D85B23F9D25600441B9B /* DissTest */,
 				5A72D85A23F9D25600441B9B /* Products */,
+				8ED15F3CFCD8C1DE95130EAB /* Pods */,
+				8B8DC7E1FF06AE80480605C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,7 +123,12 @@
 				5A844DF3241E79E70048EDD0 /* NavViewController.swift */,
 				5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */,
 				5A72D86223F9D25600441B9B /* Main.storyboard */,
+				5ABAC1D5242A402D0019D62A /* EntryTableViewCell.swift */,
+				5ABAC1D1242903F60019D62A /* pieChartResultViewController.swift */,
+				5ABAC1CF2428EDC10019D62A /* pieChartDatePickerViewController.swift */,
+				5AB2FBEB2428D37B009336E7 /* chartsViewController.swift */,
 				5A95EB5124213033007F2E93 /* TrendsViewController.swift */,
+				5ABAC1D3242A3FD30019D62A /* EntriesTableViewController.swift */,
 				5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */,
 				5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */,
 				5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */,
@@ -133,6 +155,23 @@
 			path = DissTest;
 			sourceTree = "<group>";
 		};
+		8B8DC7E1FF06AE80480605C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8ED15F3CFCD8C1DE95130EAB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC0CC1B5C0625E2D5C460747 /* Pods-DissTest.debug.xcconfig */,
+				0EC025DE24703C6E234DBD9E /* Pods-DissTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A72D86D23F9D26700441B9B /* Build configuration list for PBXNativeTarget "DissTest" */;
 			buildPhases = (
+				46B7ECCCC764B8DA65CDF39B /* [CP] Check Pods Manifest.lock */,
 				5A72D85523F9D25600441B9B /* Sources */,
 				5A72D85623F9D25600441B9B /* Frameworks */,
 				5A72D85723F9D25600441B9B /* Resources */,
+				779542D4EA58AC01E7381A46 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,18 +246,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		46B7ECCCC764B8DA65CDF39B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DissTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		779542D4EA58AC01E7381A46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DissTest/Pods-DissTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DissTest/Pods-DissTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DissTest/Pods-DissTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A72D85523F9D25600441B9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ABAC1D6242A402E0019D62A /* EntryTableViewCell.swift in Sources */,
 				5A7C5B18241BB4F50047CD0B /* MoodEntryViewController.swift in Sources */,
 				5A7C5B04240BEFD90047CD0B /* NotesViewController.swift in Sources */,
 				5A844DF6241E9A4B0048EDD0 /* createNewActivityViewController.swift in Sources */,
 				5A95EB20241FB871007F2E93 /* newDatabase.swift in Sources */,
 				5A95EB5224213033007F2E93 /* TrendsViewController.swift in Sources */,
+				5ABAC1D4242A3FD40019D62A /* EntriesTableViewController.swift in Sources */,
 				5A844DF4241E79E70048EDD0 /* NavViewController.swift in Sources */,
 				5A7C5B142416C64C0047CD0B /* DataStore.swift in Sources */,
+				5ABAC1D2242903F60019D62A /* pieChartResultViewController.swift in Sources */,
+				5ABAC1D02428EDC10019D62A /* pieChartDatePickerViewController.swift in Sources */,
 				5A7C5B1E241BCB510047CD0B /* ActivitiesViewController.swift in Sources */,
 				5A95EB5824218B9E007F2E93 /* activity.swift in Sources */,
 				5A7C5B10240D3FE80047CD0B /* DBAccess.swift in Sources */,
@@ -227,6 +314,7 @@
 				5A844DF8241E9F950048EDD0 /* ActivitiesTableViewController.swift in Sources */,
 				5A72D85D23F9D25600441B9B /* AppDelegate.swift in Sources */,
 				5A72D85F23F9D25600441B9B /* SceneDelegate.swift in Sources */,
+				5AB2FBEC2428D37B009336E7 /* chartsViewController.swift in Sources */,
 				5A95EB562421881C007F2E93 /* ActivitiesTableViewCell.swift in Sources */,
 				5A7C5B1A241BBD190047CD0B /* LifestyleEntryViewController.swift in Sources */,
 			);
@@ -370,6 +458,7 @@
 		};
 		5A72D86E23F9D26700441B9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC0CC1B5C0625E2D5C460747 /* Pods-DissTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -388,6 +477,7 @@
 		};
 		5A72D86F23F9D26700441B9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EC025DE24703C6E234DBD9E /* Pods-DissTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

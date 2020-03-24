@@ -10,9 +10,9 @@ import UIKit
 
 class LogsViewController: UIViewController {
     let hello = DataStoreRebuild()
-    //let tester = newDatabase()
-    var btnStatus: Bool = false
+    
 let test = Mood(Date: "18-03-2020", Sleep: 5, Water: 5, Stress: 5, Exercise: 5, Location: "K", Alcohol: 3, Mood: 4, Productivity: 7, Notes: "nn")
+    
     
     @IBOutlet weak var a: UINavigationItem!
     
@@ -20,35 +20,18 @@ let test = Mood(Date: "18-03-2020", Sleep: 5, Water: 5, Stress: 5, Exercise: 5, 
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d"
-    
-      //  dateFormatter.dateStyle = .full
         let dateString: String = dateFormatter.string(from:date)
-       
-      print(dateString)
+        print(dateString)
         
-        
-        
-     
-       // hello.readRows()
-      //  tester.readNew()
-        //tester.readRows()
+   
        
         //////// It can still enter the database, button to enter it must be broken, maybe to do with the segue change i attempted
 
     
         super.viewDidLoad()
-        hello.readRows()
-        //hello.insertMoodObject(dailyEntry: test)
-     //   hello.createObject()
-       // hello.getLastEntry()
-//        startBtn.isHidden = btnStatus
-//        hello.getActivities()
-       // hello.readNew()
-       // hello.readActivities()
-       // hello.insertTestObject()
-    //    hello.insertNewActivity()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.tintColor = .blue
+        //hello.readRows()
+        hello.getAverages(moodLevel: 3)
+       // self.presentedViewController?.title = dateString
         self.navigationController?.navigationBar.topItem?.title = dateString
         dailyQuoteView.layer.borderWidth = 5
         dailyQuoteView.layer.borderColor = UIColor.systemGray6.cgColor
@@ -70,11 +53,7 @@ let test = Mood(Date: "18-03-2020", Sleep: 5, Water: 5, Stress: 5, Exercise: 5, 
         startBtn.layer.cornerRadius = 5
         startBtn.layer.masksToBounds = true
         dailyTxt.adjustsFontSizeToFitWidth = true
-        //dailyView.layer.cornerRadius = 10
-        //dailyView.layer.masksToBounds = true
-       // dailyView.layer.
-        //dailyView.layer.backgroundColor = UIColor.green.cgColor
-        
+       
 //
         // Do any additional setup after loading the view.
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zfw-hP-3TH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k2H-Ko-cbP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,7 +7,197 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Trends View Controller-->
+        <!--Charts-->
+        <scene sceneID="IAa-F6-xyO">
+            <objects>
+                <viewController id="x6F-zB-fTk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XaB-7p-dgK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What style chart would you like?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BU1-Ss-Jdf">
+                                <rect key="frame" x="20" y="126" width="374" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qk3-Bf-GJf">
+                                <rect key="frame" x="238" y="236" width="166" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="pie"/>
+                                <connections>
+                                    <segue destination="MDv-6b-wxR" kind="show" id="wMx-rC-AQa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5G-fg-wVO">
+                                <rect key="frame" x="238" y="534" width="166" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="line"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pru-eD-R4S">
+                                <rect key="frame" x="20" y="535" width="166" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="scatter"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXP-6N-jKg">
+                                <rect key="frame" x="238" y="257" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhJ-Bg-2VD">
+                                <rect key="frame" x="20" y="236" width="166" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="barChart">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AOc-bb-xsm"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Charts" largeTitleDisplayMode="never" id="lP6-uk-mTo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qM2-Qu-1f3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3582.608695652174" y="-1258.2589285714284"/>
+        </scene>
+        <!--Pie Chart-->
+        <scene sceneID="aBz-rT-lvU">
+            <objects>
+                <viewController id="MDv-6b-wxR" customClass="pieChartDatePickerViewController" customModule="DissTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6nA-sg-qBh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="w73-gB-Nmz">
+                                <rect key="frame" x="0.0" y="303" width="414" height="177"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="604756800">
+                                    <!--2020-03-01 12:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="607341600">
+                                    <!--2020-03-31 10:00:00 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="startDate:" destination="MDv-6b-wxR" eventType="valueChanged" id="B79-qa-hCX"/>
+                                </connections>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="tYl-9L-xfd">
+                                <rect key="frame" x="0.0" y="532" width="414" height="177"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="604756800">
+                                    <!--2020-03-01 12:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="607341600">
+                                    <!--2020-03-31 10:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select start date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIX-zC-hel">
+                                <rect key="frame" x="20" y="274" width="296" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select end date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alQ-sD-OIK">
+                                <rect key="frame" x="20" y="503" width="296" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a start and end date for the data you wish to visualise" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxy-ZY-O6o">
+                                <rect key="frame" x="20" y="193" width="374" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQr-yf-8RP">
+                                <rect key="frame" x="286" y="749" width="108" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="next:" destination="MDv-6b-wxR" eventType="touchUpInside" id="e7e-gP-4DL"/>
+                                    <segue destination="hQX-zL-BZb" kind="show" id="9ar-j2-sqc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pie Chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KpR-ug-1EU">
+                                <rect key="frame" x="20" y="133" width="374" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4Ku-k2-uic"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pie Chart" largeTitleDisplayMode="never" id="XI7-Pk-H3j">
+                        <barButtonItem key="backBarButtonItem" title="Charts" id="nAa-TL-uQP"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="endDate" destination="tYl-9L-xfd" id="Zg6-2a-bwW"/>
+                        <outlet property="startDate" destination="w73-gB-Nmz" id="1ay-QB-dxA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnV-zh-wai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4325" y="-1258"/>
+        </scene>
+        <!--Pie Chart Result View Controller-->
+        <scene sceneID="BSt-3l-aRT">
+            <objects>
+                <viewController id="hQX-zL-BZb" customClass="pieChartResultViewController" customModule="DissTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ME5-pz-1Ie">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xtp-wq-6WW" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="152" width="414" height="661"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nfb-l5-wAv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nci-VK-pvT"/>
+                    <connections>
+                        <outlet property="pie" destination="Xtp-wq-6WW" id="84O-85-JcF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J0D-Me-9z4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5202.898550724638" y="-1258.2589285714284"/>
+        </scene>
+        <!--Charts View Controller-->
+        <scene sceneID="axC-Lm-zht">
+            <objects>
+                <viewController id="Uae-kh-NTU" customClass="chartsViewController" customModule="DissTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WGf-jC-V5b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pVv-7F-lLs" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="87" y="207" width="240" height="469"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="jpX-A6-BV8"/>
+                    </view>
+                    <connections>
+                        <outlet property="barChartView" destination="pVv-7F-lLs" id="13r-vd-g6T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vGh-hg-UHK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6286.9565217391309" y="-1671.4285714285713"/>
+        </scene>
+        <!--Trends-->
         <scene sceneID="cP6-Tg-qmz">
             <objects>
                 <viewController id="yxF-8Q-6jZ" customClass="TrendsViewController" customModule="DissTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,58 +205,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YIa-ck-WT5">
-                                <rect key="frame" x="20" y="186" width="166" height="262"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="barChart" translatesAutoresizingMaskIntoConstraints="NO" id="T4E-8E-4eT">
-                                        <rect key="frame" x="0.0" y="0.0" width="166" height="262"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TpB-g0-ygw">
-                                <rect key="frame" x="228" y="186" width="166" height="262"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="46D-K3-i0y">
-                                        <rect key="frame" x="0.0" y="0.0" width="166" height="262"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bmg-c3-ptb">
-                                <rect key="frame" x="20" y="501" width="166" height="262"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="advice" translatesAutoresizingMaskIntoConstraints="NO" id="Krs-rH-rii">
-                                        <rect key="frame" x="0.0" y="0.0" width="166" height="262"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGH-t0-SBi">
                                 <rect key="frame" x="238" y="196" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJY-cY-0cu">
-                                <rect key="frame" x="228" y="150" width="140" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Charts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmj-FS-Y4l">
-                                <rect key="frame" x="20" y="149" width="140" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Charts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqq-Yu-BRQ">
                                 <rect key="frame" x="30" y="159" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -74,29 +217,101 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Advice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQ7-Dm-JMC">
-                                <rect key="frame" x="20" y="465" width="140" height="28"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSR-D1-dTm">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJY-cY-0cu">
+                                        <rect key="frame" x="232" y="15" width="140" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffc-Om-8MY">
+                                        <rect key="frame" x="232" y="51" width="166" height="262"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="calendarApp"/>
+                                        <connections>
+                                            <segue destination="CqB-Wh-0Cb" kind="show" id="rmf-o9-m3m"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Advice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQ7-Dm-JMC">
+                                        <rect key="frame" x="18" y="351" width="140" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Charts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmj-FS-Y4l">
+                                        <rect key="frame" x="18" y="15" width="140" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXL-tB-K9M">
+                                        <rect key="frame" x="18" y="51" width="166" height="262"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="barChart"/>
+                                        <connections>
+                                            <segue destination="x6F-zB-fTk" kind="show" id="CTn-ot-sId"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VE5-io-EIl">
+                                        <rect key="frame" x="18" y="387" width="166" height="262"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="advice"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ukN-Jn-RE1"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="bwZ-hh-ulQ"/>
+                    <navigationItem key="navigationItem" title="Trends" largeTitleDisplayMode="always" id="bwZ-hh-ulQ"/>
                     <connections>
-                        <outlet property="advice" destination="bmg-c3-ptb" id="y4M-DO-2XG"/>
-                        <outlet property="barCharts" destination="YIa-ck-WT5" id="Va5-UO-85f"/>
-                        <outlet property="calendar" destination="TpB-g0-ygw" id="8dV-4o-Ak9"/>
+                        <outlet property="adviceBtn" destination="VE5-io-EIl" id="LT6-YO-qTh"/>
+                        <outlet property="barCharts" destination="mXL-tB-K9M" id="o4C-Hn-aC9"/>
+                        <outlet property="calendarBtn" destination="Ffc-Om-8MY" id="bS5-dL-kGc"/>
+                        <outlet property="trendsView" destination="wSR-D1-dTm" id="pSk-Er-znc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVx-Kl-LH0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3584.057971014493" y="-589.28571428571422"/>
+            <point key="canvasLocation" x="5404.347826086957" y="-589.28571428571422"/>
         </scene>
-        <!--Wednesday, 18th March-->
+        <!--Entries-->
+        <scene sceneID="mbx-rB-DRu">
+            <objects>
+                <tableViewController id="CqB-Wh-0Cb" customClass="EntriesTableViewController" customModule="DissTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DPu-jm-mpO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gNL-F5-8Vc">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gNL-F5-8Vc" id="WzG-7g-Tse">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CqB-Wh-0Cb" id="m6q-Uk-ZXV"/>
+                            <outlet property="delegate" destination="CqB-Wh-0Cb" id="sgk-21-Pdy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Entries" largeTitleDisplayMode="never" id="6CT-Sg-4Gu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSb-UO-hs6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6284.057971014493" y="-586.60714285714278"/>
+        </scene>
+        <!--Daily Entry-->
         <scene sceneID="fnG-2c-XEW">
             <objects>
                 <viewController id="LEg-BU-icM" customClass="LogsViewController" customModule="DissTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -105,7 +320,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01V-jZ-NqH">
-                                <rect key="frame" x="20" y="154" width="362" height="199"/>
+                                <rect key="frame" x="20" y="102" width="362" height="199"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqX-AC-Vnf">
                                         <rect key="frame" x="8" y="53" width="346" height="138"/>
@@ -139,7 +354,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Kv-2S-pz5">
-                                <rect key="frame" x="20" y="386" width="362" height="231"/>
+                                <rect key="frame" x="20" y="334" width="362" height="231"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKL-Jm-JwZ">
                                         <rect key="frame" x="13" y="51" width="314" height="91"/>
@@ -202,8 +417,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e8y-CR-lcj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mood Entry" image="icons8-face" selectedImage="icons8-face" id="Crs-M7-UNe"/>
-                    <navigationItem key="navigationItem" title="Wednesday, 18th March" largeTitleDisplayMode="always" id="v2i-BK-G4Y"/>
+                    <navigationItem key="navigationItem" title="Daily Entry" id="v2i-BK-G4Y"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="a" destination="v2i-BK-G4Y" id="XPj-hY-X9u"/>
                         <outlet property="dailyEntryView" destination="6Kv-2S-pz5" id="Zrs-CC-XUw"/>
@@ -214,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NId-Zp-StZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2826.0869565217395" y="127.90178571428571"/>
+            <point key="canvasLocation" x="5184.057971014493" y="225"/>
         </scene>
         <!--Mood Entry-->
         <scene sceneID="Ahx-1H-dlw">
@@ -349,7 +564,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aw3-R5-Xrn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="6xJ-K5-jh0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="794"/>
+            <point key="canvasLocation" x="2271" y="905"/>
         </scene>
         <!--LifestyleEntryViewController-->
         <scene sceneID="dcH-NP-yXd">
@@ -647,15 +862,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R17-gx-6PZ">
-                                <rect key="frame" x="291" y="745" width="103" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Finish Entry"/>
-                                <connections>
-                                    <action selector="FinishButton:" destination="uoc-73-GvJ" eventType="touchUpInside" id="0ya-qs-Dcq"/>
-                                    <segue destination="uoc-73-GvJ" kind="unwind" unwindAction="prepareForUnwindWithSegue:" id="aT7-hj-xRJ"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Notes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDp-Ri-KUM">
                                 <rect key="frame" x="20" y="193" width="374" height="247"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -679,7 +885,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="Bkw-7w-Z4q"/>
                     <connections>
-                        <outlet property="FinishButton" destination="R17-gx-6PZ" id="HWZ-cH-qkf"/>
                         <outlet property="notesTxt" destination="cDp-Ri-KUM" id="xjX-6Z-hxy"/>
                         <segue destination="uoc-73-GvJ" kind="unwind" identifier="unwindToLogsView" unwindAction="prepareForUnwindWithSegue:" id="X6i-tb-FhG"/>
                     </connections>
@@ -689,54 +894,7 @@
             </objects>
             <point key="canvasLocation" x="1915.9420289855075" y="2844.6428571428569"/>
         </scene>
-        <!--LogsViewController-->
-        <scene sceneID="dTE-uh-nM2">
-            <objects>
-                <navigationController title="LogsViewController" automaticallyAdjustsScrollViewInsets="NO" id="zfw-hP-3TH" customClass="NavViewController" customModule="DissTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jpL-5h-lM0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="OK6-vs-taK" kind="relationship" relationship="rootViewController" id="fBw-8V-S6o"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OQD-Pu-0lf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1104.3478260869565" y="127.90178571428571"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="3Xa-dI-27C">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="OK6-vs-taK" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="aqZ-yE-AOg"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OoB-X9-zhg">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="LEg-BU-icM" kind="relationship" relationship="viewControllers" id="Usv-e7-Jd3"/>
-                        <segue destination="izT-YO-xlX" kind="relationship" relationship="viewControllers" id="8ou-mF-FWm"/>
-                        <segue destination="MbO-Ph-jxO" kind="relationship" relationship="viewControllers" id="FFq-BE-ht1"/>
-                        <segue destination="o8w-mz-GRw" kind="relationship" relationship="viewControllers" id="m1N-5h-ByE"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NF4-V6-TSL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2013.0434782608697" y="127.90178571428571"/>
-        </scene>
-        <!--Activity Plan View Controller-->
+        <!--Activity Plan-->
         <scene sceneID="MfR-MZ-Ypa">
             <objects>
                 <viewController id="ayb-Jf-ALc" customClass="ActivityPlanViewController" customModule="DissTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -791,7 +949,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="yED-AZ-iHi"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dvt-sS-Jw7"/>
+                    <navigationItem key="navigationItem" title="Activity Plan" id="dvt-sS-Jw7"/>
                     <connections>
                         <outlet property="activityPlanView" destination="zxw-9z-WV7" id="yQr-Xb-auR"/>
                         <outlet property="currentPlanView" destination="9qs-DQ-SFC" id="41h-N6-A47"/>
@@ -801,26 +959,7 @@
             </objects>
             <point key="canvasLocation" x="1786.9565217391305" y="-564.50892857142856"/>
         </scene>
-        <!--Trends-->
-        <scene sceneID="ELv-de-HVY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="izT-YO-xlX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trends" image="chart.bar" catalog="system" id="9EB-cc-QRm"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="p10-Ml-lfs">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="yxF-8Q-6jZ" kind="relationship" relationship="rootViewController" id="H6U-A2-lTo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z7x-uz-6cd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2826.0869565217395" y="-588.61607142857144"/>
-        </scene>
-        <!--View Controller-->
+        <!--Help-->
         <scene sceneID="XhU-P3-EDs">
             <objects>
                 <viewController id="ptV-Jp-dPL" sceneMemberID="viewController">
@@ -830,7 +969,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="9Mj-xJ-y9v"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0MR-Ab-dta"/>
+                    <navigationItem key="navigationItem" title="Help" id="0MR-Ab-dta"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T1m-Q5-4L9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -874,14 +1013,77 @@
             </objects>
             <point key="canvasLocation" x="-800.00000000000011" y="-453.34821428571428"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="kqt-k2-gef">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="k2H-Ko-cbP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="034-6n-Jm1"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OxR-dK-THy">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gFt-z0-TZn" kind="relationship" relationship="viewControllers" id="a7W-dw-mEh"/>
+                        <segue destination="v9v-YP-hg2" kind="relationship" relationship="viewControllers" id="JT1-Le-d5I"/>
+                        <segue destination="MbO-Ph-jxO" kind="relationship" relationship="viewControllers" id="t7K-Hm-8Gb"/>
+                        <segue destination="o8w-mz-GRw" kind="relationship" relationship="viewControllers" id="2cH-hG-0RO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vxu-H3-LhK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3432" y="225"/>
+        </scene>
+        <!--Trends-->
+        <scene sceneID="7IP-84-pTL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v9v-YP-hg2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Trends" image="chart.pie.fill" catalog="system" id="bIs-3D-bN5"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="POM-Vi-Hvm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="hsH-lB-JAi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yxF-8Q-6jZ" kind="relationship" relationship="rootViewController" id="Cux-Ge-FFP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xqa-2E-bTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4494.202898550725" y="-589.28571428571422"/>
+        </scene>
+        <!--Daily Entry-->
+        <scene sceneID="jEH-7x-E6m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gFt-z0-TZn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Daily Entry" image="calendar" catalog="system" id="zGE-gT-rvA"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="bvo-H6-Iy9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LEg-BU-icM" kind="relationship" relationship="rootViewController" id="TEN-SL-XyR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gGM-kp-Shh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4273.913043478261" y="225"/>
+        </scene>
     </scenes>
     <resources>
         <image name="advice" width="150" height="246"/>
         <image name="barChart" width="150" height="246"/>
-        <image name="calendar" width="150" height="246"/>
-        <image name="chart.bar" catalog="system" width="64" height="44"/>
+        <image name="calendar" catalog="system" width="64" height="52"/>
+        <image name="calendarApp" width="150" height="246"/>
+        <image name="chart.pie.fill" catalog="system" width="64" height="62"/>
         <image name="icons8-activity_feed" width="25" height="25"/>
-        <image name="icons8-face" width="25" height="25"/>
+        <image name="line" width="166" height="262"/>
+        <image name="pie" width="166" height="262"/>
         <image name="questionmark" catalog="system" width="48" height="64"/>
+        <image name="scatter" width="166" height="262"/>
     </resources>
 </document>

@@ -21,6 +21,9 @@ class NotesViewController: UIViewController {
     
     let date = Date()
            let dateFormatter = DateFormatter()
+    let blabla = LogsViewController()
+    
+    
        
                
     var dailyEntry: Mood = Mood(Date: "", Sleep: 0, Water: 0, Stress: 0, Exercise: 0, Location: "", Alcohol: 0, Mood: 0, Productivity: 0, Notes: "")
@@ -30,12 +33,18 @@ class NotesViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        dateFormatter.dateFormat = "MM-dd-yy"
+        dateFormatter.dateFormat = "dd-mm-yy"
         let dateString = dateFormatter.string(from:date)
         dailyEntry.Date = dateString
+        print(dateString)
       //  print(dailyEntry.Date)
-
+      //  var tester: Mood = Mood(Date: "80-03-2020" , Sleep: 5, Water: 5, Stress: 5, Exercise: 5, Location: "Test", Alcohol: 9, Mood: 9, Productivity: 9, Notes: "Hello")
+      //  blabla.hello.insertMoodObject(dailyEntry: tester)
         super.viewDidLoad()
+        database.readRows()
+        
+        database.readRows()
+     //   database.insertMoodObject(dailyEntry: tester)
        // print(dailyEntry.Location)
         //print(valueForLocation)
         //database.readRows()
@@ -51,38 +60,38 @@ class NotesViewController: UIViewController {
     
     
     @IBAction func saveBtn(_ sender: Any) {
-        guard var notesValue = notesTxt.text else{ return }
-        let valueForNotes = notesValue
+      // database.insertMoodObject(dailyEntry: tester)
+        guard var notesValue = notesTxt.text else{ return
+            
+        }
+        var valueForNotes = notesValue
         
-       // valueForNotes = notesTxt.text!
+        valueForNotes = notesTxt.text!
+        print(notesValue)
         dailyEntry.Notes = valueForNotes
         print(dailyEntry.Notes)
+        database.insertMoodObject(dailyEntry: dailyEntry)
         let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to complete this entry?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
             action in self.database.insertMoodObject(dailyEntry: self.dailyEntry)
+            print(self.dailyEntry.Date)
             self.performSegue(withIdentifier: "unwindToLogsView", sender: self)
             
-        }))
+            
+        
+    
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         self.present(alert, animated: true)
         
         
-//        database.insertMoodObject(dailyEntry: dailyEntry)
+            self.blabla.hello.insertMoodObject(dailyEntry: self.dailyEntry)
+   }))
     }
 
     
-    // let yourMother = notesText.text
-    @IBOutlet weak var FinishButton: UIButton!
-    @IBAction func FinishButton(_ sender: Any) {
-        database.insertMoodObject(dailyEntry: dailyEntry)
-       database.readRows()
-        self.performSegue(withIdentifier: "unwindToLogsView", sender: self)
-        
-    }
     
     
-    
-    
+    /**
     
     // MARK: - Navigation
 
@@ -96,5 +105,9 @@ class NotesViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     
+}
+
+ 
+ */
 
 }

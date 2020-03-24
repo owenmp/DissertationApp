@@ -12,19 +12,26 @@ class TrendsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        barCharts.layer.shadowColor = UIColor.black.cgColor
         barCharts.layer.shadowRadius = 2
         barCharts.layer.shadowOpacity = 2
-        calendar.layer.shadowOffset = .zero
-         calendar.layer.shadowColor = UIColor.black.cgColor
-                calendar.layer.shadowRadius = 3
-                calendar.layer.shadowOpacity = 3
-                calendar.layer.shadowOffset = .zero
+        barCharts.layer.cornerRadius = 7
+        barCharts.layer.masksToBounds = true
+        calendarBtn.layer.cornerRadius = 7
+        calendarBtn.layer.masksToBounds = true
+        adviceBtn.layer.cornerRadius = 7
+        adviceBtn.layer.masksToBounds = true
+        calendarBtn.layer.shadowOffset = .zero
+         //calendarBtn.layer.shadowColor = UIColor.black.cgColor
+                calendarBtn.layer.shadowRadius = 3
+                calendarBtn.layer.shadowOpacity = 3
+                calendarBtn.layer.shadowOffset = .zero
+
+         adviceBtn.layer.shadowColor = UIColor.black.cgColor
+                adviceBtn.layer.shadowRadius = 3
+                adviceBtn.layer.shadowOpacity = 3
+                adviceBtn.layer.shadowOffset = .zero
         
-         advice.layer.shadowColor = UIColor.black.cgColor
-                advice.layer.shadowRadius = 3
-                advice.layer.shadowOpacity = 3
-                advice.layer.shadowOffset = .zero
+        trendsView.layer.backgroundColor = UIColor.systemGray6.cgColor
         
         
         
@@ -37,11 +44,18 @@ class TrendsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var barCharts: UIView!
     
-    @IBOutlet weak var calendar: UIView!
+    @IBOutlet weak var ChartsView: UIView!
+    @IBOutlet weak var trendsView: UIView!
+    @IBOutlet weak var adviceBtn: UIButton!
+    @IBOutlet weak var barCharts: UIButton!
     
-    @IBOutlet weak var advice: UIView!
+    @IBOutlet weak var calendarBtn: UIButton!
+    //    @IBOutlet weak var barCharts: UIView!
+//    
+//    @IBOutlet weak var calendar: UIView!
+//    
+//    @IBOutlet weak var advice: UIView!
     
     /*
     // MARK: - Navigation

@@ -113,6 +113,81 @@ class DataStoreRebuild {
     }
     }
     
+    func getAverages (moodLevel: Int) -> [Int] {
+        var averages: [Int] = []
+        let query = "SELECT * FROM MAIN WHERE MOOD = 3;"
+        var statement: OpaquePointer? = nil
+        var water: Int = 0
+        var alcohol: Int = 0
+        var stress: Int = 0
+        var exercise: Int = 0
+        var sleep: Int = 0
+        var productivity: Int = 0
+        var count: Int = 0
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+            let sleepRead = sqlite3_column_int(statement!, 1)
+            let waterRead = sqlite3_column_int(statement!, 2)
+            let stressRead = sqlite3_column_int(statement!, 3)
+            let exerciseRead = sqlite3_column_int(statement!, 4)
+            let alcoholRead = sqlite3_column_int(statement!, 6)
+            //let moodRead = sqlite3_column_int(statement!, 8)
+            let productivityRead = sqlite3_column_int(statement!, 8)
+            water += Int(waterRead)
+            alcohol += Int(alcoholRead)
+            stress += Int(stressRead)
+            exercise += Int(exerciseRead)
+            sleep += Int(sleepRead)
+            productivity += Int(productivityRead)
+            count += 1
+            }
+            sqlite3_finalize(statement)
+        
+            
+            water /= count
+            alcohol /= count
+            stress /= count
+            exercise /= count
+            sleep /= count
+            productivity /= count
+            
+            averages.append(sleep)
+            averages.append(water)
+            averages.append(stress)
+            averages.append(exercise)
+            averages.append(alcohol)
+            averages.append(productivity)
+
+        }
+          print(averages)
+           return averages
+    }
+    
+
+
+        
+        
+        
+        
+      
+    
+    
+    func getWater()-> [Int]{
+        var waterValues: [Int] = []
+        let query = "SELECT MOOD FROM MAIN WHERE WATER = 2"
+        var statement: OpaquePointer? = nil
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+               while(sqlite3_step(statement) == SQLITE_ROW){
+                let first = stringAtField(statement!, fieldIndex: 0)
+                print(first)
+                let water = Int(first)!
+                waterValues.append(water)
+            }
+            sqlite3_finalize(statement)
+        
+    }
+        return waterValues
+    }
     
     func readRows(){
    // var entries: [String] = []
@@ -397,4 +472,6 @@ sqlite3_finalize(statement)
     
     
 }
+
+
 
