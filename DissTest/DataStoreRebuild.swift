@@ -113,9 +113,9 @@ class DataStoreRebuild {
     }
     }
     
-    func getAverages (moodLevel: Int) -> [Int] {
+    func getAveragesForMood3 (moodLevel: Int) -> [Int] {
         var averages: [Int] = []
-        let query = "SELECT * FROM MAIN WHERE MOOD = 3;"
+        let query = "SELECT * FROM MAIN WHERE MOOD = (\(moodLevel));"
         var statement: OpaquePointer? = nil
         var water: Int = 0
         var alcohol: Int = 0

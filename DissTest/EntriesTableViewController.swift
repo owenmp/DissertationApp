@@ -132,14 +132,37 @@ class EntriesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "entryDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let entryDetailVC = segue.destination as! EntryDetailViewController
+                
+                entryDetailVC.valueForNotes = entries[indexPath.row].Notes
+                entryDetailVC.valueForStress = entries[indexPath.row].Stress
+                entryDetailVC.valueForMood = entries[indexPath.row].Mood
+                entryDetailVC.valueForAlcohol = entries[indexPath.row].Alcohol
+                entryDetailVC.valueForWater = entries [indexPath.row].Water
+                entryDetailVC.valueForExercise = entries[indexPath.row].Exercise
+                entryDetailVC.valueForSleep = entries[indexPath.row].Sleep
+                entryDetailVC.valueForProductivity = entries[indexPath.row].Productivity
+                entryDetailVC.valueForDate = entries[indexPath.row].Date
+                
+//                entryDetailVC.valueForAlcohol = entries[indexPath.row].Alcohol
+//                entryDetailVC.valueForMood
+//
+                
+                
+                
+            }
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

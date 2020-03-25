@@ -14,15 +14,82 @@ class pieChartResultViewController: UIViewController {
     let mood: [String] = ["Sleep","Water","Stress","Exercise","Alcohol","Productivity"]
     //let values = []
     var databaseCall = LogsViewController()
+    var valueForPie = 2
    // var valuesForPie: [Int] = []
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let values = self.databaseCall.hello.getAverages(moodLevel: 3)
+        pie.layer.backgroundColor = UIColor.systemGray6.cgColor
+        valueView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        valueView.layer.cornerRadius = 7
+        valueView.layer.masksToBounds = true
+        valueView.layer.shadowRadius = 3
+        valueView.layer.shadowOffset = .zero
+        let values = self.databaseCall.hello.getAveragesForMood3(moodLevel: valueForPie)
         customizeChart(dataPoints: mood, values: values)
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBOutlet weak var valueView: UIView!
+    
+    
+    
+    @IBAction func oneBtn(_ sender: Any) {
+        valueForPie = 1
+        self.viewDidLoad()
+    }
+    
+    
+    @IBAction func twoBtn(_ sender: Any) {
+        valueForPie = 2
+        self.viewDidLoad()
+    }
+    
+    @IBAction func threeBtn(_ sender: Any) {
+        valueForPie = 3
+        self.viewDidLoad()
+    }
+    
+    
+    @IBAction func fourBtn(_ sender: Any) {
+        valueForPie = 4
+        self.viewDidLoad()
+    }
+    
+    @IBAction func fiveBtn(_ sender: Any) {
+        valueForPie = 5
+        self.viewDidLoad()
+        
+    }
+    
+    @IBAction func sixBtn(_ sender: Any) {
+        valueForPie = 6
+        self.viewDidLoad()
+    }
+    
+    
+    @IBAction func sevenBtn(_ sender: Any) {
+        valueForPie = 7
+        self.viewDidLoad()
+    }
+    
+    
+    @IBAction func eightBtn(_ sender: Any) {
+        valueForPie = 8
+        self.viewDidLoad()
+    }
+    
+    
+    @IBAction func nineBtn(_ sender: Any) {
+        valueForPie = 9
+        self.viewDidLoad()
+    }
+    
+    
+    @IBAction func tenBtn(_ sender: Any) {
+        valueForPie = 10
+        self.viewDidLoad()
     }
     
     
