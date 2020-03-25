@@ -133,6 +133,7 @@ class DataStoreRebuild {
             let alcoholRead = sqlite3_column_int(statement!, 6)
             //let moodRead = sqlite3_column_int(statement!, 8)
             let productivityRead = sqlite3_column_int(statement!, 8)
+            
             water += Int(waterRead)
             alcohol += Int(alcoholRead)
             stress += Int(stressRead)
@@ -143,7 +144,21 @@ class DataStoreRebuild {
             }
             sqlite3_finalize(statement)
         
-            
+            if count == 0 {
+                water = 0
+                alcohol = 0
+                stress = 0
+                exercise = 0
+                sleep = 0
+                productivity = 0
+                averages.append(water)
+                averages.append(alcohol)
+                averages.append(stress)
+                averages.append(exercise)
+                averages.append(sleep)
+                averages.append(productivity)
+                
+            } else {
             water /= count
             alcohol /= count
             stress /= count
@@ -157,6 +172,7 @@ class DataStoreRebuild {
             averages.append(exercise)
             averages.append(alcohol)
             averages.append(productivity)
+            }
 
         }
           print(averages)

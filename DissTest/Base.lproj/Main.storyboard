@@ -154,8 +154,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xtp-wq-6WW" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="221" width="414" height="592"/>
+                                <rect key="frame" x="9" y="221" width="396" height="584"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mood:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgz-eO-cI6">
+                                        <rect key="frame" x="8" y="8" width="101" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnJ-PI-mPo">
+                                        <rect key="frame" x="127" y="8" width="42" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jg1-Cx-KdG">
@@ -183,7 +199,6 @@
                                         <state key="normal" title="8"/>
                                         <connections>
                                             <action selector="eightBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="qN4-cu-qea"/>
-                                            <action selector="sevenBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="hMa-C3-ZEg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsK-yJ-Orp">
@@ -192,7 +207,6 @@
                                         <state key="normal" title="9"/>
                                         <connections>
                                             <action selector="nineBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="lnc-kV-POc"/>
-                                            <action selector="sevenBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="h2G-3c-bfY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fn-n4-OIR">
@@ -200,7 +214,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="10"/>
                                         <connections>
-                                            <action selector="sevenBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="Vzx-lK-K3e"/>
                                             <action selector="tenBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="F6v-iq-D9s"/>
                                         </connections>
                                     </button>
@@ -209,8 +222,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="1"/>
                                         <connections>
-                                            <action selector="oneBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="wOV-zw-91Z"/>
-                                            <action selector="sevenBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="hvQ-p6-P6m"/>
+                                            <action selector="oneBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="SMA-wa-3gF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xj3-Ci-PEq">
@@ -228,7 +240,6 @@
                                         <state key="normal" title="4"/>
                                         <connections>
                                             <action selector="fourBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="dcI-8o-wyC"/>
-                                            <action selector="sevenBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="yxW-jg-t38"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQn-Bl-GMa">
@@ -237,7 +248,6 @@
                                         <state key="normal" title="5"/>
                                         <connections>
                                             <action selector="fiveBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="xHQ-5e-QCX"/>
-                                            <action selector="sevenBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="h0h-DC-Ql2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jG7-WQ-SNe">
@@ -245,7 +255,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="6"/>
                                         <connections>
-                                            <action selector="sevenBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="SEl-7o-2di"/>
                                             <action selector="sixBtn:" destination="hQX-zL-BZb" eventType="touchUpInside" id="mCA-pY-5rO"/>
                                         </connections>
                                     </button>
@@ -267,13 +276,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pie Chart" id="nci-VK-pvT"/>
                     <connections>
+                        <outlet property="moodValueLbl" destination="ZnJ-PI-mPo" id="Cg0-hM-M26"/>
                         <outlet property="pie" destination="Xtp-wq-6WW" id="84O-85-JcF"/>
                         <outlet property="valueView" destination="jg1-Cx-KdG" id="Sxn-kA-VZY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0D-Me-9z4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4704" y="-1258"/>
+            <point key="canvasLocation" x="4702.898550724638" y="-1258.2589285714284"/>
         </scene>
         <!--Charts View Controller-->
         <scene sceneID="axC-Lm-zht">

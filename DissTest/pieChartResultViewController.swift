@@ -14,19 +14,32 @@ class pieChartResultViewController: UIViewController {
     let mood: [String] = ["Sleep","Water","Stress","Exercise","Alcohol","Productivity"]
     //let values = []
     var databaseCall = LogsViewController()
-    var valueForPie = 2
+    var valueForPie = 0
+    
    // var valuesForPie: [Int] = []
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        moodValueLbl.text = String(valueForPie)
         pie.layer.backgroundColor = UIColor.systemGray6.cgColor
         valueView.layer.backgroundColor = UIColor.systemGray6.cgColor
         valueView.layer.cornerRadius = 7
         valueView.layer.masksToBounds = true
         valueView.layer.shadowRadius = 3
         valueView.layer.shadowOffset = .zero
+        pie.layer.cornerRadius = 7
+        pie.layer.masksToBounds = true
+        pie.layer.shadowRadius = 3
+        pie.layer.shadowOffset = .zero
+        let legend = pie.legend
+        
+        
+        
+         
+        legend.font = UIFont(name: "Verdana", size: 25.0)!
         let values = self.databaseCall.hello.getAveragesForMood3(moodLevel: valueForPie)
         customizeChart(dataPoints: mood, values: values)
+        
 
         // Do any additional setup after loading the view.
     }
@@ -34,7 +47,9 @@ class pieChartResultViewController: UIViewController {
     @IBOutlet weak var valueView: UIView!
     
     
+    @IBOutlet weak var moodValueLbl: UILabel!
     
+   
     @IBAction func oneBtn(_ sender: Any) {
         valueForPie = 1
         self.viewDidLoad()
@@ -113,6 +128,7 @@ class pieChartResultViewController: UIViewController {
         let formatter = DefaultValueFormatter(formatter: format)
         pieChartData.setValueFormatter(formatter)
         // 4. Assign it to the chart’s data
+        
         pie.data = pieChartData
 
         
@@ -122,11 +138,19 @@ class pieChartResultViewController: UIViewController {
     private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
       var colors: [UIColor] = []
       for _ in 0..<numbersOfColor {
-        let red = Double(arc4random_uniform(256))
-        let green = Double(arc4random_uniform(256))
-        let blue = Double(arc4random_uniform(256))
-        let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-        colors.append(color)
+        
+//        let red = Double(arc4random_uniform(256))
+//        let green = Double(arc4random_uniform(256))
+//        let blue = Double(arc4random_uniform(256))
+//        let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+//        colors.append(color)
+        colors.append(UIColor.red)
+        colors.append(UIColor.yellow)
+        colors.append(UIColor.green)
+        colors.append(UIColor.blue)
+        colors.append(UIColor.systemPink)
+        colors.append(UIColor.purple)
+        
       }
       return colors
     }
