@@ -12,6 +12,9 @@ class createNewActivityViewController: UIViewController {
     var valueForName : String = ""
     var valueForDescription : String = "Des"
     var descriptionSend: String = "Hello"
+    var database = LogsViewController()
+    var nextVC = ActivitiesTableViewController()
+    
     
    
     @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
@@ -46,6 +49,7 @@ class createNewActivityViewController: UIViewController {
     @IBAction func createBtn(_ sender: Any) {
         performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
         //navigationController?.popViewController(animated: true)
+        
     }
     
     @IBAction func dismissVC(_ sender: Any) {
@@ -55,6 +59,9 @@ class createNewActivityViewController: UIViewController {
             print(descriptionTxt.text!)
             presenter.valueForName = valueForName
             presenter.valueForDescription = valueForDescription
+            database.hello.insertNewActivity(Name: valueForName, Description: descriptionTxt.text!)
+            nextVC.viewDidLoad()
+            
            
             
         }

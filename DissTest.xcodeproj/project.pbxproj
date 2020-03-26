@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A3FFA22242CE45300F842F6 /* ChartsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3FFA21242CE45200F842F6 /* ChartsScreenViewController.swift */; };
 		5A72D85D23F9D25600441B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D85C23F9D25600441B9B /* AppDelegate.swift */; };
 		5A72D85F23F9D25600441B9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D85E23F9D25600441B9B /* SceneDelegate.swift */; };
 		5A72D86123F9D25600441B9B /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D86023F9D25600441B9B /* LogsViewController.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		0EC025DE24703C6E234DBD9E /* Pods-DissTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DissTest.release.xcconfig"; path = "Target Support Files/Pods-DissTest/Pods-DissTest.release.xcconfig"; sourceTree = "<group>"; };
+		5A3FFA21242CE45200F842F6 /* ChartsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsScreenViewController.swift; sourceTree = "<group>"; };
 		5A72D85923F9D25600441B9B /* DissTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DissTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A72D85C23F9D25600441B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A72D85E23F9D25600441B9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				5ABAC1D1242903F60019D62A /* pieChartResultViewController.swift */,
 				5ABAC1CF2428EDC10019D62A /* pieChartDatePickerViewController.swift */,
 				5AB2FBEB2428D37B009336E7 /* chartsViewController.swift */,
+				5A3FFA21242CE45200F842F6 /* ChartsScreenViewController.swift */,
 				5A95EB5124213033007F2E93 /* TrendsViewController.swift */,
 				5ABAC1D3242A3FD30019D62A /* EntriesTableViewController.swift */,
 				5ABAC1D7242A92B90019D62A /* ColorExtension.swift */,
@@ -310,6 +313,7 @@
 			files = (
 				5ABAC1D6242A402E0019D62A /* EntryTableViewCell.swift in Sources */,
 				5A7C5B18241BB4F50047CD0B /* MoodEntryViewController.swift in Sources */,
+				5A3FFA22242CE45300F842F6 /* ChartsScreenViewController.swift in Sources */,
 				5A7C5B04240BEFD90047CD0B /* NotesViewController.swift in Sources */,
 				5A844DF6241E9A4B0048EDD0 /* createNewActivityViewController.swift in Sources */,
 				5ABAC1D8242A92B90019D62A /* ColorExtension.swift in Sources */,

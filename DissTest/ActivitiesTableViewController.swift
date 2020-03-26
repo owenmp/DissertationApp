@@ -14,21 +14,25 @@ class ActivitiesTableViewController: UITableViewController {
     var descriptionString: String = ""
     let database = DataStoreRebuild()
     var activities: [activity] = []
+    var blabla = LogsViewController()
+    
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  print(valueForName)
-        activities = database.getActivities()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+     
+        activities = blabla.hello.getActivities()
+        tableView.reloadData()
+        
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    // load datas
+        activities = blabla.hello.getActivities()
+    tableView.reloadData()
+    }
     
     
 
@@ -78,6 +82,10 @@ class ActivitiesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
                return 110
        }
+   
+     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(activities[indexPath.row].name)
+    }
     
 
     /*

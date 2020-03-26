@@ -19,6 +19,13 @@ class NotesViewController: UIViewController {
     var valueForLocation = ""
     var valueForNotes = ""
     
+    
+    
+    
+    
+    
+    
+    
     let date = Date()
            let dateFormatter = DateFormatter()
     let blabla = LogsViewController()
@@ -36,7 +43,7 @@ class NotesViewController: UIViewController {
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let dateString = dateFormatter.string(from:date)
        // dailyEntry.Date = dateString
-        var dailyEntry: Mood = Mood(Date: dateString, Sleep: valueForSleep, Water: valueForWater, Stress: valueForStress, Exercise: ValueForExercise, Location: valueForLocation, Alcohol: valueForAlcohol, Mood: valueForMood, Productivity: valueForProductivity, Notes: "Today was a  bad day")
+      //  var dailyEntry: Mood = Mood(Date: dateString, Sleep: valueForSleep, Water: valueForWater, Stress: valueForStress, Exercise: ValueForExercise, Location: valueForLocation, Alcohol: valueForAlcohol, Mood: valueForMood, Productivity: valueForProductivity, Notes: "Today was a  bad day")
         //print(dailyEntry.toString())
        // blabla.hello.insertMoodObject(dailyEntry: dailyEntry)
        // print(dateString)
@@ -63,34 +70,31 @@ class NotesViewController: UIViewController {
     
     
     @IBAction func saveBtn(_ sender: Any) {
-      // database.insertMoodObject(dailyEntry: tester)
         guard var notesValue = notesTxt.text else{ return
-          
         }
-        
-        
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let dateString = dateFormatter.string(from:date)
         valueForNotes = notesTxt.text!
         print(notesValue)
-       
-        
         var valueForNotes2 = notesValue
-        var dailyEntry: Mood = Mood(Date: "30-03-2020", Sleep: valueForSleep, Water: valueForWater, Stress: valueForStress, Exercise: ValueForExercise, Location: valueForLocation, Alcohol: valueForAlcohol, Mood: valueForMood, Productivity: valueForProductivity, Notes: valueForNotes2)
-        blabla.hello.insertMoodObject(dailyEntry: dailyEntry )
-//        dailyEntry.Notes = valueForNotes
-//        print(dailyEntry.Notes)
-//        database.insertMoodObject(dailyEntry: dailyEntry)
-       // let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to complete this entry?", preferredStyle: .alert)
-        //alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
-           // action in self.database.insertMoodObject(dailyEntry: self.dailyEntry)
-            //print(self.dailyEntry.Date)
-            self.performSegue(withIdentifier: "unwindToLogsView", sender: self)
+        var dailyEntry: Mood = Mood(Date: dateString, Sleep: valueForSleep, Water: valueForWater, Stress: valueForStress, Exercise: ValueForExercise, Location: valueForLocation, Alcohol: valueForAlcohol, Mood: valueForMood, Productivity: valueForProductivity, Notes: valueForNotes2)
+        
+        let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to complete this entry?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:  {
+                action in self.blabla.hello.insertMoodObject(dailyEntry: dailyEntry)
+                self.performSegue(withIdentifier: "unwindToLogsView", sender: self)
+
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            
             
 }
+}
         
-    
-//        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-//        self.present(alert, animated: true)
-//
+    //blabla.hello.insertMoodObject(dailyEntry: dailyEntry )
+
+        
 //
 //            self.blabla.hello.insertMoodObject(dailyEntry: self.dailyEntry)
 //   }))
@@ -118,4 +122,4 @@ class NotesViewController: UIViewController {
  
  */
 
-}
+

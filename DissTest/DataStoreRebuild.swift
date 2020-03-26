@@ -251,14 +251,14 @@ sqlite3_finalize(statement)
       let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
     let insertActivityString = "INSERT INTO Activities (NAME,DESCRIPTION) VALUES (?,?);"
     //let insertActivityString = "INSERT INTO ACTIVIITIES"
-    func insertNewActivity(){
+    func insertNewActivity(Name: String, Description: String){
         var insertStatement: OpaquePointer?
         if sqlite3_prepare_v2(database,insertActivityString, -1, &insertStatement, nil) == SQLITE_OK {
-            let insertedName: NSString
-            insertedName = "Studying"
+            let insertedName = Name as NSString
+           // insertedName = "Studying"
             //insertedName = name as NSString
-            let insertedDescription: NSString
-            insertedDescription = "Work"
+            let insertedDescription = Description as NSString
+           // insertedDescription = "Work"
             sqlite3_bind_text(insertStatement, 1, insertedName.utf8String, -1, SQLITE_TRANSIENT)
             sqlite3_bind_text(insertStatement, 2, insertedDescription.utf8String, -1, SQLITE_TRANSIENT)
             if sqlite3_step(insertStatement) == SQLITE_DONE {
