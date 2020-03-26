@@ -36,6 +36,9 @@
 		5A95EB562421881C007F2E93 /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */; };
 		5A95EB5824218B9E007F2E93 /* activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB5724218B9E007F2E93 /* activity.swift */; };
 		5AA1815C242B6EDB00A37ED2 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1815B242B6EDB00A37ED2 /* EntryDetailViewController.swift */; };
+		5AA1815E242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1815D242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift */; };
+		5AA18160242BA53700A37ED2 /* EntryActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1815F242BA53700A37ED2 /* EntryActivityTableViewCell.swift */; };
+		5AA18162242BA6F200A37ED2 /* activityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA18161242BA6F200A37ED2 /* activityLog.swift */; };
 		5AB2FBEC2428D37B009336E7 /* chartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2FBEB2428D37B009336E7 /* chartsViewController.swift */; };
 		5ABAC1D02428EDC10019D62A /* pieChartDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAC1CF2428EDC10019D62A /* pieChartDatePickerViewController.swift */; };
 		5ABAC1D2242903F60019D62A /* pieChartResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAC1D1242903F60019D62A /* pieChartResultViewController.swift */; };
@@ -78,6 +81,9 @@
 		5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
 		5A95EB5724218B9E007F2E93 /* activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activity.swift; sourceTree = "<group>"; };
 		5AA1815B242B6EDB00A37ED2 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		5AA1815D242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryActivitiesTableViewController.swift; sourceTree = "<group>"; };
+		5AA1815F242BA53700A37ED2 /* EntryActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryActivityTableViewCell.swift; sourceTree = "<group>"; };
+		5AA18161242BA6F200A37ED2 /* activityLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityLog.swift; sourceTree = "<group>"; };
 		5AB2FBEB2428D37B009336E7 /* chartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chartsViewController.swift; sourceTree = "<group>"; };
 		5ABAC1CF2428EDC10019D62A /* pieChartDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pieChartDatePickerViewController.swift; sourceTree = "<group>"; };
 		5ABAC1D1242903F60019D62A /* pieChartResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pieChartResultViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 				5A844DF3241E79E70048EDD0 /* NavViewController.swift */,
 				5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */,
 				5A72D86223F9D25600441B9B /* Main.storyboard */,
+				5AA1815F242BA53700A37ED2 /* EntryActivityTableViewCell.swift */,
+				5AA1815D242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift */,
 				5AA1815B242B6EDB00A37ED2 /* EntryDetailViewController.swift */,
 				5ABAC1D5242A402D0019D62A /* EntryTableViewCell.swift */,
 				5ABAC1D1242903F60019D62A /* pieChartResultViewController.swift */,
@@ -150,6 +158,7 @@
 				5A7C5B15241A7E9E0047CD0B /* MoodEntry.swift */,
 				5A95EB4F241FE1D4007F2E93 /* databaseForNewProject.db */,
 				5A95EB4D241FE1C0007F2E93 /* DataStoreRebuild.swift */,
+				5AA18161242BA6F200A37ED2 /* activityLog.swift */,
 				5A95EB5724218B9E007F2E93 /* activity.swift */,
 				5A95EB25241FC1EE007F2E93 /* hello.db */,
 				5A95EB1B241FB713007F2E93 /* table.db */,
@@ -307,7 +316,10 @@
 				5A95EB20241FB871007F2E93 /* newDatabase.swift in Sources */,
 				5A95EB5224213033007F2E93 /* TrendsViewController.swift in Sources */,
 				5ABAC1D4242A3FD40019D62A /* EntriesTableViewController.swift in Sources */,
+				5AA1815E242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift in Sources */,
 				5A844DF4241E79E70048EDD0 /* NavViewController.swift in Sources */,
+				5AA18160242BA53700A37ED2 /* EntryActivityTableViewCell.swift in Sources */,
+				5AA18162242BA6F200A37ED2 /* activityLog.swift in Sources */,
 				5A7C5B142416C64C0047CD0B /* DataStore.swift in Sources */,
 				5ABAC1D2242903F60019D62A /* pieChartResultViewController.swift in Sources */,
 				5ABAC1D02428EDC10019D62A /* pieChartDatePickerViewController.swift in Sources */,

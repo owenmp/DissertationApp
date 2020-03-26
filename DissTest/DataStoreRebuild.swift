@@ -364,7 +364,7 @@ sqlite3_finalize(statement)
         
     }
     
-    let deleteStatementString = "DELETE FROM MAIN WHERE DATE = '18-03-20'"
+    let deleteStatementString = "DELETE FROM MAIN WHERE DATE = '80-03-20'"
     func deleteEntries(){
         var deleteStatement: OpaquePointer?
         if sqlite3_prepare_v2(database, deleteStatementString, -1, &deleteStatement,nil) ==
@@ -403,6 +403,36 @@ sqlite3_finalize(statement)
         }
         return activityArray
     }
+    
+    func getEntryActivities(date: String)-> [activityLog]{
+        var activityRead: activityLog!
+        var activityArray: [activityLog] = []
+        let query = "SELECT * FROM ACTIVITYLOG WHERE DATE = ('\(date)');"
+        var statement: OpaquePointer? = nil  // Pointer for sql to track returns
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+          while(sqlite3_step(statement) == SQLITE_ROW){
+        let name = stringAtField(statement!, fieldIndex: 0)
+        let length = sqlite3_column_int(statement!, 1)
+           // let type = stringAtField(statement!, fieldIndex: <#T##Int#>)
+        let description = stringAtField(statement!, fieldIndex: 3)
+            
+            let activityRead = activityLog(name: name,length: Int(length), description: description)
+       //     print(activityRead.name)
+         //   print(activityRead.description)
+            activityArray.append(activityRead)
+            print(activityArray[0].name)
+         //   print(activityArray[1].name)
+            
+            
+        
+       // return moodArray
+    }
+        }
+        return activityArray
+    }
+    
+    
+    
     
     func getLastEntry(){
        let query = "SELECT date FROM main WHERE DATE IN ( SELECT max( DATE) FROM main );"

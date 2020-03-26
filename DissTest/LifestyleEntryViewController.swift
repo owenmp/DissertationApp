@@ -114,6 +114,9 @@ class LifestyleEntryViewController: UIViewController {
             activitiesVC.valueForWater = valueForWater
             activitiesVC.valueForAlcohol = valueForAlcohol
             activitiesVC.valueForLocation = valueForLocation
+            activitiesVC.valueForMood = valueForMood
+            activitiesVC.valueForProductivity = valueForProductivity
+            activitiesVC.valueForStress = valueForStress
             
             //  let activitiesVC = segue.destination as!
     }

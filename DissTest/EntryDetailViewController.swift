@@ -47,14 +47,18 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var moodValueLbl: UILabel!
     
     @IBOutlet weak var productivityValueLbl: UILabel!
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "activities" {
+            let activitiesVC = segue.destination as! EntryActivitiesTableViewController
+            activitiesVC.dateValue = valueForDate
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

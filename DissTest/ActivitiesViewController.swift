@@ -43,11 +43,12 @@ class ActivitiesViewController: UIViewController {
             notesVC.valueForAlcohol = valueForAlcohol
             notesVC.valueForWater = valueForWater
             notesVC.valueForSleep = valueForSleep
-            notesVC.dailyEntry.Alcohol = valueForAlcohol
-            notesVC.dailyEntry.Exercise = ValueForExercise
-            notesVC.dailyEntry.Location = valueForLocation
-            notesVC.dailyEntry.Mood = valueForMood
-    notesVC.dailyEntry.Productivity = valueForProductivity
+            notesVC.valueForStress = valueForStress
+//            notesVC.dailyEntry.Alcohol = valueForAlcohol
+//            notesVC.dailyEntry.Exercise = ValueForExercise
+//            notesVC.dailyEntry.Location = valueForLocation
+//            notesVC.dailyEntry.Mood = valueForMood
+//    notesVC.dailyEntry.Productivity = valueForProductivity
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.

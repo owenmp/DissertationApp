@@ -33,4 +33,17 @@ class Mood {
         self.Notes = Notes
     }
     
+    func toString(){
+        print("Date: " ,self.Date)
+        print("Sleep: ", self.Sleep)
+        print("Water: " ,self.Water)
+        print("Stress: " , self.Stress)
+        print("Exercise: " , self.Exercise)
+        print("Location: ", self.Location)
+        print("Alcohol: ", self.Alcohol )
+        print("Mood: ", self.Mood)
+        print("Productivity: " , self.Productivity)
+        print("Notes: ", self.Notes)
+    }
+    
 }

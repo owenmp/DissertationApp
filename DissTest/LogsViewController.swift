@@ -10,9 +10,9 @@ import UIKit
 
 class LogsViewController: UIViewController {
     let hello = DataStoreRebuild()
+   
     
-let test = Mood(Date: "18-03-2020", Sleep: 5, Water: 5, Stress: 5, Exercise: 5, Location: "K", Alcohol: 3, Mood: 4, Productivity: 7, Notes: "nn")
-    
+
     
     @IBOutlet weak var a: UINavigationItem!
     
@@ -21,7 +21,9 @@ let test = Mood(Date: "18-03-2020", Sleep: 5, Water: 5, Stress: 5, Exercise: 5, 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d"
         let dateString: String = dateFormatter.string(from:date)
-        print(dateString)
+        //print(dateString)
+        let test = Mood(Date: dateString, Sleep: 5, Water: 5, Stress: 5, Exercise: 5, Location: "K", Alcohol: 3, Mood: 4, Productivity: 7, Notes: "I had a great day today")
+        
         
    
        
@@ -29,9 +31,16 @@ let test = Mood(Date: "18-03-2020", Sleep: 5, Water: 5, Stress: 5, Exercise: 5, 
 
     
         super.viewDidLoad()
-        //hello.readRows()
+        
+       // hello.insertMoodObject(dailyEntry: test)
+        hello.readRows()
+       // hello.insertMoodObject(dailyEntry: test)
+       // hello.readRows()
+      //  hello.deleteEntries()
+        //hello.getAllEntries()
        // hello.getAllEntries()
-        hello.getAveragesForMood3(moodLevel: 7)
+        //hello.getEntryActivities(date: "07-03-2020")
+       // hello.getAveragesForMood3(moodLevel: 7)
        // self.presentedViewController?.title = dateString
         self.navigationController?.navigationBar.topItem?.title = dateString
         dailyQuoteView.layer.borderWidth = 5
