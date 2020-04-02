@@ -12,7 +12,8 @@ import UIKit
 class EntriesTableViewController: UITableViewController {
     var entries: [Mood] = []
     let database = LogsViewController()
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         entries = self.database.hello.getAllEntries()

@@ -18,12 +18,26 @@ class ActivitiesTableViewController: UITableViewController {
     
     
     
-
+    @IBAction func refreshBtn(_ sender: Any) {
+        print("Refresh")
+        activities.removeAll()
+        activities = blabla.hello.getActivities()
+        self.tableView.reloadData()
+        self.viewDidLoad()
+//        self.tableView.reloadData()
+//        self.viewDidLoad()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ViewLoaded")
+        tableView.allowsSelection = true
      
         activities = blabla.hello.getActivities()
-        tableView.reloadData()
+        //tableView.reloadData()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+       // self.tableView.datasource = self
+        //tableView.reloadData()
         
     }
     
@@ -83,8 +97,8 @@ class ActivitiesTableViewController: UITableViewController {
                return 110
        }
    
-     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(activities[indexPath.row].name)
+     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+        print("hello")
     }
     
 

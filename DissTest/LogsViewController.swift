@@ -17,6 +17,9 @@ class LogsViewController: UIViewController {
     @IBOutlet weak var a: UINavigationItem!
     
     override func viewDidLoad() {
+        
+        //hello.insertNewActivity(Name: "Drawing", Description: "SecondTest") //hello.searchEntries(filter: "Location", value: "University")
+        //print("The segue test worked")
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d"
@@ -33,7 +36,7 @@ class LogsViewController: UIViewController {
         super.viewDidLoad()
         
        // hello.insertMoodObject(dailyEntry: test)
-        hello.readRows()
+      //  hello.readRows()
        // hello.insertMoodObject(dailyEntry: test)
        // hello.readRows()
       //  hello.deleteEntries()

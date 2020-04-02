@@ -20,7 +20,13 @@ class pieChartResultViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        moodValueLbl.text = String(valueForPie)
+        //pie.animate(xAxisDuration: 3000)
+        //pie.animate(yAxisDuration: 3000)
+     //   pie.animate(xAxisDuration: 3000, easing: ChartEasingOption.easeInCirc.self)
+        //pie.animate(xAxisDuration: 5000, easingOption: ChartEasingOption.easeInBack)
+       // pie.spin(duration: 3000, fromAngle: 500, toAngle: 360)
+       // pie.spin(duration: 3000, fromAngle: 500, toAngle: 360)
+                moodValueLbl.text = String(valueForPie)
         pie.layer.backgroundColor = UIColor.systemGray6.cgColor
         valueView.layer.backgroundColor = UIColor.systemGray6.cgColor
         valueView.layer.cornerRadius = 7
@@ -31,6 +37,7 @@ class pieChartResultViewController: UIViewController {
         pie.layer.masksToBounds = true
         pie.layer.shadowRadius = 3
         pie.layer.shadowOffset = .zero
+        //pie.layer.
         let legend = pie.legend
         
         
@@ -126,12 +133,16 @@ class pieChartResultViewController: UIViewController {
         let format = NumberFormatter()
         format.numberStyle = .none
         let formatter = DefaultValueFormatter(formatter: format)
+        
         pieChartData.setValueFormatter(formatter)
         // 4. Assign it to the chart’s data
         
+        
+
         pie.data = pieChartData
 
         
+
         
     }
     

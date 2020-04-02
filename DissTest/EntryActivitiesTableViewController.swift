@@ -57,6 +57,11 @@ class EntryActivitiesTableViewController: UITableViewController {
             return 150
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath){
+        print("Hello")
+        
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

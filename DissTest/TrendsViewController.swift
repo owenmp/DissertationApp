@@ -32,6 +32,8 @@ class TrendsViewController: UIViewController {
                 adviceBtn.layer.shadowOffset = .zero
         
         trendsView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        trendsView.layer.cornerRadius = 7
+        trendsView.layer.masksToBounds = true
         
         
         

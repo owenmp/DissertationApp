@@ -57,10 +57,12 @@ class createNewActivityViewController: UIViewController {
             print(valueForName)
             print(valueForDescription)
             print(descriptionTxt.text!)
-            presenter.valueForName = valueForName
-            presenter.valueForDescription = valueForDescription
+           // presenter.valueForName = valueForName
+            //presenter.valueForDescription = valueForDescription
             database.hello.insertNewActivity(Name: valueForName, Description: descriptionTxt.text!)
-            nextVC.viewDidLoad()
+         
+            
+            // nextVC.viewDidLoad()
             
            
             
@@ -68,6 +70,24 @@ class createNewActivityViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         
     }
+    
+    
+    
+    @IBAction func finishBtn(_ sender: Any) {
+        print(valueForName)
+        var valueForDesc = descriptionTxt.text!
+        print(valueForDesc)
+database.hello.insertNewActivity(Name: valueForName, Description: valueForDesc)
+           
+        if let presenter = presentingViewController as? ActivitiesTableViewController { presenter.activities.removeAll()
+            presenter.activities = presenter.blabla.hello.getActivities()
+            presenter.tableView.reloadData()
+            presenter.viewDidLoad()
+    }
+          dismiss(animated: true, completion: nil)
+              
+    }
+    
     /*
     // MARK: - Navigation
 
