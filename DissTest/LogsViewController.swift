@@ -27,6 +27,15 @@ class LogsViewController: UIViewController {
         //print(dateString)
         let test = Mood(Date: dateString, Sleep: 5, Water: 5, Stress: 5, Exercise: 5, Location: "K", Alcohol: 3, Mood: 4, Productivity: 7, Notes: "I had a great day today")
         
+        var one = activityLog(name: "Run", length: 2, description: "TestRun")
+        var two = activityLog(name: "Swim", length: 3, description: "TestSwim")
+        var three = activityLog(name: "Testing", length: 1, description: "testTest")
+        var activitiesArray : [activityLog] = []
+        activitiesArray.append(one)
+        activitiesArray.append(two)
+        activitiesArray.append(three)
+        
+    //    hello.insertDailyActivities(dailyActivities: activitiesArray, date: "15-03-2020")
         
    
        

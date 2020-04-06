@@ -15,6 +15,8 @@ class ActivitiesTableViewController: UITableViewController {
     let database = DataStoreRebuild()
     var activities: [activity] = []
     var blabla = LogsViewController()
+//    var entryActivities: [activityLog] = []
+    
     
     
     
@@ -24,6 +26,9 @@ class ActivitiesTableViewController: UITableViewController {
         activities = blabla.hello.getActivities()
         self.tableView.reloadData()
         self.viewDidLoad()
+       // for i in entryActivities{
+         //   print(i)
+        //}
 //        self.tableView.reloadData()
 //        self.viewDidLoad()
     }
@@ -137,14 +142,22 @@ class ActivitiesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            if let indexPath = self.tableView.indexPathForSelectedRow{ let detailActivityVC = segue.destination as! detailActivityViewController
+                detailActivityVC.valueForName = activities [indexPath.row].name
+                detailActivityVC.valueForType = activities[indexPath.row].description
+            }
+        }
+        
+        
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

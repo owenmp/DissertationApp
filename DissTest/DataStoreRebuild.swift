@@ -330,6 +330,37 @@ sqlite3_finalize(statement)
     }
     
     
+    func insertDailyActivities(dailyActivities: [activityLog], date: String){
+        var statement: OpaquePointer?
+        var insertActivityStatement = "INSERT INTO ACTIVITYLOG (NAME,LENGTH,DATE, DESCRIPTION) VALUES (?,?,?,?);"
+        for i in dailyActivities{
+        if sqlite3_prepare_v2(database,insertActivityStatement, -1, &statement, nil) == SQLITE_OK {
+            let nameString: NSString = i.name as NSString
+            let descriptionString: NSString = i.description as NSString
+            let dateString: NSString = date as NSString
+            sqlite3_bind_text(statement, 1, nameString.utf8String, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_int(statement, 2, Int32(i.length))
+            sqlite3_bind_text(statement, 3, dateString.utf8String, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_text(statement, 4, descriptionString.utf8String, -1, SQLITE_TRANSIENT)
+            
+            if sqlite3_step(statement) == SQLITE_DONE {
+                     print("\nSuccessfully inserted row.")
+                   } else {
+                     print("\nCould not insert row.")
+            }
+                 } else {
+                   print("\nINSERT statement is not prepared.")
+                //inser notes isn't working
+                
+            }
+            sqlite3_finalize(statement)
+        
+    }
+    }
+        
+    
+    
+    
     func insertMoodObject(dailyEntry: Mood){
         var statement : OpaquePointer?
         if sqlite3_prepare_v2(database,insertStatementString2, -1, &statement, nil) == SQLITE_OK {

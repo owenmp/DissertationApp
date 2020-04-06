@@ -1281,6 +1281,77 @@
             </objects>
             <point key="canvasLocation" x="1916" y="1469"/>
         </scene>
+        <!--Detail Activity View Controller-->
+        <scene sceneID="Ez3-IO-fGf">
+            <objects>
+                <viewController id="Vi4-Cr-OGD" customClass="detailActivityViewController" customModule="DissTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zOn-Yx-epB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5m-Cg-BvE">
+                                <rect key="frame" x="20" y="69" width="321" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type of activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKk-CL-ele">
+                                <rect key="frame" x="20" y="155" width="321" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Length of activity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k6J-mc-pzI">
+                                <rect key="frame" x="20" y="214" width="321" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="lengthTxt:" destination="Vi4-Cr-OGD" eventType="editingDidEnd" id="UBs-wI-acT"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Cz-Jy-0YA">
+                                <rect key="frame" x="20" y="256" width="321" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="descriptionTxt:" destination="Vi4-Cr-OGD" eventType="editingDidEnd" id="ape-gT-tPo"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40J-gz-T70">
+                                <rect key="frame" x="312" y="20" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelBtn:" destination="Vi4-Cr-OGD" eventType="touchUpInside" id="Nmq-hm-Kbl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eva-dm-IS0">
+                                <rect key="frame" x="20" y="363" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Activity"/>
+                                <connections>
+                                    <action selector="addActivity:" destination="Vi4-Cr-OGD" eventType="touchUpInside" id="yue-CE-Dsc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="59R-gB-kRI"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTxt" destination="3Cz-Jy-0YA" id="1Bw-x6-abV"/>
+                        <outlet property="lengthTxt" destination="k6J-mc-pzI" id="a6h-86-xtl"/>
+                        <outlet property="nameLbl" destination="b5m-Cg-BvE" id="BuB-JS-6YU"/>
+                        <outlet property="typeLbl" destination="ZKk-CL-ele" id="dIH-mf-MbM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="biU-Is-wtD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3679.7101449275365" y="2844.6428571428569"/>
+        </scene>
         <!--Activities-->
         <scene sceneID="XiW-2r-dma">
             <objects>
@@ -1293,6 +1364,28 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="474"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityIdentifier" rowHeight="56" id="3eC-PZ-02n" customClass="dailyActivityTableViewCell" customModule="DissTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3eC-PZ-02n" id="xLM-pG-9rp" customClass="dailyActivityTableViewCell" customModule="DissTest" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0p-fh-ckf">
+                                                    <rect key="frame" x="20" y="13" width="386" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLbl" destination="q0p-fh-ckf" id="0ZA-GI-dpF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kR3-GN-wJU">
                                 <rect key="frame" x="20" y="622" width="83" height="30"/>
@@ -1310,11 +1403,22 @@
                                     <segue destination="CWi-Zo-Bee" kind="show" identifier="activitySegue" id="Kzx-uz-pRf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggi-MF-c9n">
+                                <rect key="frame" x="219" y="622" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshBtn:" destination="zm5-J9-2xH" eventType="touchUpInside" id="I1u-xi-KkI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Nya-Za-Sa0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Activities" id="bnq-6w-MBU"/>
+                    <connections>
+                        <outlet property="tableView" destination="1bL-ix-nGS" id="jI1-u7-Yfc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRh-Wb-GRN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1366,6 +1470,7 @@
                                 <connections>
                                     <outlet property="descriptionLbl" destination="5Ns-I2-D3H" id="2Xc-fQ-5O6"/>
                                     <outlet property="nameLbl" destination="QX7-lL-obg" id="y15-0h-SAk"/>
+                                    <segue destination="Vi4-Cr-OGD" kind="showDetail" identifier="detailSegue" id="fc8-lt-uvG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -49,6 +49,8 @@
 		5AE394D424335DA600544B89 /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394D324335DA600544B89 /* BarChartViewController.swift */; };
 		5AE394D624335FD400544B89 /* searchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394D524335FD400544B89 /* searchViewController.swift */; };
 		5AE394D82434B48700544B89 /* searchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394D72434B48600544B89 /* searchTableViewCell.swift */; };
+		5AE394DA243B4AF200544B89 /* detailActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394D9243B4AF200544B89 /* detailActivityViewController.swift */; };
+		5AE394DE243B6A2D00544B89 /* dailyActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394DD243B6A2D00544B89 /* dailyActivityTableViewCell.swift */; };
 		E5EBC7FE22717F752E90F28F /* Pods_DissTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,8 @@
 		5AE394D324335DA600544B89 /* BarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
 		5AE394D524335FD400544B89 /* searchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchViewController.swift; sourceTree = "<group>"; };
 		5AE394D72434B48600544B89 /* searchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTableViewCell.swift; sourceTree = "<group>"; };
+		5AE394D9243B4AF200544B89 /* detailActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailActivityViewController.swift; sourceTree = "<group>"; };
+		5AE394DD243B6A2D00544B89 /* dailyActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dailyActivityTableViewCell.swift; sourceTree = "<group>"; };
 		DC0CC1B5C0625E2D5C460747 /* Pods-DissTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DissTest.debug.xcconfig"; path = "Target Support Files/Pods-DissTest/Pods-DissTest.debug.xcconfig"; sourceTree = "<group>"; };
 		DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DissTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +145,7 @@
 				5A844DF3241E79E70048EDD0 /* NavViewController.swift */,
 				5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */,
 				5A72D86223F9D25600441B9B /* Main.storyboard */,
+				5AE394D9243B4AF200544B89 /* detailActivityViewController.swift */,
 				5AE394D72434B48600544B89 /* searchTableViewCell.swift */,
 				5AE394D524335FD400544B89 /* searchViewController.swift */,
 				5AE394D324335DA600544B89 /* BarChartViewController.swift */,
@@ -178,6 +183,7 @@
 				5A95EB23241FC130007F2E93 /* anothertest.sql */,
 				5A95EB1D241FB838007F2E93 /* new.db.sql */,
 				5A95EB5324216E70007F2E93 /* ActivityPlanViewController.swift */,
+				5AE394DD243B6A2D00544B89 /* dailyActivityTableViewCell.swift */,
 			);
 			path = DissTest;
 			sourceTree = "<group>";
@@ -332,12 +338,14 @@
 				5ABAC1D4242A3FD40019D62A /* EntriesTableViewController.swift in Sources */,
 				5AE394D624335FD400544B89 /* searchViewController.swift in Sources */,
 				5AA1815E242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift in Sources */,
+				5AE394DA243B4AF200544B89 /* detailActivityViewController.swift in Sources */,
 				5A844DF4241E79E70048EDD0 /* NavViewController.swift in Sources */,
 				5AA18160242BA53700A37ED2 /* EntryActivityTableViewCell.swift in Sources */,
 				5AA18162242BA6F200A37ED2 /* activityLog.swift in Sources */,
 				5A7C5B142416C64C0047CD0B /* DataStore.swift in Sources */,
 				5ABAC1D2242903F60019D62A /* pieChartResultViewController.swift in Sources */,
 				5AE394D82434B48700544B89 /* searchTableViewCell.swift in Sources */,
+				5AE394DE243B6A2D00544B89 /* dailyActivityTableViewCell.swift in Sources */,
 				5ABAC1D02428EDC10019D62A /* pieChartDatePickerViewController.swift in Sources */,
 				5A7C5B1E241BCB510047CD0B /* ActivitiesViewController.swift in Sources */,
 				5A95EB5824218B9E007F2E93 /* activity.swift in Sources */,

@@ -14,6 +14,7 @@ class EntriesTableViewController: UITableViewController {
     let database = LogsViewController()
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         entries = self.database.hello.getAllEntries()

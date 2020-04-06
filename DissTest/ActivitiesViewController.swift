@@ -7,8 +7,10 @@
 //
 
 import UIKit
+var entryActivities: [activityLog] = []
 
-class ActivitiesViewController: UIViewController {
+
+class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     var valueForMood = 0
       var valueForStress = 0
       var valueForProductivity = 0
@@ -17,6 +19,11 @@ class ActivitiesViewController: UIViewController {
     var valueForWater = 0
     var valueForAlcohol = 0
     var valueForLocation = ""
+    var nextVC = ActivitiesTableViewController()
+    
+    let cellReuseIdentifier = "activityIdentifier"
+    @IBOutlet weak var tableView: UITableView!
+   // var activitiesArray: [activityLog] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +32,50 @@ class ActivitiesViewController: UIViewController {
         print(valueForWater)
         print(valueForAlcohol)
         print(valueForLocation)
+        tableView.delegate = self
+        tableView.dataSource = self
+       // activitiesArray = nextVC.entryActivities
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func refreshBtn(_ sender: Any) {
+        
+        self.tableView.reloadData()
+        self.viewDidLoad()
+        
+        for i in entryActivities{
+            print(i.name)
+        }
+//        activitiesArray = nextVC.entryActivities
+//        print(activitiesArray[0].name)
+//        print(activitiesArray[1].name)
+       // for i in nextVC.entryActivities{
+         //   print(i.name)
+        //}
+    }
+    
+    
+   func numberOfSections(in tableView: UITableView) -> Int {
+          return 1
+      }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        entryActivities.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)as! dailyActivityTableViewCell
+        let wantedName = entryActivities[indexPath.row].name
+        cell.nameLbl.text = wantedName
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 50
+    }
+    
+    
+    
     
 
     

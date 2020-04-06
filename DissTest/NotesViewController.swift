@@ -42,6 +42,11 @@ class NotesViewController: UIViewController {
     override func viewDidLoad() {
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let dateString = dateFormatter.string(from:date)
+        for i in entryActivities{
+            print (i.name)
+            print (i.description)
+            print (i.length)
+        }
        // dailyEntry.Date = dateString
       //  var dailyEntry: Mood = Mood(Date: dateString, Sleep: valueForSleep, Water: valueForWater, Stress: valueForStress, Exercise: ValueForExercise, Location: valueForLocation, Alcohol: valueForAlcohol, Mood: valueForMood, Productivity: valueForProductivity, Notes: "Today was a  bad day")
         //print(dailyEntry.toString())
@@ -82,6 +87,9 @@ class NotesViewController: UIViewController {
         let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to complete this entry?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:  {
                 action in self.blabla.hello.insertMoodObject(dailyEntry: dailyEntry)
+            self.blabla.hello.insertDailyActivities(dailyActivities: entryActivities, date: dateString)
+            
+            
                 self.performSegue(withIdentifier: "unwindToLogsView", sender: self)
 
         }))
