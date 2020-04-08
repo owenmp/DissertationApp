@@ -15,13 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gB5-zc-667" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="246" width="374" height="514"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eDb-VD-DOS">
-                                <rect key="frame" x="12" y="110" width="394" height="128"/>
+                                <rect key="frame" x="10" y="104" width="394" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="877-XJ-Jh4">
@@ -33,7 +28,7 @@
                                             <action selector="searchTxt:" destination="OSA-aE-j5u" eventType="editingDidEnd" id="S66-9o-Msj"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcf-GD-gxA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create bar chart:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcf-GD-gxA">
                                         <rect key="frame" x="10" y="8" width="292" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -50,10 +45,25 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuY-lK-VeG">
-                                        <rect key="frame" x="323" y="88" width="46" height="30"/>
+                                        <rect key="frame" x="323" y="86" width="63" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Create"/>
+                                        <connections>
+                                            <action selector="createBar:" destination="OSA-aE-j5u" eventType="touchUpInside" id="fEk-7v-aT1"/>
+                                        </connections>
                                     </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DHG-9B-M3R">
+                                <rect key="frame" x="10" y="252" width="394" height="542"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gB5-zc-667" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="8" y="8" width="378" height="526"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -61,12 +71,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Wd0-tH-FND"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Bar Chart" id="sVh-0d-s97">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="6Ta-t6-HHp"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Bar Chart" id="sVh-0d-s97"/>
                     <connections>
+                        <outlet property="backgroundView" destination="DHG-9B-M3R" id="AWT-md-mUp"/>
                         <outlet property="barChart" destination="gB5-zc-667" id="ajH-uu-ptD"/>
+                        <outlet property="createBtn" destination="vuY-lK-VeG" id="geV-co-yu9"/>
                         <outlet property="searchTxt" destination="877-XJ-Jh4" id="gMy-Sp-K0M"/>
+                        <outlet property="searchView" destination="eDb-VD-DOS" id="F5G-Jx-16Z"/>
                         <outlet property="valueTxt" destination="FK8-hD-OXf" id="J8q-Eg-unM"/>
                     </connections>
                 </viewController>
@@ -103,6 +114,9 @@
                                         <rect key="frame" x="212" y="349" width="166" height="262"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="line"/>
+                                        <connections>
+                                            <segue destination="O6g-Pl-fAR" kind="show" id="p3T-2g-nel"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qk3-Bf-GJf">
                                         <rect key="frame" x="212" y="52" width="166" height="262"/>
@@ -180,89 +194,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qM2-Qu-1f3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3582.608695652174" y="-1258.2589285714284"/>
-        </scene>
-        <!--Pie Chart-->
-        <scene sceneID="aBz-rT-lvU">
-            <objects>
-                <viewController id="MDv-6b-wxR" customClass="pieChartDatePickerViewController" customModule="DissTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6nA-sg-qBh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="w73-gB-Nmz">
-                                <rect key="frame" x="0.0" y="303" width="414" height="177"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="604756800">
-                                    <!--2020-03-01 12:00:00 +0000-->
-                                </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="607341600">
-                                    <!--2020-03-31 10:00:00 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="startDate:" destination="MDv-6b-wxR" eventType="valueChanged" id="B79-qa-hCX"/>
-                                </connections>
-                            </datePicker>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="tYl-9L-xfd">
-                                <rect key="frame" x="0.0" y="532" width="414" height="177"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="604756800">
-                                    <!--2020-03-01 12:00:00 +0000-->
-                                </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="607341600">
-                                    <!--2020-03-31 10:00:00 +0000-->
-                                </date>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select start date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIX-zC-hel">
-                                <rect key="frame" x="20" y="274" width="296" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select end date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alQ-sD-OIK">
-                                <rect key="frame" x="20" y="503" width="296" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a start and end date for the data you wish to visualise" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxy-ZY-O6o">
-                                <rect key="frame" x="20" y="193" width="374" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQr-yf-8RP">
-                                <rect key="frame" x="286" y="749" width="108" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="next:" destination="MDv-6b-wxR" eventType="touchUpInside" id="e7e-gP-4DL"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pie Chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KpR-ug-1EU">
-                                <rect key="frame" x="20" y="133" width="374" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="4Ku-k2-uic"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Pie Chart" largeTitleDisplayMode="never" id="XI7-Pk-H3j">
-                        <barButtonItem key="backBarButtonItem" title="Charts" id="nAa-TL-uQP"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="endDate" destination="tYl-9L-xfd" id="Zg6-2a-bwW"/>
-                        <outlet property="startDate" destination="w73-gB-Nmz" id="1ay-QB-dxA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cnV-zh-wai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4339" y="-2087"/>
         </scene>
         <!--Pie Chart-->
         <scene sceneID="BSt-3l-aRT">
@@ -1765,6 +1696,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cig-RA-1jM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1102.8985507246377" y="-564.50892857142856"/>
+        </scene>
+        <!--Line Chart-->
+        <scene sceneID="Tfb-5G-iKW">
+            <objects>
+                <viewController id="O6g-Pl-fAR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JQI-xG-O9c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="zvk-TI-vdr"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Line Chart" id="Lgr-Gd-IdO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85x-bO-vvy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3777" y="-2023"/>
         </scene>
         <!--Help-->
         <scene sceneID="aeI-D5-sdl">

@@ -11,8 +11,8 @@ import Charts
 
 
 class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
-    var option = ""
-    var valueForSearch = ""
+    var option = "Sleep"
+    var valueForSearch = "8"
     let options = ["Water","Exercise","Sleep","Location","Alcohol"]
     var db = LogsViewController()
     var formatter = ChartStringFormatter()
@@ -23,19 +23,34 @@ class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerV
         let pickerView = UIPickerView()
         pickerView.delegate = self
         searchTxt.inputView = pickerView
-        
+        var y = db.hello.getBarAverages(search: option, value: valueForSearch)
         var x = ["Mood", "Stress", "Productivity"]
-        var y = [1,5,10]
+       // var y = [1,5,10]
         setChart(dataPoints: x, values: y)
         barChart.autoScaleMinMaxEnabled = true
         barChart.dragEnabled = true
         
         let legend = barChart.legend
         legend.font = UIFont(name:"Verdana", size: 15.0)!
+        searchView.layer.cornerRadius = 7
+        searchView.layer.masksToBounds = true
+        searchView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        backgroundView.layer.cornerRadius = 7
+        backgroundView.layer.masksToBounds = true
+        backgroundView.layer.backgroundColor = UIColor.systemGray6.cgColor
+//        createBtn.layer.cornerRadius = 7
+//        createBtn.layer.masksToBounds = true
+//        createBtn.layer.backgroundColor = UIColor.white.cgColor
         
+       // barChart.animate(yAxisDuration: 3000)
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    @IBOutlet weak var createBtn: UIButton!
+    
+    @IBOutlet weak var backgroundView: UIView!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
               return 1
@@ -56,6 +71,17 @@ class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerV
             print(option)
     }
     
+    
+    
+    @IBAction func createBar(_ sender: Any) {
+        valueForSearch = valueTxt.text!
+        print(valueForSearch)
+        print(option)
+        self.viewDidLoad()
+    }
+    
+    
+    @IBOutlet weak var searchView: UIView!
     
     @IBOutlet weak var valueTxt: UITextField!
     @IBOutlet weak var searchTxt: UITextField!
@@ -85,6 +111,7 @@ class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerV
         format.numberStyle = .none
        let f = DefaultValueFormatter(formatter: format)
         chartData.setValueFormatter(f)
+        barChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
        
     }
     

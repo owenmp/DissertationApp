@@ -113,6 +113,53 @@ class DataStoreRebuild {
     }
     }
     
+    
+    func getBarAverages(search: String, value: String) -> [Int] {
+        var averages: [Int] = []
+        var statement: OpaquePointer? = nil
+        let query = "SELECT MOOD,STRESS,PRODUCTIVITY FROM MAIN WHERE (\(search)) = ('\(value)');"
+        var mood = 0
+        var stress = 0
+        var productivity = 0
+        var count = 0
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+            let moodRead = sqlite3_column_int(statement!, 0)
+            let stressRead = sqlite3_column_int(statement!, 1)
+            let productivityRead = sqlite3_column_int(statement!, 2)
+            
+            mood += Int(moodRead)
+            stress += Int(stressRead)
+            productivity += Int(productivityRead)
+            count += 1
+            }
+            sqlite3_finalize(statement)
+            if count == 0 {
+                mood = 0
+                stress = 0
+                productivity = 0
+                averages.append(mood)
+                averages.append(stress)
+                averages.append(productivity)
+            } else {
+                mood /= count
+                stress /= count
+                productivity /= count
+                averages.append(mood)
+                averages.append(stress)
+                averages.append(productivity)
+            }
+            print(averages)
+        }
+            return averages
+            
+            
+        
+        
+    }
+    
+    
+    
     func getAveragesForMood3 (moodLevel: Int) -> [Int] {
         var averages: [Int] = []
         let query = "SELECT * FROM MAIN WHERE MOOD = (\(moodLevel));"
