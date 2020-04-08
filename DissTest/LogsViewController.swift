@@ -34,6 +34,7 @@ class LogsViewController: UIViewController {
         activitiesArray.append(one)
         activitiesArray.append(two)
         activitiesArray.append(three)
+       // hello.getScatterData(filter: "Sleep", value: 8)
         
     //    hello.insertDailyActivities(dailyActivities: activitiesArray, date: "15-03-2020")
         
