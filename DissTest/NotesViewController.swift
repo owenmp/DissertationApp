@@ -65,7 +65,19 @@ class NotesViewController: UIViewController {
         //database.readRows()
         //database.insertMoodObject(dailyEntry: dailyEntry)
         // Do any additional setup after loading the view.
+        
+        backgroundView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        backgroundView.layer.cornerRadius = 7
+        backgroundView.layer.masksToBounds = true
+        saveBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        saveBtn.layer.cornerRadius = 7
+        saveBtn.layer.masksToBounds = true
+        
     }
+    @IBOutlet weak var saveBtn: UIButton!
+    
+    @IBOutlet weak var backgroundView: UIView!
+    
     
     @IBOutlet weak var notesText: UITextView!
     @IBOutlet weak var notesTxt: UITextField!

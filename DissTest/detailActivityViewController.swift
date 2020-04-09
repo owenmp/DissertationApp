@@ -22,13 +22,22 @@ class detailActivityViewController: UIViewController {
         nameLbl.text = valueForName
         typeLbl.text = valueForType
 
+        titleBackground.layer.cornerRadius = 7
+        titleBackground.layer.backgroundColor = UIColor.systemGray6.cgColor
+        titleBackground.layer.masksToBounds = true
+        detailBackground.layer.cornerRadius = 7
+        detailBackground.layer.masksToBounds = true
+        detailBackground.layer.backgroundColor = UIColor.systemGray6.cgColor
         // Do any additional setup after loading the view.
+        saveBtn.layer.backgroundColor = UIColor.systemBlue.cgColor
+    
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var lengthTxt: UITextField!
     @IBAction func lengthTxt(_ sender: Any) {
         var text: String = lengthTxt.text!
@@ -65,6 +74,8 @@ class detailActivityViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var detailBackground: UIView!
+    @IBOutlet weak var titleBackground: UIView!
     
     @IBOutlet weak var nameLbl: UILabel!
     
