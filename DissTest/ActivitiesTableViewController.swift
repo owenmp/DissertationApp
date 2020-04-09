@@ -41,6 +41,9 @@ class ActivitiesTableViewController: UITableViewController {
         //tableView.reloadData()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        createBtn.layer.cornerRadius = 7
+        createBtn.layer.masksToBounds = true
+        createBtn.layer.backgroundColor = UIColor.systemBlue.cgColor
        // self.tableView.datasource = self
         //tableView.reloadData()
         
@@ -52,6 +55,9 @@ class ActivitiesTableViewController: UITableViewController {
         activities = blabla.hello.getActivities()
     tableView.reloadData()
     }
+    
+    
+    @IBOutlet weak var createBtn: UIButton!
     
     
 

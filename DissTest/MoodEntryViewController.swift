@@ -21,17 +21,74 @@ class MoodEntryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        moodView.layer.cornerRadius = 7
+        moodView.layer.masksToBounds = true
+        moodView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        stressView.layer.cornerRadius = 7
+               stressView.layer.masksToBounds = true
+               stressView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        productiveView.layer.cornerRadius = 7
+               productiveView.layer.masksToBounds = true
+               productiveView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        
+       
+        advanceBtn.layer.cornerRadius = 7
+        advanceBtn.layer.masksToBounds = true
+    advanceBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        moodLbl.adjustsFontSizeToFitWidth = true
+        stressLbl.adjustsFontSizeToFitWidth = true
+        productiveLbl.adjustsFontSizeToFitWidth = true
+        excellentLbl.adjustsFontSizeToFitWidth = true
+        neutralLbl.adjustsFontSizeToFitWidth = true
+        veryBadLbl.adjustsFontSizeToFitWidth = true
+        veryLbl.adjustsFontSizeToFitWidth = true
+
+        somewhatLbl.adjustsFontSizeToFitWidth = true
+
+        notAtAllLbl.adjustsFontSizeToFitWidth = true
+        pNotAtLbl.adjustsFontSizeToFitWidth = true
+        moderatlyLbl.adjustsFontSizeToFitWidth = true
+        veryLbl.adjustsFontSizeToFitWidth = true
+
+        //productiveLbl.adjustsFontSizeToFitWidth = true
+
+
+
+
 
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var pNotAtLbl: UILabel!
     
-    @IBAction func nextBtn(_ sender: Any) {
-        print(dailyEntry.Mood)
-        print(dailyEntry.Stress)
-        print(dailyEntry.Productivity)
+    @IBOutlet weak var moderatlyLbl: UILabel!
+    @IBOutlet weak var veryGoodLbl: UILabel!
+    
+    @IBOutlet weak var notAtAllLbl: UILabel!
+    
+    @IBOutlet weak var somewhatLbl: UILabel!
+    
+    @IBOutlet weak var veryLbl: UILabel!
+    
+    @IBOutlet weak var neutralLbl: UILabel!
+    @IBOutlet weak var veryBadLbl: UILabel!
+    
+    @IBOutlet weak var excellentLbl: UILabel!
+    @IBOutlet weak var productiveLbl: UILabel!
+    @IBOutlet weak var stressLbl: UILabel!
+    
+    @IBOutlet weak var advanceBtn: UIButton!
+    @IBAction func advanceBtn(_ sender: Any) {
     }
     
+   
+    @IBOutlet weak var moodLbl: UILabel!
     
+    
+    @IBOutlet weak var moodView: UIView!
+    
+    @IBOutlet weak var stressView: UIView!
+    
+    @IBOutlet weak var productiveView: UIView!
     @IBAction func moodLevel(_ sender: UISlider) {
         let step: Float = 1
         let roundedValue = round(sender.value / step) * step

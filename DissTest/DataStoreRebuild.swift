@@ -596,10 +596,14 @@ sqlite3_finalize(statement)
        // var moodRead: Mood!
         var moodArray: [Mood] = []
         var query = ""
+        var percent = "%"
         if filter == "Mood" || filter == "Stress" || filter == "Productivity" || filter == "Exercise" || filter == "Sleep" || filter == "Alcohol" || filter == "Water" {
              query = "SELECT * FROM MAIN WHERE (\(filter)) = (\(value));"
         } else if filter == "Notes"{
-             query = "SELECT * FROM MAIN WHERE NOTES MATCH '(\(value))'"
+            percent += value
+            percent += percent
+            
+             query = "SELECT * FROM MAIN WHERE NOTES like '(\(percent))'"
         } else {
             query = "SELECT * FROM MAIN WHERE LOCATION = ('\(value)');"
         }

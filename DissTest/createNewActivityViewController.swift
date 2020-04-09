@@ -23,12 +23,20 @@ class createNewActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        backgroundView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        backgroundView.layer.cornerRadius = 7
+        backgroundView.layer.masksToBounds = true
+        finishBtn.layer.cornerRadius = 7
+        finishBtn.layer.backgroundColor = UIColor.systemBlue.cgColor
+        finishBtn.layer.masksToBounds = true
 
         // Do any additional setup after loading the view.
     }
     
     
+    @IBOutlet weak var finishBtn: UIButton!
+    
+    @IBOutlet weak var backgroundView: UIView!
     
    
     

@@ -36,7 +36,21 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
         tableView.dataSource = self
        // activitiesArray = nextVC.entryActivities
         // Do any additional setup after loading the view.
+        
+        addActivityBtn.layer.cornerRadius = 7
+        addActivityBtn.layer.masksToBounds = true
+        addActivityBtn.layer.backgroundColor = UIColor.systemBlue.cgColor
+        advanceBtn.layer.cornerRadius = 7
+        advanceBtn.layer.masksToBounds = true
+        advanceBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        
     }
+    
+    
+    @IBOutlet weak var addActivityBtn: UIButton!
+    
+    
+    @IBOutlet weak var advanceBtn: UIButton!
     
     @IBAction func refreshBtn(_ sender: Any) {
         

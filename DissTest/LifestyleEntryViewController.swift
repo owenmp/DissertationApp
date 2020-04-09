@@ -23,9 +23,38 @@ class LifestyleEntryViewController: UIViewController {
         print(valueForMood)
         print(valueForStress)
         print(valueForProductivity)
+        
+        sleepView.layer.cornerRadius = 7
+        sleepView.layer.masksToBounds = true
+        sleepView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        waterView.layer.cornerRadius = 7
+              waterView.layer.masksToBounds = true
+              waterView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        alcoholView.layer.cornerRadius = 7
+              alcoholView.layer.masksToBounds = true
+              alcoholView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        locationView.layer.cornerRadius = 7
+              locationView.layer.masksToBounds = true
+              locationView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        exerciseView.layer.cornerRadius = 7
+              exerciseView.layer.masksToBounds = true
+              exerciseView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        advanceBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        advanceBtn.layer.cornerRadius = 7
+        advanceBtn.layer.masksToBounds = true
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBOutlet weak var advanceBtn: UIButton!
+    @IBOutlet weak var locationView: UIView!
+    @IBOutlet weak var alcoholView: UIView!
+    @IBOutlet weak var sleepView: UIView!
+    
+    @IBOutlet weak var exerciseView: UIView!
+    
+    @IBOutlet weak var waterView: UIView!
     
     
     @IBOutlet weak var sleepHoursTxt: UITextField!
