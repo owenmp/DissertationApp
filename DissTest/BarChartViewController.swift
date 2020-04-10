@@ -47,6 +47,10 @@ class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerV
     }
     
     
+    @IBAction func pdfButton(_ sender: Any) {
+        let pdfFilePath = barChart.exportAsPdfFromView()
+        print(pdfFilePath)
+    }
     
     @IBOutlet weak var createBtn: UIButton!
     

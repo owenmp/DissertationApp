@@ -47,6 +47,7 @@
 		5ABAC1D6242A402E0019D62A /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAC1D5242A402D0019D62A /* EntryTableViewCell.swift */; };
 		5ABAC1D8242A92B90019D62A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAC1D7242A92B90019D62A /* ColorExtension.swift */; };
 		5AC4A474243DE9D1007F2818 /* ChartStringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC4A473243DE9D1007F2818 /* ChartStringFormatter.swift */; };
+		5AC9C1D92440BEA200D07683 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9C1D82440BEA200D07683 /* UIViewExtension.swift */; };
 		5AE394D424335DA600544B89 /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394D324335DA600544B89 /* BarChartViewController.swift */; };
 		5AE394D624335FD400544B89 /* searchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394D524335FD400544B89 /* searchViewController.swift */; };
 		5AE394D82434B48700544B89 /* searchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394D72434B48600544B89 /* searchTableViewCell.swift */; };
@@ -100,6 +101,7 @@
 		5ABAC1D5242A402D0019D62A /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		5ABAC1D7242A92B90019D62A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5AC4A473243DE9D1007F2818 /* ChartStringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartStringFormatter.swift; sourceTree = "<group>"; };
+		5AC9C1D82440BEA200D07683 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		5AE394D324335DA600544B89 /* BarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
 		5AE394D524335FD400544B89 /* searchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchViewController.swift; sourceTree = "<group>"; };
 		5AE394D72434B48600544B89 /* searchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTableViewCell.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				5AE394D9243B4AF200544B89 /* detailActivityViewController.swift */,
 				5AE394D72434B48600544B89 /* searchTableViewCell.swift */,
 				5AE394D524335FD400544B89 /* searchViewController.swift */,
+				5AC9C1D82440BEA200D07683 /* UIViewExtension.swift */,
 				5AE394D324335DA600544B89 /* BarChartViewController.swift */,
 				5AA1815F242BA53700A37ED2 /* EntryActivityTableViewCell.swift */,
 				5AA1815D242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift */,
@@ -364,6 +367,7 @@
 				5AA1815C242B6EDB00A37ED2 /* EntryDetailViewController.swift in Sources */,
 				5A72D86123F9D25600441B9B /* LogsViewController.swift in Sources */,
 				5A844DF8241E9F950048EDD0 /* ActivitiesTableViewController.swift in Sources */,
+				5AC9C1D92440BEA200D07683 /* UIViewExtension.swift in Sources */,
 				5A72D85D23F9D25600441B9B /* AppDelegate.swift in Sources */,
 				5A72D85F23F9D25600441B9B /* SceneDelegate.swift in Sources */,
 				5AB2FBEC2428D37B009336E7 /* chartsViewController.swift in Sources */,
