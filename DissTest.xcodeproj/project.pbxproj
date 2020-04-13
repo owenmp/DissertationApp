@@ -24,6 +24,7 @@
 		5A844DF4241E79E70048EDD0 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A844DF3241E79E70048EDD0 /* NavViewController.swift */; };
 		5A844DF6241E9A4B0048EDD0 /* createNewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */; };
 		5A844DF8241E9F950048EDD0 /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */; };
+		5A9185452441E36400A4AEEC /* adviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9185442441E36400A4AEEC /* adviceViewController.swift */; };
 		5A95EB1C241FB713007F2E93 /* table.db in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB1B241FB713007F2E93 /* table.db */; };
 		5A95EB1E241FB839007F2E93 /* new.db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB1D241FB838007F2E93 /* new.db.sql */; };
 		5A95EB20241FB871007F2E93 /* newDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB1F241FB871007F2E93 /* newDatabase.swift */; };
@@ -78,6 +79,7 @@
 		5A844DF3241E79E70048EDD0 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewActivityViewController.swift; sourceTree = "<group>"; };
 		5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
+		5A9185442441E36400A4AEEC /* adviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adviceViewController.swift; sourceTree = "<group>"; };
 		5A95EB1B241FB713007F2E93 /* table.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = table.db; path = ../../../table.db; sourceTree = "<group>"; };
 		5A95EB1D241FB838007F2E93 /* new.db.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = new.db.sql; sourceTree = "<group>"; };
 		5A95EB1F241FB871007F2E93 /* newDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newDatabase.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */,
 				5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */,
 				5A7C5B1D241BCB510047CD0B /* ActivitiesViewController.swift */,
+				5A9185442441E36400A4AEEC /* adviceViewController.swift */,
 				5A7C5B17241BB4F40047CD0B /* MoodEntryViewController.swift */,
 				5A7C5B03240BEFD90047CD0B /* NotesViewController.swift */,
 				5A72D86523F9D26700441B9B /* Assets.xcassets */,
@@ -340,6 +343,7 @@
 				5A3FFA22242CE45300F842F6 /* ChartsScreenViewController.swift in Sources */,
 				5A7C5B04240BEFD90047CD0B /* NotesViewController.swift in Sources */,
 				5AE394E0243CA94800544B89 /* scatterGraphViewController.swift in Sources */,
+				5A9185452441E36400A4AEEC /* adviceViewController.swift in Sources */,
 				5A844DF6241E9A4B0048EDD0 /* createNewActivityViewController.swift in Sources */,
 				5ABAC1D8242A92B90019D62A /* ColorExtension.swift in Sources */,
 				5A95EB20241FB871007F2E93 /* newDatabase.swift in Sources */,

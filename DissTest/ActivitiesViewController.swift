@@ -88,6 +88,14 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
             return 50
     }
     
+//      func tableView(_tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        guard let
+//        
+//
+//        let configuration = ""
+//        return configuration
+//    }
+    
     
     
     

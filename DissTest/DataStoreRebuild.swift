@@ -111,7 +111,510 @@ class DataStoreRebuild {
             sqlite3_finalize(statement)
             
     }
+        
     }
+    
+    
+    func getOverallAlcohol() -> Double {
+          let query = "SELECT ALCOHOL FROM MAIN;"
+          var average: Double = 0
+          var statement: OpaquePointer? = nil
+          var count: Double = 0
+          if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+          while(sqlite3_step(statement) == SQLITE_ROW){
+              let sleep = sqlite3_column_int(statement!, 0)
+              average += Double(sleep)
+              count += 1
+              }
+              sqlite3_finalize(statement)
+              if count == 0 {
+                  average = 0
+              } else {
+                  average /= count
+              }
+              print(average)
+          }
+              
+          return average
+              
+      }
+    
+    
+    func getOverallWater() -> Double {
+          let query = "SELECT WATER FROM MAIN;"
+          var average: Double = 0
+          var statement: OpaquePointer? = nil
+          var count: Double = 0
+          if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+          while(sqlite3_step(statement) == SQLITE_ROW){
+              let sleep = sqlite3_column_int(statement!, 0)
+              average += Double(sleep)
+              count += 1
+              }
+              sqlite3_finalize(statement)
+              if count == 0 {
+                  average = 0
+              } else {
+                  average /= count
+              }
+              print(average)
+          }
+              
+          return average
+              
+      }
+    
+    
+    
+    func getOverallExercise() -> Double {
+          let query = "SELECT EXERCISE FROM MAIN;"
+          var average: Double = 0
+          var statement: OpaquePointer? = nil
+          var count: Double = 0
+          if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+          while(sqlite3_step(statement) == SQLITE_ROW){
+              let sleep = sqlite3_column_int(statement!, 0)
+              average += Double(sleep)
+              count += 1
+              }
+              sqlite3_finalize(statement)
+              if count == 0 {
+                  average = 0
+              } else {
+                  average /= count
+              }
+              print(average)
+          }
+              
+          return average
+              
+      }
+    
+    
+    func getOverallSleep() -> Double {
+        let query = "SELECT SLEEP FROM MAIN;"
+        var average: Double = 0
+        var statement: OpaquePointer? = nil
+        var count: Double = 0
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+            let sleep = sqlite3_column_int(statement!, 0)
+            average += Double(sleep)
+            count += 1
+            }
+            sqlite3_finalize(statement)
+            if count == 0 {
+                average = 0
+            } else {
+                average /= count
+            }
+            print(average)
+        }
+            
+        return average
+            
+    }
+    
+    func getPoorAlcoholAverage () -> Double {
+          let query = "SELECT ALCOHOL FROM MAIN WHERE MOOD < 4;"
+          var averages: [Double] = []
+          var statement: OpaquePointer? = nil
+          var poorAverage: Double = 0
+          var poorWater: Double = 0
+          var count: Double = 0
+          if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+          while(sqlite3_step(statement) == SQLITE_ROW){
+          let waterRead = sqlite3_column_int(statement!, 0)
+          poorWater += Double(waterRead)
+              count += 1
+              }
+              sqlite3_finalize(statement)
+              if count == 0 {
+                  poorAverage = 0
+              } else{
+                  poorWater /= count
+                  poorAverage = poorWater
+              }
+              print(poorAverage)
+              
+      }
+          
+          return poorAverage
+          
+      }
+    
+    
+    func getMediumALCOHOLAverage () -> Double {
+            let query = "SELECT ALCOHOL FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
+            var averages: [Double] = []
+            var statement: OpaquePointer? = nil
+            var poorAverage: Double = 0
+            var poorWater: Double = 0
+            var count: Double = 0
+            if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+            while(sqlite3_step(statement) == SQLITE_ROW){
+            let waterRead = sqlite3_column_int(statement!, 0)
+            poorWater += Double(waterRead)
+                count += 1
+                }
+                sqlite3_finalize(statement)
+                if count == 0 {
+                    poorAverage = 0
+                } else{
+                    poorWater /= count
+                    poorAverage = poorWater
+                }
+                print(poorAverage)
+                
+        }
+           return poorAverage
+           }
+    
+    
+    
+    
+    func getGoodAlcoholAverage () -> Double {
+            let query = "SELECT ALCOHOL FROM MAIN WHERE MOOD > 7;"
+            var averages: [Double] = []
+            var statement: OpaquePointer? = nil
+            var poorAverage: Double = 0
+            var poorWater: Double = 0
+            var count: Double = 0
+            if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+            while(sqlite3_step(statement) == SQLITE_ROW){
+            let waterRead = sqlite3_column_int(statement!, 0)
+            poorWater += Double(waterRead)
+                count += 1
+                }
+                sqlite3_finalize(statement)
+                if count == 0 {
+                    poorAverage = 0
+                } else{
+                    poorWater /= count
+                    poorAverage = poorWater
+                }
+                print(poorAverage)
+                
+        }
+           return poorAverage
+       }
+    
+    
+    
+    func getGoodExerciseAverage () -> Double {
+         let query = "SELECT EXERCISE FROM MAIN WHERE MOOD > 7;"
+         var averages: [Double] = []
+         var statement: OpaquePointer? = nil
+         var poorAverage: Double = 0
+         var poorWater: Double = 0
+         var count: Double = 0
+         if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+         while(sqlite3_step(statement) == SQLITE_ROW){
+         let waterRead = sqlite3_column_int(statement!, 0)
+         poorWater += Double(waterRead)
+             count += 1
+             }
+             sqlite3_finalize(statement)
+             if count == 0 {
+                 poorAverage = 0
+             } else{
+                 poorWater /= count
+                 poorAverage = poorWater
+             }
+             print(poorAverage)
+             
+     }
+        return poorAverage
+    }
+    
+    
+    
+    func getMediumExerciseAverage () -> Double {
+         let query = "SELECT EXERCISE FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
+         var averages: [Double] = []
+         var statement: OpaquePointer? = nil
+         var poorAverage: Double = 0
+         var poorWater: Double = 0
+         var count: Double = 0
+         if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+         while(sqlite3_step(statement) == SQLITE_ROW){
+         let waterRead = sqlite3_column_int(statement!, 0)
+         poorWater += Double(waterRead)
+             count += 1
+             }
+             sqlite3_finalize(statement)
+             if count == 0 {
+                 poorAverage = 0
+             } else{
+                 poorWater /= count
+                 poorAverage = poorWater
+             }
+             print(poorAverage)
+             
+     }
+        return poorAverage
+        }
+    
+    func getPoorExerciseAverage () -> Double {
+        let query = "SELECT EXERCISE FROM MAIN WHERE MOOD < 4;"
+        var averages: [Double] = []
+        var statement: OpaquePointer? = nil
+        var poorAverage: Double = 0
+        var poorWater: Double = 0
+        var count: Double = 0
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+        let waterRead = sqlite3_column_int(statement!, 0)
+        poorWater += Double(waterRead)
+            count += 1
+            }
+            sqlite3_finalize(statement)
+            if count == 0 {
+                poorAverage = 0
+            } else{
+                poorWater /= count
+                poorAverage = poorWater
+            }
+            print(poorAverage)
+            
+    }
+        
+        return poorAverage
+        
+    }
+
+    
+    
+    
+    func getPoorSleepAverage () -> Double {
+        let query = "SELECT SLEEP FROM MAIN WHERE MOOD < 4;"
+        var averages: [Double] = []
+        var statement: OpaquePointer? = nil
+        var poorAverage: Double = 0
+        var poorWater: Double = 0
+        var count: Double = 0
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+        let waterRead = sqlite3_column_int(statement!, 0)
+        poorWater += Double(waterRead)
+            count += 1
+            }
+            sqlite3_finalize(statement)
+            if count == 0 {
+                poorAverage = 0
+            } else{
+                poorWater /= count
+                poorAverage = poorWater
+            }
+            print(poorAverage)
+            
+    }
+        
+        return poorAverage
+        
+    }
+    
+    
+    func getMediumSleepAverage () -> Double {
+        let query = "SELECT SLEEP FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
+        var averages: [Double] = []
+        var statement: OpaquePointer? = nil
+        var mediumAverage: Double = 0
+        var mediumWater: Double = 0
+        var count: Double = 0
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+        let waterRead = sqlite3_column_int(statement!, 0)
+        mediumWater += Double(waterRead)
+            count += 1
+            }
+            sqlite3_finalize(statement)
+            if count == 0 {
+                mediumAverage = 0
+            } else{
+                mediumWater /= count
+                mediumAverage = mediumWater
+            }
+            print(mediumAverage)
+            
+    }
+        
+        return mediumAverage
+        
+    }
+    
+    
+    func getGoodSleepAverage () -> Double {
+        let query = "SELECT SLEEP FROM MAIN WHERE MOOD > 7"
+        var averages: [Double] = []
+        var statement: OpaquePointer? = nil
+        var mediumAverage: Double = 0
+        var mediumWater: Double = 0
+        var count: Double = 0
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+        let waterRead = sqlite3_column_int(statement!, 0)
+        mediumWater += Double(waterRead)
+            count += 1
+            }
+            sqlite3_finalize(statement)
+            if count == 0 {
+                mediumAverage = 0
+            } else{
+                mediumWater /= count
+                mediumAverage = mediumWater
+            }
+            print(mediumAverage)
+            
+    }
+        
+        return mediumAverage
+        
+    }
+    
+    
+    func getGoodAverage () -> Double {
+           let query = "SELECT WATER FROM MAIN WHERE MOOD > 7"
+           var averages: [Double] = []
+           var statement: OpaquePointer? = nil
+           var mediumAverage: Double = 0
+           var mediumWater: Double = 0
+           var count: Double = 0
+           if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+           while(sqlite3_step(statement) == SQLITE_ROW){
+           let waterRead = sqlite3_column_int(statement!, 0)
+           mediumWater += Double(waterRead)
+               count += 1
+               }
+               sqlite3_finalize(statement)
+               if count == 0 {
+                   mediumAverage = 0
+               } else{
+                   mediumWater /= count
+                   mediumAverage = mediumWater
+               }
+               print(mediumAverage)
+               
+       }
+           
+           return mediumAverage
+           
+       }
+    
+    
+    
+    func getMediumAverage () -> Double {
+           let query = "SELECT WATER FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
+           var averages: [Double] = []
+           var statement: OpaquePointer? = nil
+           var mediumAverage: Double = 0
+           var mediumWater: Double = 0
+           var count: Double = 0
+           if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+           while(sqlite3_step(statement) == SQLITE_ROW){
+           let waterRead = sqlite3_column_int(statement!, 0)
+           mediumWater += Double(waterRead)
+               count += 1
+               }
+               sqlite3_finalize(statement)
+               if count == 0 {
+                   mediumAverage = 0
+               } else{
+                   mediumWater /= count
+                   mediumAverage = mediumWater
+               }
+               print(mediumAverage)
+               
+       }
+           
+           return mediumAverage
+           
+       }
+    
+    
+    
+    
+    
+    
+    
+    
+    func getPoorWaterAverage () -> Double {
+        let query = "SELECT WATER FROM MAIN WHERE MOOD < 4;"
+        var averages: [Double] = []
+        var statement: OpaquePointer? = nil
+        var poorAverage: Double = 0
+        var poorWater: Double = 0
+        var count: Double = 0
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+        let waterRead = sqlite3_column_int(statement!, 0)
+        poorWater += Double(waterRead)
+            count += 1
+            }
+            sqlite3_finalize(statement)
+            if count == 0 {
+                poorAverage = 0
+            } else{
+                poorWater /= count
+                poorAverage = poorWater
+            }
+            print(poorAverage)
+            
+    }
+        
+        return poorAverage
+        
+    }
+    
+    
+    
+    
+//    func getWaterAverages() -> [Double] {
+//
+//
+//        let query1 = "SELECT WATER FROM MAIN WHERE MOOD < 4;"
+//        let query2 = "SELECT WATER FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
+//        let query3 = "SELECT WATER FROM MAIN WHERE MOOD > 7;"
+//        var queryArray : [String] = []
+//        queryArray.append(query1)
+//        queryArray.append(query2)
+//        queryArray.append(query3)
+//        var poor: Double = 0
+//        var medium: Double = 0
+//        var good:Double  = 0
+//        var averagesRead: [Double] = []
+//        var count: Double = 0
+//        averagesRead.append(poor)
+//        averagesRead.append(medium)
+//        averages.append(poor)
+//
+//        for i in 0...2 {
+//            if sqlite3_prepare_v2( database, queryArray[i], -1, &statement, nil) == SQLITE_OK {
+//            while(sqlite3_step(statement) == SQLITE_ROW){
+//                let waterRead = sqlite3_column_int(statement!, 0)
+//
+//                //var read = averagesRead[i]
+//                medium += Double(waterRead)
+//                count += 1
+//                medium /= count
+//                poor = medium
+//                averages.append(poor)
+//                print(read)
+//                }
+//                sqlite3_finalize(statement)
+//            }
+//
+//
+//
+//
+//        }
+//
+//
+//
+//
+//        return averages
+//
+//    }
     
     
     func getBarAverages(search: String, value: String) -> [Int] {
