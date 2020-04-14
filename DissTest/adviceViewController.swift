@@ -28,6 +28,8 @@ class adviceViewController: UIViewController {
     var overallWater: Double = 0
     var count = 0
     var exerciseCount = 0
+    var alcoholCount = 0
+    var sleepCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,12 +89,116 @@ class adviceViewController: UIViewController {
         badExerciseDescLbl.isHidden = true
         goodExerciseValLbl.isHidden = true
         goodExerciseDescLbl.isHidden = true
+        alcoholView.isHidden = true
+        alcoholView.layer.cornerRadius = 7
+        alcoholView.layer.masksToBounds = true
+        alcoholView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        badAlcoholValLbl.isHidden = true
+        badAlcoholDescLbl.isHidden = true
+        goodAlcoholValLbl.isHidden = true
+        goodAlcoholDescLbl.isHidden = true
+        goodAlcoholValLbl.text = String(format:"%.2f",goodAlcoholAv)
+        badAlcoholValLbl.text = String(format:"%.2f",poorAlcoholAv)
+        alcoholLifeLbl.isHidden = true
+        
+        alcoholLifeValLbl.isHidden = true
+        alcoholLifeValLbl.text = String(format:"%.2f",overallAlcohol)
+        avAlcoholDescLbl.isHidden = true
+        avAlcoholValLbl.isHidden = true
+        avAlcoholValLbl.text = String(format:"%.2f",overallAlcohol)
+        sleepLifeLbl.isHidden = true
+        sleepLifeValLbl.isHidden = true
+        sleepLifeValLbl.text = String(format:"%.2f",overallSleep)
+        
+        sleepView.isHidden = true
+        sleepView.layer.cornerRadius = 7
+        sleepView.layer.masksToBounds = true
+        sleepView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        goodSleepDescLbl.isHidden = true
+        goodSleepValLbl.isHidden = true
+        badSleepValLbl.isHidden = true
+        badSleepDescLbl.isHidden = true
+        goodSleepValLbl.text = String(format:"%.2f",goodSleepAv)
+        badSleepValLbl.text = String(format:"%.2f",poorSleepAv)
+        avSleepVal.text = String(format:"%.2f",overallSleep)
+        goodLifestyleView.isHidden = true
+        goodLifestyleView.layer.cornerRadius = 7
+        goodLifestyleView.layer.masksToBounds = true
+        goodLifestyleView.layer.backgroundColor = UIColor.init(red: 0.6588, green: 0.9294, blue: 0.737255, alpha: 1).cgColor
+        
+        goodSleepLifeLbl.text = String(format:"%.2f",goodSleepAv)
+        goodAlcoholLifeLbl.text = String(format:"%.2f",goodAlcoholAv)
+        goodExerciseLifeLbl.text = String(format:"%.2f",goodExerciseAv)
+        goodLifeWaterLbl.text = String(format:"%.2f",goodWaterAv)
         
         
+        pdfBtn.isHidden = true
+        pdfBtn.layer.backgroundColor = UIColor.systemRed.cgColor
+        pdfBtn.layer.cornerRadius = 7
+        pdfBtn.layer.masksToBounds = true
+        statsBtn.isHidden = true
+        statsBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        statsBtn.layer.cornerRadius = 7
+        statsBtn.layer.masksToBounds = true
+        backGroundView.isHidden = false
         
     }
     
+    @IBOutlet weak var backGroundView: UIView!
+    @IBOutlet weak var pdfBtn: UIButton!
     
+    @IBOutlet weak var statsBtn: UIButton!
+    
+    
+    
+    @IBOutlet weak var goodSleepLifeLbl: UILabel!
+    @IBOutlet weak var goodAlcoholLifeLbl: UILabel!
+    @IBOutlet weak var goodExerciseLifeLbl: UILabel!
+    
+    @IBOutlet weak var goodLifeWaterLbl: UILabel!
+    
+    
+    
+    @IBOutlet weak var goodLifestyleView: UIView!
+    
+    
+    @IBOutlet weak var avSleepVal: UILabel!
+    
+    @IBOutlet weak var sleepNextBtn: UIButton!
+    
+    
+    @IBOutlet weak var badSleepValLbl: UILabel!
+    @IBOutlet weak var badSleepDescLbl: UILabel!
+    
+    @IBOutlet weak var goodSleepValLbl: UILabel!
+    
+    @IBOutlet weak var goodSleepDescLbl: UILabel!
+    
+    @IBOutlet weak var sleepView: UIView!
+    
+    
+    @IBOutlet weak var sleepLifeValLbl: UILabel!
+    @IBOutlet weak var sleepLifeLbl: UILabel!
+    
+    @IBOutlet weak var avAlcoholValLbl: UILabel!
+    
+    @IBOutlet weak var avAlcoholDescLbl: UILabel!
+    
+    @IBOutlet weak var alcoholLifeValLbl: UILabel!
+    
+    @IBOutlet weak var alcoholLifeLbl: UILabel!
+    
+    
+    @IBOutlet weak var badAlcoholValLbl: UILabel!
+    
+    @IBOutlet weak var goodAlcoholValLbl: UILabel!
+    @IBOutlet weak var badAlcoholDescLbl: UILabel!
+    
+    @IBOutlet weak var goodAlcoholDescLbl: UILabel!
+    
+    @IBOutlet weak var averageAlcoholLbl: UILabel!
+    
+    @IBOutlet weak var alcoholView: UIView!
     
     @IBOutlet weak var averageExerciseVal: UILabel!
     
@@ -121,6 +227,148 @@ class adviceViewController: UIViewController {
     @IBOutlet weak var averageWaterLbl: UILabel!
     
     @IBOutlet weak var exerciseNextBtn: UIButton!
+    
+    @IBOutlet weak var alcoholNextBtn: UIButton!
+    
+    
+    @IBAction func pdfBtn(_ sender: Any) {
+        
+        let pdfFilePath = backGroundView.exportAsPdfFromView()
+               print(pdfFilePath)
+        
+    }
+    
+    @IBAction func sleepNextBtn(_ sender: Any) {
+        
+        sleepCount += 1
+        
+        if sleepCount == 1 {
+            
+            goodSleepDescLbl.alpha = 0
+            goodSleepValLbl.alpha = 0
+            UILabel.animate(withDuration: 2, animations: {
+                self.goodSleepValLbl.alpha = 1
+                self.goodSleepDescLbl.alpha = 1
+                self.goodSleepValLbl.isHidden = false
+                self.goodSleepDescLbl.isHidden = false
+                
+            })
+        }else if sleepCount == 2 {
+            
+            badSleepDescLbl.alpha = 0
+            badSleepValLbl.alpha = 0
+            UILabel.animate(withDuration: 2, animations: {
+                self.badSleepDescLbl.alpha = 1
+                self.badSleepDescLbl.isHidden = false
+                self.badSleepValLbl.alpha = 1
+                self.badSleepValLbl.isHidden = false
+                self.sleepNextBtn.setTitle("Next", for: .normal)
+                
+                
+                
+            })
+        }else {
+            
+            sleepView.alpha = 1
+            goodLifestyleView.alpha = 0
+            pdfBtn.alpha = 0
+            statsBtn.alpha = 0
+           
+            UIView.animate(withDuration: 2, animations: {
+                self.sleepView.alpha = 0
+                self.goodLifestyleView.alpha = 1
+                self.goodLifestyleView.isHidden = false
+                self.pdfBtn.alpha = 1
+                self.pdfBtn.isHidden = false
+                self.statsBtn.alpha = 1
+                self.statsBtn.isHidden = false
+                self.backGroundView.isHidden = false
+                
+            })
+            
+            
+            
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @IBAction func alcoholNextBtn(_ sender: Any) {
+        alcoholCount += 1
+        
+        if alcoholCount == 1 {
+            
+            goodAlcoholDescLbl.alpha = 0
+            goodAlcoholValLbl.alpha = 0
+            UILabel.animate(withDuration: 2, animations: {
+                
+                self.goodAlcoholDescLbl.alpha = 1
+                self.goodAlcoholValLbl.isHidden = false
+                self.goodAlcoholValLbl.alpha = 1
+                self.goodAlcoholDescLbl.isHidden = false
+            })
+        }else if alcoholCount == 2 {
+            
+            self.badAlcoholDescLbl.alpha = 0
+            self.badAlcoholValLbl.alpha = 0
+             UILabel.animate(withDuration: 2, animations: {
+                self.badAlcoholDescLbl.alpha = 1
+                self.badAlcoholValLbl.alpha = 1
+                self.badAlcoholValLbl.isHidden = false
+                self.badAlcoholDescLbl.isHidden = false
+                
+                self.alcoholNextBtn.setTitle("Next", for: .normal)
+                
+            })
+            
+        }else {
+            alcoholView.alpha = 1
+            sleepView.alpha = 0
+            UIView.animate(withDuration: 2.0, animations: {
+                self.sleepView.alpha = 1
+                self.sleepView.isHidden = false
+                self.alcoholView.alpha = 0
+            self.alcoholView.isHidden = true
+            })
+            
+            sleepLifeValLbl.alpha = 0
+            sleepLifeLbl.alpha = 0
+            UILabel.animate(withDuration: 2.0, animations: {
+                self.sleepLifeValLbl.alpha = 1
+                self.sleepLifeLbl.alpha = 1
+                self.sleepLifeValLbl.isHidden = false
+                self.sleepLifeLbl.isHidden = false
+                
+            })
+            
+            
+            
+            
+        }
+    }
+    
+   
+    
+    
+    
+    
+    
     
     
     
@@ -152,16 +400,46 @@ class adviceViewController: UIViewController {
         
         } else {
            // exerciseView.alpha = 1
+            alcoholView.alpha = 0
             UIView.animate(withDuration: 2.0, animations: {
                 
                 self.exerciseView.alpha = 0
                 self.exerciseView.isHidden = true
+                self.alcoholView.alpha = 1
+                self.alcoholView.isHidden = false
                 
             })
             
+            alcoholLifeValLbl.alpha = 0
+            alcoholLifeLbl.alpha = 0
+            avAlcoholValLbl.alpha = 0
+            avAlcoholDescLbl.alpha = 0
+            UILabel.animate(withDuration: 2.0, animations: {
+                
+                self.alcoholLifeValLbl.alpha = 1
+                self.alcoholLifeValLbl.isHidden = false
+                self.alcoholLifeLbl.alpha = 1
+                self.alcoholLifeLbl.isHidden = false
+                self.avAlcoholValLbl.alpha = 1
+                self.avAlcoholValLbl.isHidden = false
+                self.avAlcoholDescLbl.alpha = 1
+                self.avAlcoholDescLbl.isHidden = false
+                
+                
+            })
+       
         }
     
+    
     }
+    
+
+            
+       
+      
+    
+    
+
     
     
     @IBAction func waterNextBtn(_ sender: Any) {

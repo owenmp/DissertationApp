@@ -55,6 +55,7 @@
 		5AE394DA243B4AF200544B89 /* detailActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394D9243B4AF200544B89 /* detailActivityViewController.swift */; };
 		5AE394DE243B6A2D00544B89 /* dailyActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394DD243B6A2D00544B89 /* dailyActivityTableViewCell.swift */; };
 		5AE394E0243CA94800544B89 /* scatterGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394DF243CA94800544B89 /* scatterGraphViewController.swift */; };
+		5AF5B9922445F87D00BF0790 /* lineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF5B9912445F87D00BF0790 /* lineChartViewController.swift */; };
 		E5EBC7FE22717F752E90F28F /* Pods_DissTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		5AE394D9243B4AF200544B89 /* detailActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailActivityViewController.swift; sourceTree = "<group>"; };
 		5AE394DD243B6A2D00544B89 /* dailyActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dailyActivityTableViewCell.swift; sourceTree = "<group>"; };
 		5AE394DF243CA94800544B89 /* scatterGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scatterGraphViewController.swift; sourceTree = "<group>"; };
+		5AF5B9912445F87D00BF0790 /* lineChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lineChartViewController.swift; sourceTree = "<group>"; };
 		DC0CC1B5C0625E2D5C460747 /* Pods-DissTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DissTest.debug.xcconfig"; path = "Target Support Files/Pods-DissTest/Pods-DissTest.debug.xcconfig"; sourceTree = "<group>"; };
 		DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DissTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 				5AE394D524335FD400544B89 /* searchViewController.swift */,
 				5AC9C1D82440BEA200D07683 /* UIViewExtension.swift */,
 				5AE394D324335DA600544B89 /* BarChartViewController.swift */,
+				5AF5B9912445F87D00BF0790 /* lineChartViewController.swift */,
 				5AA1815F242BA53700A37ED2 /* EntryActivityTableViewCell.swift */,
 				5AA1815D242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift */,
 				5AA1815B242B6EDB00A37ED2 /* EntryDetailViewController.swift */,
@@ -363,6 +366,7 @@
 				5AE394DE243B6A2D00544B89 /* dailyActivityTableViewCell.swift in Sources */,
 				5ABAC1D02428EDC10019D62A /* pieChartDatePickerViewController.swift in Sources */,
 				5A7C5B1E241BCB510047CD0B /* ActivitiesViewController.swift in Sources */,
+				5AF5B9922445F87D00BF0790 /* lineChartViewController.swift in Sources */,
 				5A95EB5824218B9E007F2E93 /* activity.swift in Sources */,
 				5A7C5B10240D3FE80047CD0B /* DBAccess.swift in Sources */,
 				5A7C5B16241A7E9E0047CD0B /* MoodEntry.swift in Sources */,
