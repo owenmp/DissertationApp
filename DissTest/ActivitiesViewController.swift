@@ -14,11 +14,13 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
     var valueForMood = 0
       var valueForStress = 0
       var valueForProductivity = 0
-    var valueForSleep = 0
+    var valueForSleepHours = 0
     var ValueForExercise = 0
     var valueForWater = 0
     var valueForAlcohol = 0
     var valueForLocation = ""
+    var valueForSleepMinutes = 0
+    var valueForExerciseMinutes = 0
     var nextVC = ActivitiesTableViewController()
     
     let cellReuseIdentifier = "activityIdentifier"
@@ -27,11 +29,13 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(valueForSleep)
+        print(valueForSleepHours)
         print(ValueForExercise)
         print(valueForWater)
         print(valueForAlcohol)
-        print(valueForLocation)
+        print(notesLocation)
+        print(valueForSleepMinutes)
+        print(valueForExerciseMinutes)
         tableView.delegate = self
         tableView.dataSource = self
        // activitiesArray = nextVC.entryActivities
@@ -125,8 +129,10 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
             notesVC.valueForLocation = valueForLocation
             notesVC.valueForAlcohol = valueForAlcohol
             notesVC.valueForWater = valueForWater
-            notesVC.valueForSleep = valueForSleep
+            notesVC.valueForSleep = valueForSleepHours
             notesVC.valueForStress = valueForStress
+            notesVC.valueForSleepMinutes = valueForSleepMinutes
+                       notesVC.valueForExerciseMinutes = valueForExerciseMinutes
 //            notesVC.dailyEntry.Alcohol = valueForAlcohol
 //            notesVC.dailyEntry.Exercise = ValueForExercise
 //            notesVC.dailyEntry.Location = valueForLocation

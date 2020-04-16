@@ -9,8 +9,8 @@
 import UIKit
 
 class LogsViewController: UIViewController {
-    let databaseStore = DataStoreRebuild()
-   
+    //let databaseStore = DataStoreRebuild()
+   let databaseStore = FinalDatabase()
     
 
     
@@ -24,16 +24,18 @@ class LogsViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d"
         let dateString: String = dateFormatter.string(from:date)
-        //print(dateString)
-        let test = Mood(Date: dateString, Sleep: 5, Water: 5, Stress: 5, Exercise: 5, Location: "K", Alcohol: 3, Mood: 4, Productivity: 7, Notes: "I had a great day today")
         
-        var one = activityLog(name: "Run", length: 2, description: "TestRun")
-        var two = activityLog(name: "Swim", length: 3, description: "TestSwim")
-        var three = activityLog(name: "Testing", length: 1, description: "testTest")
-        var activitiesArray : [activityLog] = []
-        activitiesArray.append(one)
-        activitiesArray.append(two)
-        activitiesArray.append(three)
+        
+        //print(dateString)
+        //let test = Mood(Date: dateString, Sleep: 5, Water: 5, Stress: 5, Exercise: 5, Location: "K", Alcohol: 3, Mood: 4, Productivity: 7, Notes: "I had a great day today")
+        
+//        var one = activityLog(name: "Run", length: 2, description: "TestRun")
+//        var two = activityLog(name: "Swim", length: 3, description: "TestSwim")
+//        var three = activityLog(name: "Testing", length: 1, description: "testTest")
+//        var activitiesArray : [activityLog] = []
+//        activitiesArray.append(one)
+//        activitiesArray.append(two)
+//        activitiesArray.append(three)
        // hello.getScatterData(filter: "Sleep", value: 8)
     // hello.getBarAverages(search: "Location", value: "University")
        // hello.searchEntries(filter: "Notes", value: "Worked")
@@ -56,8 +58,8 @@ class LogsViewController: UIViewController {
 //        print(a[0])
 //        print(a[1])
 //        print(a[2])
-        databaseStore.getAllDates()
-        databaseStore.getAllMood()
+       // databaseStore.getAllDates()
+       // databaseStore.getAllMood()
         
     //    hello.insertDailyActivities(dailyActivities: activitiesArray, date: "15-03-2020")
         
@@ -67,6 +69,11 @@ class LogsViewController: UIViewController {
 
     
         super.viewDidLoad()
+//        var activity = activityLog(name: "Dissertation", length: 7, description: "Completed re build of my database", minutes: 20)
+//        var act: [activityLog] = []
+//        act.append(activity)
+//        //print(dateString)
+//        databaseStore.insertDailyActivities(dailyActivities: act, date: "16-04-2020")
         
        // hello.insertMoodObject(dailyEntry: test)
       //  hello.readRows()

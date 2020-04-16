@@ -369,7 +369,7 @@ class FinalDatabase {
     
     
     func getMediumExerciseAverage () -> Double {
-         let query = "SELECT EXERCISE FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
+         let query = "SELECT EXERCISEHOURS FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
          var averages: [Double] = []
          var statement: OpaquePointer? = nil
          var poorAverage: Double = 0
@@ -395,7 +395,7 @@ class FinalDatabase {
         }
     
     func getPoorExerciseAverage () -> Double {
-        let query = "SELECT EXERCISE FROM MAIN WHERE MOOD < 4;"
+        let query = "SELECT EXERCISEHOURS FROM MAIN WHERE MOOD < 4;"
         var averages: [Double] = []
         var statement: OpaquePointer? = nil
         var poorAverage: Double = 0
@@ -426,7 +426,7 @@ class FinalDatabase {
     
     
     func getPoorSleepAverage () -> Double {
-        let query = "SELECT SLEEP FROM MAIN WHERE MOOD < 4;"
+        let query = "SELECT SLEEPHOURS FROM MAIN WHERE MOOD < 4;"
         var averages: [Double] = []
         var statement: OpaquePointer? = nil
         var poorAverage: Double = 0
@@ -455,7 +455,7 @@ class FinalDatabase {
     
     
     func getMediumSleepAverage () -> Double {
-        let query = "SELECT SLEEP FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
+        let query = "SELECT SLEEPHOURS FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
         var averages: [Double] = []
         var statement: OpaquePointer? = nil
         var mediumAverage: Double = 0
@@ -484,7 +484,7 @@ class FinalDatabase {
     
     
     func getGoodSleepAverage () -> Double {
-        let query = "SELECT SLEEP FROM MAIN WHERE MOOD > 7"
+        let query = "SELECT SLEEPHOURS FROM MAIN WHERE MOOD > 7"
         var averages: [Double] = []
         var statement: OpaquePointer? = nil
         var mediumAverage: Double = 0
@@ -885,43 +885,43 @@ sqlite3_finalize(statement)
                }
    
     
+//
+//        func insertTestObject(){
+//           var statement : OpaquePointer?
+//           let tester = Mood(Date: "17-03-2020", Sleep: 6, Water: 5, Stress: 3, Exercise: 6, Location: "Aber", Alcohol: 8, Mood: 9, Productivity: 10, Notes: "I Had a bad day")
+//
+//         if sqlite3_prepare_v2(database,insertStatementString2, -1, &statement, nil) == SQLITE_OK {
+//            let date : NSString = tester.Date as NSString
+//            sqlite3_bind_text(statement, 1, date.utf8String, -1, SQLITE_TRANSIENT)
+//            sqlite3_bind_int(statement, 2, Int32(tester.Sleep))
+//            sqlite3_bind_int(statement, 3, Int32(tester.Water))
+//            sqlite3_bind_int(statement, 4, Int32(tester.Stress))
+//            sqlite3_bind_int(statement, 5, Int32(tester.Exercise))
+//            let hello : NSString = tester.Location as NSString
+//            sqlite3_bind_text(statement, 6, hello.utf8String,-1,SQLITE_TRANSIENT)
+//            let notes: NSString = tester.Notes as NSString
+//            sqlite3_bind_int(statement, 7, Int32(tester.Alcohol))
+//            sqlite3_bind_text(statement, 8, notes.utf8String,-1,SQLITE_TRANSIENT)
+//            sqlite3_bind_int(statement, 9, Int32(tester.Mood))
+//           sqlite3_bind_int(statement, 10, Int32(tester.Productivity))
+//            if sqlite3_step(statement) == SQLITE_DONE {
+//                 print("\nSuccessfully inserted row.")
+//               } else {
+//                 print("\nCould not insert row.")
+//               }
+//             } else {
+//               print("\nINSERT statement is not prepared.")
+//            //inser notes isn't working
+//
+//        }
+//        sqlite3_finalize(statement)
+//    }
+//
     
-    let insertStatementString2 = "INSERT INTO MAIN (DATE,SLEEP,WATER,STRESS,EXERCISE,LOCATION,ALCOHOL,NOTES,MOOD,PRODUCTIVITY) VALUES (?,?,?,?,?,?,?,?,?,?);"
-    func insertTestObject(){
-           var statement : OpaquePointer?
-           let tester = Mood(Date: "17-03-2020", Sleep: 6, Water: 5, Stress: 3, Exercise: 6, Location: "Aber", Alcohol: 8, Mood: 9, Productivity: 10, Notes: "I Had a bad day")
-        
-         if sqlite3_prepare_v2(database,insertStatementString2, -1, &statement, nil) == SQLITE_OK {
-            let date : NSString = tester.Date as NSString
-            sqlite3_bind_text(statement, 1, date.utf8String, -1, SQLITE_TRANSIENT)
-            sqlite3_bind_int(statement, 2, Int32(tester.Sleep))
-            sqlite3_bind_int(statement, 3, Int32(tester.Water))
-            sqlite3_bind_int(statement, 4, Int32(tester.Stress))
-            sqlite3_bind_int(statement, 5, Int32(tester.Exercise))
-            let hello : NSString = tester.Location as NSString
-            sqlite3_bind_text(statement, 6, hello.utf8String,-1,SQLITE_TRANSIENT)
-            let notes: NSString = tester.Notes as NSString
-            sqlite3_bind_int(statement, 7, Int32(tester.Alcohol))
-            sqlite3_bind_text(statement, 8, notes.utf8String,-1,SQLITE_TRANSIENT)
-            sqlite3_bind_int(statement, 9, Int32(tester.Mood))
-           sqlite3_bind_int(statement, 10, Int32(tester.Productivity))
-            if sqlite3_step(statement) == SQLITE_DONE {
-                 print("\nSuccessfully inserted row.")
-               } else {
-                 print("\nCould not insert row.")
-               }
-             } else {
-               print("\nINSERT statement is not prepared.")
-            //inser notes isn't working
-            
-        }
-        sqlite3_finalize(statement)
-    }
-    
-    
+
     func insertDailyActivities(dailyActivities: [activityLog], date: String){
         var statement: OpaquePointer?
-        var insertActivityStatement = "INSERT INTO ACTIVITYLOG (NAME,LENGTH,DATE, DESCRIPTION) VALUES (?,?,?,?);"
+        var insertActivityStatement = "INSERT INTO ACTIVITYLOG (NAME,HOURS,MINUTES,DATE,DESCRIPTION) VALUES (?,?,?,?,?);"
         for i in dailyActivities{
         if sqlite3_prepare_v2(database,insertActivityStatement, -1, &statement, nil) == SQLITE_OK {
             let nameString: NSString = i.name as NSString
@@ -929,8 +929,9 @@ sqlite3_finalize(statement)
             let dateString: NSString = date as NSString
             sqlite3_bind_text(statement, 1, nameString.utf8String, -1, SQLITE_TRANSIENT)
             sqlite3_bind_int(statement, 2, Int32(i.length))
-            sqlite3_bind_text(statement, 3, dateString.utf8String, -1, SQLITE_TRANSIENT)
-            sqlite3_bind_text(statement, 4, descriptionString.utf8String, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_int(statement, 3, Int32(i.minutes))
+            sqlite3_bind_text(statement, 4, dateString.utf8String, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_text(statement, 5, descriptionString.utf8String, -1, SQLITE_TRANSIENT)
             
             if sqlite3_step(statement) == SQLITE_DONE {
                      print("\nSuccessfully inserted row.")
@@ -949,7 +950,8 @@ sqlite3_finalize(statement)
         
     
     
-    
+    let insertStatementString2 = "INSERT INTO MAIN (DATE,SLEEPHOURS,WATER,STRESS,EXERCISEHOURS,LOCATION,ALCOHOL,NOTES,MOOD,PRODUCTIVITY,EXERCISEMINUTES,SLEEPMINUTES) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);"
+
     func insertMoodObject(dailyEntry: Mood){
         var statement : OpaquePointer?
         if sqlite3_prepare_v2(database,insertStatementString2, -1, &statement, nil) == SQLITE_OK {
@@ -967,6 +969,8 @@ sqlite3_finalize(statement)
                 sqlite3_bind_text(statement, 8, notes.utf8String,-1,SQLITE_TRANSIENT)
                 sqlite3_bind_int(statement, 9, Int32(dailyEntry.Mood))
                sqlite3_bind_int(statement, 10, Int32(dailyEntry.Productivity))
+            sqlite3_bind_int(statement,11,Int32(dailyEntry.ExerciseMinutes))
+            sqlite3_bind_int(statement,12,Int32(dailyEntry.SleepMinutes))
                 if sqlite3_step(statement) == SQLITE_DONE {
                      print("\nSuccessfully inserted row.")
                    } else {
@@ -1026,111 +1030,111 @@ sqlite3_finalize(statement)
     
     
     
-    func getScatterDates(filter: String, value: Int) -> [String]{
-           var moodArray: [Mood] = []
-           var moodValue: [String] = []
-           var query = "SELECT * FROM MAIN WHERE (\(filter)) = (\(value));"
-           var statement: OpaquePointer? = nil  // Pointer for sql to track returns
-            if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
-            while(sqlite3_step(statement) == SQLITE_ROW){
-                let date = stringAtField(statement!, fieldIndex: 0)
-                let sleep = sqlite3_column_int(statement!, 1)
-                 let water = sqlite3_column_int(statement!, 2)
-                 let stress = sqlite3_column_int(statement!, 3)
-                 let exercise = sqlite3_column_int(statement!, 4)
-                let location = stringAtField(statement!,fieldIndex: 5)
-                 let alcohol = sqlite3_column_int(statement!, 6)
-                let mood = sqlite3_column_int(statement!, 7)
-                 let productivity = sqlite3_column_int(statement!, 8)
-                let notes = stringAtField(statement!,fieldIndex: 9)
-                let objectDate: String
-                objectDate = String(date)
-                         //  print(objectDate)
-                let objectSleep: Int
-                objectSleep = Int(sleep)
-                let objectWater: Int
-                objectWater = Int(water)
-                let objectStress: Int
-                objectStress = Int(stress)
-                let objectExercise: Int
-                objectExercise = Int(exercise)
-                let objectLocation : String
-                objectLocation = String(location)
-                let objectAlcohol : Int
-                objectAlcohol = Int(alcohol)
-                let objectMood : Int
-                objectMood = Int(mood)
-                let objectProductivity: Int
-                objectProductivity = Int(productivity)
-                let objectNotes: String
-                objectNotes = String(notes)
-            
-           var object = Mood(Date: objectDate, Sleep: objectSleep, Water: objectWater, Stress: objectStress, Exercise: objectExercise, Location: objectLocation, Alcohol: objectAlcohol, Mood: objectMood, Productivity: objectProductivity, Notes: objectNotes)
-               print(object.Date)
-               moodArray.append(object)
-               moodValue.append(object.Date)
-                       }
-                       sqlite3_finalize(statement)
-                   }
-                       
-                       
-                       
-                       return moodValue
-               }
+//    func getScatterDates(filter: String, value: Int) -> [String]{
+//           var moodArray: [Mood] = []
+//           var moodValue: [String] = []
+//           var query = "SELECT * FROM MAIN WHERE (\(filter)) = (\(value));"
+//           var statement: OpaquePointer? = nil  // Pointer for sql to track returns
+//            if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+//            while(sqlite3_step(statement) == SQLITE_ROW){
+//                let date = stringAtField(statement!, fieldIndex: 0)
+//                let sleep = sqlite3_column_int(statement!, 1)
+//                 let water = sqlite3_column_int(statement!, 2)
+//                 let stress = sqlite3_column_int(statement!, 3)
+//                 let exercise = sqlite3_column_int(statement!, 4)
+//                let location = stringAtField(statement!,fieldIndex: 5)
+//                 let alcohol = sqlite3_column_int(statement!, 6)
+//                let mood = sqlite3_column_int(statement!, 7)
+//                 let productivity = sqlite3_column_int(statement!, 8)
+//                let notes = stringAtField(statement!,fieldIndex: 9)
+//                let objectDate: String
+//                objectDate = String(date)
+//                         //  print(objectDate)
+//                let objectSleep: Int
+//                objectSleep = Int(sleep)
+//                let objectWater: Int
+//                objectWater = Int(water)
+//                let objectStress: Int
+//                objectStress = Int(stress)
+//                let objectExercise: Int
+//                objectExercise = Int(exercise)
+//                let objectLocation : String
+//                objectLocation = String(location)
+//                let objectAlcohol : Int
+//                objectAlcohol = Int(alcohol)
+//                let objectMood : Int
+//                objectMood = Int(mood)
+//                let objectProductivity: Int
+//                objectProductivity = Int(productivity)
+//                let objectNotes: String
+//                objectNotes = String(notes)
+//
+//           var object = Mood(Date: objectDate, Sleep: objectSleep, Water: objectWater, Stress: objectStress, Exercise: objectExercise, Location: objectLocation, Alcohol: objectAlcohol, Mood: objectMood, Productivity: objectProductivity, Notes: objectNotes)
+//               print(object.Date)
+//               moodArray.append(object)
+//               moodValue.append(object.Date)
+//                       }
+//                       sqlite3_finalize(statement)
+//                   }
+//
+//
+//
+//                       return moodValue
+//               }
     
     
     
-    func getScatterData(filter: String, value: Int) -> [Int]{
-        var moodArray: [Mood] = []
-        var moodValue: [Int] = []
-        var query = "SELECT * FROM MAIN WHERE (\(filter)) = (\(value));"
-        var statement: OpaquePointer? = nil  // Pointer for sql to track returns
-         if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
-         while(sqlite3_step(statement) == SQLITE_ROW){
-             let date = stringAtField(statement!, fieldIndex: 0)
-             let sleep = sqlite3_column_int(statement!, 1)
-              let water = sqlite3_column_int(statement!, 2)
-              let stress = sqlite3_column_int(statement!, 3)
-              let exercise = sqlite3_column_int(statement!, 4)
-             let location = stringAtField(statement!,fieldIndex: 5)
-              let alcohol = sqlite3_column_int(statement!, 6)
-             let mood = sqlite3_column_int(statement!, 7)
-              let productivity = sqlite3_column_int(statement!, 8)
-             let notes = stringAtField(statement!,fieldIndex: 9)
-             let objectDate: String
-             objectDate = String(date)
-                      //  print(objectDate)
-             let objectSleep: Int
-             objectSleep = Int(sleep)
-             let objectWater: Int
-             objectWater = Int(water)
-             let objectStress: Int
-             objectStress = Int(stress)
-             let objectExercise: Int
-             objectExercise = Int(exercise)
-             let objectLocation : String
-             objectLocation = String(location)
-             let objectAlcohol : Int
-             objectAlcohol = Int(alcohol)
-             let objectMood : Int
-             objectMood = Int(mood)
-             let objectProductivity: Int
-             objectProductivity = Int(productivity)
-             let objectNotes: String
-             objectNotes = String(notes)
-         
-        var object = Mood(Date: objectDate, Sleep: objectSleep, Water: objectWater, Stress: objectStress, Exercise: objectExercise, Location: objectLocation, Alcohol: objectAlcohol, Mood: objectMood, Productivity: objectProductivity, Notes: objectNotes)
-            print(object.Date)
-            moodArray.append(object)
-            moodValue.append(object.Mood)
-                    }
-                    sqlite3_finalize(statement)
-                }
-                    
-                    
-                    
-                    return moodValue
-            }
+//    func getScatterData(filter: String, value: Int) -> [Int]{
+//        var moodArray: [Mood] = []
+//        var moodValue: [Int] = []
+//        var query = "SELECT * FROM MAIN WHERE (\(filter)) = (\(value));"
+//        var statement: OpaquePointer? = nil  // Pointer for sql to track returns
+//         if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+//         while(sqlite3_step(statement) == SQLITE_ROW){
+//             let date = stringAtField(statement!, fieldIndex: 0)
+//             let sleep = sqlite3_column_int(statement!, 1)
+//              let water = sqlite3_column_int(statement!, 2)
+//              let stress = sqlite3_column_int(statement!, 3)
+//              let exercise = sqlite3_column_int(statement!, 4)
+//             let location = stringAtField(statement!,fieldIndex: 5)
+//              let alcohol = sqlite3_column_int(statement!, 6)
+//             let mood = sqlite3_column_int(statement!, 7)
+//              let productivity = sqlite3_column_int(statement!, 8)
+//             let notes = stringAtField(statement!,fieldIndex: 9)
+//             let objectDate: String
+//             objectDate = String(date)
+//                      //  print(objectDate)
+//             let objectSleep: Int
+//             objectSleep = Int(sleep)
+//             let objectWater: Int
+//             objectWater = Int(water)
+//             let objectStress: Int
+//             objectStress = Int(stress)
+//             let objectExercise: Int
+//             objectExercise = Int(exercise)
+//             let objectLocation : String
+//             objectLocation = String(location)
+//             let objectAlcohol : Int
+//             objectAlcohol = Int(alcohol)
+//             let objectMood : Int
+//             objectMood = Int(mood)
+//             let objectProductivity: Int
+//             objectProductivity = Int(productivity)
+//             let objectNotes: String
+//             objectNotes = String(notes)
+//
+//        var object = Mood(Date: objectDate, Sleep: objectSleep, Water: objectWater, Stress: objectStress, Exercise: objectExercise, Location: objectLocation, Alcohol: objectAlcohol, Mood: objectMood, Productivity: objectProductivity, Notes: objectNotes)
+//            print(object.Date)
+//            moodArray.append(object)
+//            moodValue.append(object.Mood)
+//                    }
+//                    sqlite3_finalize(statement)
+//                }
+//
+//
+//
+//                    return moodValue
+//            }
     
 
     
@@ -1163,6 +1167,8 @@ sqlite3_finalize(statement)
             let mood = sqlite3_column_int(statement!, 7)
              let productivity = sqlite3_column_int(statement!, 8)
             let notes = stringAtField(statement!,fieldIndex: 9)
+            let exerciseMinutes = sqlite3_column_int(statement!, 10)
+            let sleepMinutes = sqlite3_column_int(statement!, 11)
             let objectDate: String
             objectDate = String(date)
                      //  print(objectDate)
@@ -1184,8 +1190,13 @@ sqlite3_finalize(statement)
             objectProductivity = Int(productivity)
             let objectNotes: String
             objectNotes = String(notes)
+            let objectExerciseMins: Int
+            objectExerciseMins = Int(exerciseMinutes)
+            let objectSleepMins: Int
+            objectSleepMins = Int(sleepMinutes)
+            
         
-       var object = Mood(Date: objectDate, Sleep: objectSleep, Water: objectWater, Stress: objectStress, Exercise: objectExercise, Location: objectLocation, Alcohol: objectAlcohol, Mood: objectMood, Productivity: objectProductivity, Notes: objectNotes)
+       var object = Mood(Date: objectDate, Sleep: objectSleep, Water: objectWater, Stress: objectStress, Exercise: objectExercise, Location: objectLocation, Alcohol: objectAlcohol, Mood: objectMood, Productivity: objectProductivity, Notes: objectNotes, SleepMinutes: objectSleepMins, ExerciseMinutes: objectExerciseMins)
             print(object.Date)
             moodArray.append(object)
             }
@@ -1206,10 +1217,11 @@ sqlite3_finalize(statement)
           while(sqlite3_step(statement) == SQLITE_ROW){
         let name = stringAtField(statement!, fieldIndex: 0)
         let length = sqlite3_column_int(statement!, 1)
+           let minutes = sqlite3_column_int(statement!, 2)
            // let type = stringAtField(statement!, fieldIndex: <#T##Int#>)
-        let description = stringAtField(statement!, fieldIndex: 3)
+        let description = stringAtField(statement!, fieldIndex: 4)
             
-            let activityRead = activityLog(name: name,length: Int(length), description: description)
+            let activityRead = activityLog(name: name,length: Int(length),description: description, minutes: Int(minutes))
        //     print(activityRead.name)
          //   print(activityRead.description)
             activityArray.append(activityRead)
@@ -1256,6 +1268,8 @@ sqlite3_finalize(statement)
             let mood = sqlite3_column_int(statement!, 7)
              let productivity = sqlite3_column_int(statement!, 8)
             let notes = stringAtField(statement!,fieldIndex: 9)
+            let exerciseMins = sqlite3_column_int(statement!, 10)
+            let sleepMins = sqlite3_column_int(statement!, 11)
             let objectDate: String
                        objectDate = String(date)
                      //  print(objectDate)
@@ -1277,9 +1291,15 @@ sqlite3_finalize(statement)
                        objectProductivity = Int(productivity)
                        let objectNotes: String
                        objectNotes = String(notes)
+            let objectExerciseMins: Int
+            objectExerciseMins = Int(exerciseMins)
+            let objectSleepMins: Int
+            objectSleepMins = Int(sleepMins)
+            
+                        
                        
                        
-                       var object = Mood(Date: objectDate, Sleep: objectSleep, Water: objectWater, Stress: objectStress, Exercise: objectExercise, Location: objectLocation, Alcohol: objectAlcohol, Mood: objectMood, Productivity: objectProductivity, Notes: objectNotes)
+                       var object = Mood(Date: objectDate, Sleep: objectSleep, Water: objectWater, Stress: objectStress, Exercise: objectExercise, Location: objectLocation, Alcohol: objectAlcohol, Mood: objectMood, Productivity: objectProductivity, Notes: objectNotes,SleepMinutes: objectSleepMins, ExerciseMinutes: objectExerciseMins)
             print(object.Date)
             entries.append(object)
             }
@@ -1297,66 +1317,66 @@ sqlite3_finalize(statement)
     
     
     
-    func createObject()  {
-        let query = "SELECT * FROM MAIN WHERE DATE = '07-03-2020'"
-            var object: Mood!
-        var statement: OpaquePointer? = nil
-        if sqlite3_prepare_v2(database, query, -1, &statement, nil) == SQLITE_OK {
-        while(sqlite3_step(statement) == SQLITE_ROW){
-            let date = sqlite3_column_int(statement!, 0)
-            let sleep = sqlite3_column_int(statement!, 1)
-             let water = sqlite3_column_int(statement!, 2)
-             let stress = sqlite3_column_int(statement!, 3)
-             let exercise = sqlite3_column_int(statement!, 4)
-            let location = stringAtField(statement!,fieldIndex: 5)
-             let alcohol = sqlite3_column_int(statement!, 6)
-            let mood = sqlite3_column_int(statement!, 8)
-             let productivity = sqlite3_column_int(statement!, 9)
-            let notes = stringAtField(statement!,fieldIndex: 7)
-            
-            let objectDate: String
-            objectDate = String(date)
-          //  print(objectDate)
-            let objectSleep: Int
-            objectSleep = Int(sleep)
-            let objectWater: Int
-            objectWater = Int(water)
-            let objectStress: Int
-            objectStress = Int(stress)
-            let objectExercise: Int
-            objectExercise = Int(exercise)
-            let objectLocation : String
-            objectLocation = String(location)
-            let objectAlcohol : Int
-            objectAlcohol = Int(alcohol)
-            let objectMood : Int
-            objectMood = Int(mood)
-            let objectProductivity: Int
-            objectProductivity = Int(productivity)
-            let objectNotes: String
-            objectNotes = String(notes)
-            
-            
-            var object = Mood(Date: objectDate, Sleep: objectSleep, Water: objectWater, Stress: objectStress, Exercise: objectExercise, Location: objectLocation, Alcohol: objectAlcohol, Mood: objectMood, Productivity: objectProductivity, Notes: objectNotes)
-            
-            print(object.Sleep)
-            print(object.Location)
-            print(object.Notes)
-//            print(date)
-//            print(sleep)
-//            print(water)
-//            print(stress)
-//            print(exercise)
-//            print(location)
-//            print(alcohol)
-//            print(mood)
-//            print(productivity)
-//            print(notes)
-        }
-        }
-            //return object
-
-    }
+//    func createObject()  {
+//        let query = "SELECT * FROM MAIN WHERE DATE = '07-03-2020'"
+//            var object: Mood!
+//        var statement: OpaquePointer? = nil
+//        if sqlite3_prepare_v2(database, query, -1, &statement, nil) == SQLITE_OK {
+//        while(sqlite3_step(statement) == SQLITE_ROW){
+//            let date = sqlite3_column_int(statement!, 0)
+//            let sleep = sqlite3_column_int(statement!, 1)
+//             let water = sqlite3_column_int(statement!, 2)
+//             let stress = sqlite3_column_int(statement!, 3)
+//             let exercise = sqlite3_column_int(statement!, 4)
+//            let location = stringAtField(statement!,fieldIndex: 5)
+//             let alcohol = sqlite3_column_int(statement!, 6)
+//            let mood = sqlite3_column_int(statement!, 8)
+//             let productivity = sqlite3_column_int(statement!, 9)
+//            let notes = stringAtField(statement!,fieldIndex: 7)
+//
+//            let objectDate: String
+//            objectDate = String(date)
+//          //  print(objectDate)
+//            let objectSleep: Int
+//            objectSleep = Int(sleep)
+//            let objectWater: Int
+//            objectWater = Int(water)
+//            let objectStress: Int
+//            objectStress = Int(stress)
+//            let objectExercise: Int
+//            objectExercise = Int(exercise)
+//            let objectLocation : String
+//            objectLocation = String(location)
+//            let objectAlcohol : Int
+//            objectAlcohol = Int(alcohol)
+//            let objectMood : Int
+//            objectMood = Int(mood)
+//            let objectProductivity: Int
+//            objectProductivity = Int(productivity)
+//            let objectNotes: String
+//            objectNotes = String(notes)
+//
+//
+//            var object = Mood(Date: objectDate, Sleep: objectSleep, Water: objectWater, Stress: objectStress, Exercise: objectExercise, Location: objectLocation, Alcohol: objectAlcohol, Mood: objectMood, Productivity: objectProductivity, Notes: objectNotes)
+//
+//            print(object.Sleep)
+//            print(object.Location)
+//            print(object.Notes)
+////            print(date)
+////            print(sleep)
+////            print(water)
+////            print(stress)
+////            print(exercise)
+////            print(location)
+////            print(alcohol)
+////            print(mood)
+////            print(productivity)
+////            print(notes)
+//        }
+//        }
+//            //return object
+//
+//    }
     
        
     

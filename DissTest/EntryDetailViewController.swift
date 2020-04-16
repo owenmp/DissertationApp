@@ -20,6 +20,7 @@ class EntryDetailViewController: UIViewController {
     var valueForExercise = 0
     var valueForAlcohol = 0
     var valueForProductivity = 0
+    var valueForLocation = ""
     var valueForDate = ""
     var valueForColor = UIColor.systemGray6.cgColor
 
@@ -55,12 +56,14 @@ class EntryDetailViewController: UIViewController {
         stressDescLbl.text = stressDescription
         productivityDescription = getProductivityDescription(value: valueForProductivity)
         productivityDescLbl.text = productivityDescription
+        locationValueLbl.text = valueForLocation
         
         
 
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var locationValueLbl: UILabel!
     
     @IBOutlet weak var stressDescLbl: UILabel!
     @IBOutlet weak var productivityDescLbl: UILabel!

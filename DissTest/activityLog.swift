@@ -13,11 +13,13 @@ class activityLog {
    // var type: String
     var length: Int
     var description: String
+    var minutes: Int
     
-    init(name: String, length: Int, description: String){
+    init(name: String, length: Int, description: String, minutes: Int){
         self.name = name
       //  self.type = type
         self.length = length
         self.description = description
+        self.minutes = minutes
     }
 }

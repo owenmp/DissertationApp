@@ -11,7 +11,7 @@ import UIKit
 class MoodEntryViewController: UIViewController {
     
    
-     var dailyEntry: Mood = Mood(Date: "", Sleep: 0, Water: 0, Stress: 0, Exercise: 0, Location: "", Alcohol: 0, Mood: 0, Productivity: 0, Notes: "")
+     var dailyEntry: Mood = Mood(Date: "", Sleep: 0, Water: 0, Stress: 0, Exercise: 0, Location: "", Alcohol: 0, Mood: 0, Productivity: 0, Notes: "",SleepMinutes: 0, ExerciseMinutes: 0)
     var valueForMood = 0
     var valueForStress = 0
     var valueForProductivity = 0

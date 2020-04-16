@@ -13,6 +13,7 @@ class detailActivityViewController: UIViewController {
     var valueForName = ""
     var valueForType = ""
     var valueForLength = 0
+    var valueForMinutes = 0
     var valueForDescription = ""
     var previousVC = ActivitiesTableViewController()
     
@@ -45,6 +46,15 @@ class detailActivityViewController: UIViewController {
         valueForLength = value!
     }
     
+    
+    @IBOutlet weak var minutesTxt: UITextField!
+    
+    @IBAction func minutesTxt(_ sender: Any) {
+        var text: String = minutesTxt.text!
+        var value = Int(text)
+        valueForMinutes = value!
+    }
+    
     @IBOutlet weak var descriptionTxt: UITextField!
     @IBAction func descriptionTxt(_ sender: Any) {
         var text: String = descriptionTxt.text!
@@ -55,6 +65,10 @@ class detailActivityViewController: UIViewController {
         guard var length = lengthTxt.text else{return}
         let valueLength = Int(length) ?? 0
         valueForLength = valueLength
+        guard var minutes = minutesTxt.text else {return}
+        let minutesLength = Int(minutes) ?? 0
+        valueForMinutes = minutesLength
+        
         
         guard var description = descriptionTxt.text else{return}
         let desValue = description
@@ -62,7 +76,7 @@ class detailActivityViewController: UIViewController {
         
         
         
-        var dailyActivitiy = activityLog(name: valueForName, length: valueForLength, description: valueForDescription)
+        var dailyActivitiy = activityLog(name: valueForName, length: valueForLength, description: valueForDescription,minutes: valueForMinutes)
         entryActivities.append(dailyActivitiy)
         
         //for i in previousVC.entryActivities{

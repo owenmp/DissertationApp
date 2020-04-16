@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var notesLocation: String = ""
 class NotesViewController: UIViewController {
     var valueForMood = 0
       var valueForStress = 0
@@ -16,7 +16,9 @@ class NotesViewController: UIViewController {
     var ValueForExercise = 0
     var valueForWater = 0
     var valueForAlcohol = 0
-    var valueForLocation = ""
+    var valueForSleepMinutes = 0
+    var valueForExerciseMinutes = 0
+    var valueForLocation = notesLocation
     var valueForNotes = ""
     
     
@@ -28,13 +30,13 @@ class NotesViewController: UIViewController {
     
     let date = Date()
            let dateFormatter = DateFormatter()
-    let blabla = LogsViewController()
+    let database = LogsViewController()
     
     
        
                
     
-    let database = DataStore()
+    //let database = DataStore()
     
     
     
@@ -47,6 +49,8 @@ class NotesViewController: UIViewController {
             print (i.description)
             print (i.length)
         }
+        
+        print(valueForLocation)
        // dailyEntry.Date = dateString
       //  var dailyEntry: Mood = Mood(Date: dateString, Sleep: valueForSleep, Water: valueForWater, Stress: valueForStress, Exercise: ValueForExercise, Location: valueForLocation, Alcohol: valueForAlcohol, Mood: valueForMood, Productivity: valueForProductivity, Notes: "Today was a  bad day")
         //print(dailyEntry.toString())
@@ -94,12 +98,12 @@ class NotesViewController: UIViewController {
         valueForNotes = notesTxt.text!
         print(notesValue)
         var valueForNotes2 = notesValue
-        var dailyEntry: Mood = Mood(Date: dateString, Sleep: valueForSleep, Water: valueForWater, Stress: valueForStress, Exercise: ValueForExercise, Location: valueForLocation, Alcohol: valueForAlcohol, Mood: valueForMood, Productivity: valueForProductivity, Notes: valueForNotes2)
+        var dailyEntry: Mood = Mood(Date: dateString, Sleep: valueForSleep, Water: valueForWater, Stress: valueForStress, Exercise: ValueForExercise, Location: valueForLocation, Alcohol: valueForAlcohol, Mood: valueForMood, Productivity: valueForProductivity, Notes: valueForNotes2, SleepMinutes: valueForSleepMinutes, ExerciseMinutes: valueForExerciseMinutes)
         
         let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to complete this entry?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:  {
-                action in self.blabla.databaseStore.insertMoodObject(dailyEntry: dailyEntry)
-            self.blabla.databaseStore.insertDailyActivities(dailyActivities: entryActivities, date: dateString)
+                action in self.database.databaseStore.insertMoodObject(dailyEntry: dailyEntry)
+            self.database.databaseStore.insertDailyActivities(dailyActivities: entryActivities, date: dateString)
             
             
                 self.performSegue(withIdentifier: "unwindToLogsView", sender: self)

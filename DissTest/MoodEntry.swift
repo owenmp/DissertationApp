@@ -19,8 +19,10 @@ class Mood {
     var Mood: Int
     var Productivity: Int
     var Notes: String
+    var SleepMinutes: Int
+    var ExerciseMinutes: Int
     
-    init(Date: String, Sleep: Int, Water: Int, Stress: Int, Exercise: Int, Location: String,Alcohol: Int, Mood: Int, Productivity: Int, Notes: String){
+    init(Date: String, Sleep: Int, Water: Int, Stress: Int, Exercise: Int, Location: String,Alcohol: Int, Mood: Int, Productivity: Int, Notes: String, SleepMinutes: Int, ExerciseMinutes: Int){
         self.Date = Date
         self.Sleep = Sleep
         self.Water = Water
@@ -31,6 +33,8 @@ class Mood {
         self.Mood = Mood
         self.Productivity = Productivity
         self.Notes = Notes
+        self.SleepMinutes = SleepMinutes
+        self.ExerciseMinutes = ExerciseMinutes
     }
     
     func toString(){
@@ -44,6 +48,8 @@ class Mood {
         print("Mood: ", self.Mood)
         print("Productivity: " , self.Productivity)
         print("Notes: ", self.Notes)
+        print("Sleep Minutes : ", self.SleepMinutes)
+        print("Exrercise Minutes : ", self.ExerciseMinutes)
     }
     
 }
