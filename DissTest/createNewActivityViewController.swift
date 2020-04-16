@@ -67,7 +67,7 @@ class createNewActivityViewController: UIViewController {
             print(descriptionTxt.text!)
            // presenter.valueForName = valueForName
             //presenter.valueForDescription = valueForDescription
-            database.hello.insertNewActivity(Name: valueForName, Description: descriptionTxt.text!)
+            database.databaseStore.insertNewActivity(Name: valueForName, Description: descriptionTxt.text!)
          
             
             // nextVC.viewDidLoad()
@@ -85,10 +85,10 @@ class createNewActivityViewController: UIViewController {
         print(valueForName)
         var valueForDesc = descriptionTxt.text!
         print(valueForDesc)
-database.hello.insertNewActivity(Name: valueForName, Description: valueForDesc)
+database.databaseStore.insertNewActivity(Name: valueForName, Description: valueForDesc)
            
         if let presenter = presentingViewController as? ActivitiesTableViewController { presenter.activities.removeAll()
-            presenter.activities = presenter.blabla.hello.getActivities()
+            presenter.activities = presenter.blabla.databaseStore.getActivities()
             presenter.tableView.reloadData()
             presenter.viewDidLoad()
     }

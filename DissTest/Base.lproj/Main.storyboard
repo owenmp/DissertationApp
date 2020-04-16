@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k2H-Ko-cbP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k2H-Ko-cbP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -2453,7 +2453,7 @@
                                 <rect key="frame" x="20" y="253" width="374" height="538"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pvM-tW-g2A">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pvM-tW-g2A" customClass="LineChartView" customModule="Charts">
                                         <rect key="frame" x="8" y="8" width="358" height="522"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -2471,6 +2471,9 @@
                         <viewLayoutGuide key="safeArea" id="zvk-TI-vdr"/>
                     </view>
                     <navigationItem key="navigationItem" title="Line Chart" id="Lgr-Gd-IdO"/>
+                    <connections>
+                        <outlet property="lineChart" destination="pvM-tW-g2A" id="Ss8-AD-EgY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85x-bO-vvy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2678,19 +2681,19 @@
             <point key="canvasLocation" x="4494" y="322"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="advice" width="150" height="246"/>
-        <image name="barChart" width="150" height="246"/>
-        <image name="calendar" catalog="system" width="64" height="52"/>
-        <image name="calendarApp" width="150" height="246"/>
-        <image name="chart.pie.fill" catalog="system" width="64" height="62"/>
-        <image name="icons8-activity_feed" width="25" height="25"/>
-        <image name="line" width="166" height="262"/>
-        <image name="pie" width="166" height="262"/>
-        <image name="questionmark" catalog="system" width="48" height="64"/>
-        <image name="scatter" width="166" height="262"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="V2Y-zd-1g9"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="advice" width="150" height="246"/>
+        <image name="barChart" width="150" height="246"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="calendarApp" width="150" height="246"/>
+        <image name="chart.pie.fill" catalog="system" width="128" height="124"/>
+        <image name="icons8-activity_feed" width="25" height="25"/>
+        <image name="line" width="166" height="262"/>
+        <image name="pie" width="166" height="262"/>
+        <image name="questionmark" catalog="system" width="96" height="128"/>
+        <image name="scatter" width="166" height="262"/>
+    </resources>
 </document>

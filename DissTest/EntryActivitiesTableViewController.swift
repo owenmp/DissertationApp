@@ -14,7 +14,7 @@ class EntryActivitiesTableViewController: UITableViewController {
     var dateValue = ""
 
     override func viewDidLoad() {
-        activities = database.hello.getEntryActivities(date: dateValue)
+        activities = database.databaseStore.getEntryActivities(date: dateValue)
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations

@@ -88,13 +88,25 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
             return 50
     }
     
-//      func tableView(_tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        guard let
+    
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            entryActivities.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            print("insert")
+            
+        }
+    }
+    
+    
+//     func tableView(_tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+       
 //        
 //
 //        let configuration = ""
 //        return configuration
-//    }
+  //  }
     
     
     

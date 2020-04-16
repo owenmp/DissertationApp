@@ -44,7 +44,7 @@ class pieChartResultViewController: UIViewController {
         
          
         legend.font = UIFont(name: "Verdana", size: 25.0)!
-        let values = self.databaseCall.hello.getAveragesForMood3(moodLevel: valueForPie)
+        let values = self.databaseCall.databaseStore.getAveragesForMood3(moodLevel: valueForPie)
         customizeChart(dataPoints: mood, values: values)
         
 

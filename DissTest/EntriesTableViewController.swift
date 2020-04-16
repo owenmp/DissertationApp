@@ -17,7 +17,7 @@ class EntriesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        entries = self.database.hello.getAllEntries()
+        entries = self.database.databaseStore.getAllEntries()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

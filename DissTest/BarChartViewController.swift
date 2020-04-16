@@ -23,7 +23,7 @@ class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerV
         let pickerView = UIPickerView()
         pickerView.delegate = self
         searchTxt.inputView = pickerView
-        var y = db.hello.getBarAverages(search: option, value: valueForSearch)
+        var y = db.databaseStore.getBarAverages(search: option, value: valueForSearch)
         var x = ["Mood", "Stress", "Productivity"]
        // var y = [1,5,10]
         setChart(dataPoints: x, values: y)

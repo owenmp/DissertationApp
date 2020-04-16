@@ -9,7 +9,7 @@
 import UIKit
 
 class LogsViewController: UIViewController {
-    let hello = DataStoreRebuild()
+    let databaseStore = DataStoreRebuild()
    
     
 
@@ -37,25 +37,27 @@ class LogsViewController: UIViewController {
        // hello.getScatterData(filter: "Sleep", value: 8)
     // hello.getBarAverages(search: "Location", value: "University")
        // hello.searchEntries(filter: "Notes", value: "Worked")
-        hello.getPoorWaterAverage()
-        hello.getMediumAverage()
-        hello.getGoodAverage()
-        hello.getPoorSleepAverage()
-        hello.getGoodSleepAverage()
-        hello.getMediumSleepAverage()
-        hello.getMediumALCOHOLAverage()
-        hello.getPoorAlcoholAverage()
-        hello.getGoodAlcoholAverage()
-        hello.getGoodExerciseAverage()
-        hello.getMediumExerciseAverage()
-        hello.getPoorExerciseAverage()
-        hello.getOverallSleep()
-        hello.getOverallExercise()
-        hello.getOverallAlcohol()
-        hello.getOverallWater()
+//        hello.getPoorWaterAverage()
+//        hello.getMediumAverage()
+//        hello.getGoodAverage()
+//        hello.getPoorSleepAverage()
+//        hello.getGoodSleepAverage()
+//        hello.getMediumSleepAverage()
+//        hello.getMediumALCOHOLAverage()
+//        hello.getPoorAlcoholAverage()
+//        hello.getGoodAlcoholAverage()
+//        hello.getGoodExerciseAverage()
+//        hello.getMediumExerciseAverage()
+//        hello.getPoorExerciseAverage()
+//        hello.getOverallSleep()
+//        hello.getOverallExercise()
+//        hello.getOverallAlcohol()
+//        hello.getOverallWater()
 //        print(a[0])
 //        print(a[1])
 //        print(a[2])
+        databaseStore.getAllDates()
+        databaseStore.getAllMood()
         
     //    hello.insertDailyActivities(dailyActivities: activitiesArray, date: "15-03-2020")
         

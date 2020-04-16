@@ -7,14 +7,49 @@
 //
 
 import UIKit
+import Charts
 
 class lineChartViewController: UIViewController {
+    
+    var db = LogsViewController()
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        var data = db.databaseStore.getAllDates()
+        
+        var vals = db.databaseStore.getAllMood()
+        
+        
+        
+        setChart(dataPoints: data, values: vals)
+        
 
         // Do any additional setup after loading the view.
     }
+    
+    func setChart (dataPoints: [String], values:[Int]) {
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(x: Double(values[i]), y: Double(i))
+            dataEntries.append(dataEntry)
+        }
+        
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label:nil)
+        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        lineChart.data = lineChartData
+        
+    
+    
+    
+    }
+    
+    @IBOutlet weak var lineChart: LineChartView!
     
 
     /*

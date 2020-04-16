@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A264B9124485A2E007F3657 /* FinalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A264B9024485A2E007F3657 /* FinalDatabase.swift */; };
+		5A264B9324485AC8007F3657 /* moodAppDatabase.db in Resources */ = {isa = PBXBuildFile; fileRef = 5A264B9224485AC8007F3657 /* moodAppDatabase.db */; };
 		5A3FFA22242CE45300F842F6 /* ChartsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3FFA21242CE45200F842F6 /* ChartsScreenViewController.swift */; };
 		5A72D85D23F9D25600441B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D85C23F9D25600441B9B /* AppDelegate.swift */; };
 		5A72D85F23F9D25600441B9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D85E23F9D25600441B9B /* SceneDelegate.swift */; };
@@ -61,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		0EC025DE24703C6E234DBD9E /* Pods-DissTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DissTest.release.xcconfig"; path = "Target Support Files/Pods-DissTest/Pods-DissTest.release.xcconfig"; sourceTree = "<group>"; };
+		5A264B9024485A2E007F3657 /* FinalDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalDatabase.swift; sourceTree = "<group>"; };
+		5A264B9224485AC8007F3657 /* moodAppDatabase.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = moodAppDatabase.db; path = ../../Databases/moodAppDatabase.db; sourceTree = "<group>"; };
 		5A3FFA21242CE45200F842F6 /* ChartsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsScreenViewController.swift; sourceTree = "<group>"; };
 		5A72D85923F9D25600441B9B /* DissTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DissTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A72D85C23F9D25600441B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				5A7C5B15241A7E9E0047CD0B /* MoodEntry.swift */,
 				5A95EB4F241FE1D4007F2E93 /* databaseForNewProject.db */,
 				5A95EB4D241FE1C0007F2E93 /* DataStoreRebuild.swift */,
+				5A264B9024485A2E007F3657 /* FinalDatabase.swift */,
+				5A264B9224485AC8007F3657 /* moodAppDatabase.db */,
 				5AA18161242BA6F200A37ED2 /* activityLog.swift */,
 				5A95EB5724218B9E007F2E93 /* activity.swift */,
 				5A95EB25241FC1EE007F2E93 /* hello.db */,
@@ -281,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A95EB26241FC1EE007F2E93 /* hello.db in Resources */,
+				5A264B9324485AC8007F3657 /* moodAppDatabase.db in Resources */,
 				5A95EB50241FE1D4007F2E93 /* databaseForNewProject.db in Resources */,
 				5A95EB22241FBC4D007F2E93 /* anothertest in Resources */,
 				5A72D86923F9D26700441B9B /* LaunchScreen.storyboard in Resources */,
@@ -353,6 +360,7 @@
 				5A95EB5224213033007F2E93 /* TrendsViewController.swift in Sources */,
 				5AE394D424335DA600544B89 /* BarChartViewController.swift in Sources */,
 				5ABAC1D4242A3FD40019D62A /* EntriesTableViewController.swift in Sources */,
+				5A264B9124485A2E007F3657 /* FinalDatabase.swift in Sources */,
 				5AE394D624335FD400544B89 /* searchViewController.swift in Sources */,
 				5AC4A474243DE9D1007F2818 /* ChartStringFormatter.swift in Sources */,
 				5AA1815E242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift in Sources */,

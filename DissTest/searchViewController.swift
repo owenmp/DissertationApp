@@ -52,7 +52,7 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         //self.viewDidLoad()
         valueSearched = textSearch.text! 
         entries.removeAll()
-        entries = database.hello.searchEntries(filter: valueForSearch, value: String(valueSearched))
+        entries = database.databaseStore.searchEntries(filter: valueForSearch, value: String(valueSearched))
         self.tableView.reloadData()
         self.viewDidLoad()
        // print(entries[0].Date)

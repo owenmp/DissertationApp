@@ -24,12 +24,12 @@ class scatterGraphViewController: UIViewController, UIPickerViewDataSource, UIPi
         searchTxt.inputView = pickerView
         scatterChart.noDataText = "No data"
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        let data = db.hello.getScatterData(filter: "Sleep", value: 8)
+        let data = db.databaseStore.getScatterData(filter: "Sleep", value: 8)
         let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
 //        setChart(dataPoints: data[0].Date, values: data[0].Sleep)
         
-        let dates = db.hello.getScatterDates(filter: "Sleep", value: 8)
-        let values = db.hello.getScatterData(filter: "Sleep", value: 8)
+        let dates = db.databaseStore.getScatterDates(filter: "Sleep", value: 8)
+        let values = db.databaseStore.getScatterData(filter: "Sleep", value: 8)
         setChart(dataPoints: dates, values: values)
         scatterChart.autoScaleMinMaxEnabled = true
         scatterChart.setVisibleXRange(minXRange: 1, maxXRange: 10)
@@ -61,7 +61,7 @@ class scatterGraphViewController: UIViewController, UIPickerViewDataSource, UIPi
            searchTxt.text = options[row]
            option = options[row]
            valueForSearch = option
-            db.hello.getScatterData(filter: valueForSearch, value: 8)
+            db.databaseStore.getScatterData(filter: valueForSearch, value: 8)
         
            print(options[row])
        }

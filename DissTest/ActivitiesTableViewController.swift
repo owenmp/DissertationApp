@@ -23,7 +23,7 @@ class ActivitiesTableViewController: UITableViewController {
     @IBAction func refreshBtn(_ sender: Any) {
         print("Refresh")
         activities.removeAll()
-        activities = blabla.hello.getActivities()
+        activities = blabla.databaseStore.getActivities()
         self.tableView.reloadData()
         self.viewDidLoad()
        // for i in entryActivities{
@@ -37,7 +37,7 @@ class ActivitiesTableViewController: UITableViewController {
         print("ViewLoaded")
         tableView.allowsSelection = true
      
-        activities = blabla.hello.getActivities()
+        activities = blabla.databaseStore.getActivities()
         //tableView.reloadData()
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -52,7 +52,7 @@ class ActivitiesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     // load datas
-        activities = blabla.hello.getActivities()
+        activities = blabla.databaseStore.getActivities()
     tableView.reloadData()
     }
     

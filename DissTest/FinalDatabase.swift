@@ -1,15 +1,19 @@
 //
-//  DataStoreRebuild.swift
+//  FinalDatabase.swift
 //  DissTest
 //
-//  Created by Owen Malcolmson-Priest on 16/03/2020.
+//  Created by Owen Malcolmson-Priest on 16/04/2020.
+//  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
+//
+
+// Created by Owen Malcolmson-Priest on 16/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
 //
 
 import Foundation
 import SQLite3
 
-class DataStoreRebuild {
+class FinalDatabase {
 
     /**
      * The sqlite3 database. For this example, it is held as a variable
@@ -43,11 +47,11 @@ class DataStoreRebuild {
         let documentsFolderPath =
            NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         
-        let sqliteFilePath = documentsFolderPath + "databaseForNewProject.db"
+        let sqliteFilePath = documentsFolderPath + "moodAppDatabase.db"
         
         if !FileManager.default.fileExists(atPath: sqliteFilePath) {
             let bundle = Bundle.main
-            let bundlePath = bundle.path(forResource: "databaseForNewProject", ofType: "db")
+            let bundlePath = bundle.path(forResource: "moodAppDatabase", ofType: "db")
             
             do {
                 try FileManager.default.copyItem(atPath: bundlePath!,
@@ -167,7 +171,7 @@ class DataStoreRebuild {
     
     
     func getOverallExercise() -> Double {
-          let query = "SELECT EXERCISE FROM MAIN;"
+          let query = "SELECT EXERCISEHOURS FROM MAIN;"
           var average: Double = 0
           var statement: OpaquePointer? = nil
           var count: Double = 0
@@ -227,7 +231,7 @@ class DataStoreRebuild {
    
     
     func getOverallSleep() -> Double {
-        let query = "SELECT SLEEP FROM MAIN;"
+        let query = "SELECT SLEEPHOURS FROM MAIN;"
         var average: Double = 0
         var statement: OpaquePointer? = nil
         var count: Double = 0
@@ -337,7 +341,7 @@ class DataStoreRebuild {
     
     
     func getGoodExerciseAverage () -> Double {
-         let query = "SELECT EXERCISE FROM MAIN WHERE MOOD > 7;"
+         let query = "SELECT EXERCISEHOURS FROM MAIN WHERE MOOD > 7;"
          var averages: [Double] = []
          var statement: OpaquePointer? = nil
          var poorAverage: Double = 0
@@ -1365,6 +1369,3 @@ sqlite3_finalize(statement)
     
     
 }
-
-
-
