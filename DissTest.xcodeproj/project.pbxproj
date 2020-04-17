@@ -58,6 +58,12 @@
 		5AE394DE243B6A2D00544B89 /* dailyActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394DD243B6A2D00544B89 /* dailyActivityTableViewCell.swift */; };
 		5AE394E0243CA94800544B89 /* scatterGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE394DF243CA94800544B89 /* scatterGraphViewController.swift */; };
 		5AF5B9922445F87D00BF0790 /* lineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF5B9912445F87D00BF0790 /* lineChartViewController.swift */; };
+		5AF927262449C20D00198213 /* previousPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF927252449C20D00198213 /* previousPlanTableViewCell.swift */; };
+		5AF927282449C26D00198213 /* previousPlansTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF927272449C26D00198213 /* previousPlansTableViewController.swift */; };
+		5AF9272A2449C52A00198213 /* planDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF927292449C52A00198213 /* planDetailTableViewController.swift */; };
+		5AF9272C2449C5AB00198213 /* planDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9272B2449C5AB00198213 /* planDetailTableViewCell.swift */; };
+		5AF9272E2449CB2000198213 /* ActivityPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9272D2449CB2000198213 /* ActivityPlan.swift */; };
+		5AF92730244A09F300198213 /* todaysPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9272F244A09F300198213 /* todaysPlanTableViewController.swift */; };
 		E5EBC7FE22717F752E90F28F /* Pods_DissTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +122,12 @@
 		5AE394DD243B6A2D00544B89 /* dailyActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dailyActivityTableViewCell.swift; sourceTree = "<group>"; };
 		5AE394DF243CA94800544B89 /* scatterGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scatterGraphViewController.swift; sourceTree = "<group>"; };
 		5AF5B9912445F87D00BF0790 /* lineChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lineChartViewController.swift; sourceTree = "<group>"; };
+		5AF927252449C20D00198213 /* previousPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = previousPlanTableViewCell.swift; sourceTree = "<group>"; };
+		5AF927272449C26D00198213 /* previousPlansTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = previousPlansTableViewController.swift; sourceTree = "<group>"; };
+		5AF927292449C52A00198213 /* planDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planDetailTableViewController.swift; sourceTree = "<group>"; };
+		5AF9272B2449C5AB00198213 /* planDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planDetailTableViewCell.swift; sourceTree = "<group>"; };
+		5AF9272D2449CB2000198213 /* ActivityPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPlan.swift; sourceTree = "<group>"; };
+		5AF9272F244A09F300198213 /* todaysPlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todaysPlanTableViewController.swift; sourceTree = "<group>"; };
 		DC0CC1B5C0625E2D5C460747 /* Pods-DissTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DissTest.debug.xcconfig"; path = "Target Support Files/Pods-DissTest/Pods-DissTest.debug.xcconfig"; sourceTree = "<group>"; };
 		DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DissTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -159,6 +171,9 @@
 				5A844DF3241E79E70048EDD0 /* NavViewController.swift */,
 				5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */,
 				5A72D86223F9D25600441B9B /* Main.storyboard */,
+				5AF9272F244A09F300198213 /* todaysPlanTableViewController.swift */,
+				5AF927252449C20D00198213 /* previousPlanTableViewCell.swift */,
+				5AF927272449C26D00198213 /* previousPlansTableViewController.swift */,
 				5AC4A473243DE9D1007F2818 /* ChartStringFormatter.swift */,
 				5AE394DF243CA94800544B89 /* scatterGraphViewController.swift */,
 				5AE394D9243B4AF200544B89 /* detailActivityViewController.swift */,
@@ -177,6 +192,8 @@
 				5A3FFA21242CE45200F842F6 /* ChartsScreenViewController.swift */,
 				5A95EB5124213033007F2E93 /* TrendsViewController.swift */,
 				5ABAC1D3242A3FD30019D62A /* EntriesTableViewController.swift */,
+				5AF927292449C52A00198213 /* planDetailTableViewController.swift */,
+				5AF9272B2449C5AB00198213 /* planDetailTableViewCell.swift */,
 				5ABAC1D7242A92B90019D62A /* ColorExtension.swift */,
 				5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */,
 				5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */,
@@ -195,6 +212,7 @@
 				5A95EB4F241FE1D4007F2E93 /* databaseForNewProject.db */,
 				5A95EB4D241FE1C0007F2E93 /* DataStoreRebuild.swift */,
 				5A264B9024485A2E007F3657 /* FinalDatabase.swift */,
+				5AF9272D2449CB2000198213 /* ActivityPlan.swift */,
 				5A264B9224485AC8007F3657 /* moodAppDatabase.db */,
 				5AA18161242BA6F200A37ED2 /* activityLog.swift */,
 				5A95EB5724218B9E007F2E93 /* activity.swift */,
@@ -355,11 +373,16 @@
 				5AE394E0243CA94800544B89 /* scatterGraphViewController.swift in Sources */,
 				5A9185452441E36400A4AEEC /* adviceViewController.swift in Sources */,
 				5A844DF6241E9A4B0048EDD0 /* createNewActivityViewController.swift in Sources */,
+				5AF92730244A09F300198213 /* todaysPlanTableViewController.swift in Sources */,
+				5AF927282449C26D00198213 /* previousPlansTableViewController.swift in Sources */,
 				5ABAC1D8242A92B90019D62A /* ColorExtension.swift in Sources */,
 				5A95EB20241FB871007F2E93 /* newDatabase.swift in Sources */,
+				5AF927262449C20D00198213 /* previousPlanTableViewCell.swift in Sources */,
+				5AF9272A2449C52A00198213 /* planDetailTableViewController.swift in Sources */,
 				5A95EB5224213033007F2E93 /* TrendsViewController.swift in Sources */,
 				5AE394D424335DA600544B89 /* BarChartViewController.swift in Sources */,
 				5ABAC1D4242A3FD40019D62A /* EntriesTableViewController.swift in Sources */,
+				5AF9272E2449CB2000198213 /* ActivityPlan.swift in Sources */,
 				5A264B9124485A2E007F3657 /* FinalDatabase.swift in Sources */,
 				5AE394D624335FD400544B89 /* searchViewController.swift in Sources */,
 				5AC4A474243DE9D1007F2818 /* ChartStringFormatter.swift in Sources */,
@@ -367,6 +390,7 @@
 				5AE394DA243B4AF200544B89 /* detailActivityViewController.swift in Sources */,
 				5A844DF4241E79E70048EDD0 /* NavViewController.swift in Sources */,
 				5AA18160242BA53700A37ED2 /* EntryActivityTableViewCell.swift in Sources */,
+				5AF9272C2449C5AB00198213 /* planDetailTableViewCell.swift in Sources */,
 				5AA18162242BA6F200A37ED2 /* activityLog.swift in Sources */,
 				5A7C5B142416C64C0047CD0B /* DataStore.swift in Sources */,
 				5ABAC1D2242903F60019D62A /* pieChartResultViewController.swift in Sources */,

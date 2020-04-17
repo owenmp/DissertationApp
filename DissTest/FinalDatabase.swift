@@ -570,12 +570,53 @@ class FinalDatabase {
            
        }
     
+    func getPlan(date: String) -> [ActivityPlan] {
+        var plan : [ActivityPlan] = []
+        var statement: OpaquePointer? = nil
+        let query = "SELECT * FROM DAILYPLAN WHERE DATE = '\(date)'"
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+            var objectDate = date
+            var name = stringAtField(statement!, fieldIndex: 1)
+            var description = stringAtField(statement!, fieldIndex: 2)
+            var completed = sqlite3_column_int(statement!, 3)
+            var objectCompleted = Int(completed)
+            
+            var objectPlan = ActivityPlan(date: date, name: name, description: description, completed: objectCompleted)
+            
+            plan.append(objectPlan)
+            print(objectPlan.name)
+            
+            
+            
+            
+            }
+            sqlite3_finalize(statement)
+        }
+    
+        
+        
+        return plan
+    }
     
     
     
     
     
     
+    func getPlanDates() -> [String] {
+        var dates : [String] = []
+        var statement: OpaquePointer? = nil
+        let query = "SELECT DISTINCT DATE FROM DAILYPLAN"
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+            var dateRead = stringAtField(statement!, fieldIndex: 0)
+            dates.append(dateRead)
+            }
+            sqlite3_finalize(statement)
+        }
+        return dates
+    }
     
     func getPoorWaterAverage () -> Double {
         let query = "SELECT WATER FROM MAIN WHERE MOOD < 4;"

@@ -14,18 +14,28 @@ class ActivityPlanViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        activityPlanView.layer.shadowColor = UIColor.black.cgColor
-        activityPlanView.layer.shadowRadius = 2
-        activityPlanView.layer.shadowOpacity = 2
-        activityPlanView.layer.shadowOffset = .zero
-        
-        currentPlanView.layer.shadowColor = UIColor.black.cgColor
-        currentPlanView.layer.shadowRadius = 2
-        currentPlanView.layer.shadowOpacity = 2
-        currentPlanView.layer.shadowOffset = .zero
+        currentPlanView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        currentPlanView.layer.cornerRadius = 7
+        currentPlanView.layer.masksToBounds = true
        
+        activityPlanView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        activityPlanView.layer.cornerRadius = 7
+        activityPlanView.layer.masksToBounds = true
+        
+        viewPlansBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        viewPlansBtn.layer.cornerRadius = 7
+        viewPlansBtn.layer.masksToBounds = true
+        todaysPlanBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        todaysPlanBtn.layer.cornerRadius = 7
+        todaysPlanBtn.layer.masksToBounds = true
         
     }
+    
+    @IBOutlet weak var todaysPlanBtn: UIButton!
+    @IBAction func todaysPlanBtn(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var viewPlansBtn: UIButton!
     
     @IBOutlet weak var currentPlanView: UIView!
     

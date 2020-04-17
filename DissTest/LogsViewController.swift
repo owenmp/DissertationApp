@@ -67,7 +67,7 @@ class LogsViewController: UIViewController {
        
         //////// It can still enter the database, button to enter it must be broken, maybe to do with the segue change i attempted
 
-    
+        //databaseStore.getPlan(date: "13-04-2020")
         super.viewDidLoad()
 //        var activity = activityLog(name: "Dissertation", length: 7, description: "Completed re build of my database", minutes: 20)
 //        var act: [activityLog] = []

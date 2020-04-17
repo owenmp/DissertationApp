@@ -11,9 +11,9 @@ import Charts
 
 
 class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
-    var option = "Sleep"
+    var option = "SleepHours"
     var valueForSearch = "8"
-    let options = ["Water","Exercise","Sleep","Location","Alcohol"]
+    let options = ["Water","Exercise","SleepHours","Location","Alcohol"]
     var db = LogsViewController()
     var formatter = ChartStringFormatter()
     
