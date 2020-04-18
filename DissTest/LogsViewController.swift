@@ -69,6 +69,8 @@ class LogsViewController: UIViewController {
 
         //databaseStore.getPlan(date: "13-04-2020")
         super.viewDidLoad()
+//        var goal = ActivityPlan(date: "18-04-2020", name: "Make breakfast", description: "Make a healthy breakfast to start the day off", completed: 0)
+//        databaseStore.addNewGoal(goal: goal)
 //        var activity = activityLog(name: "Dissertation", length: 7, description: "Completed re build of my database", minutes: 20)
 //        var act: [activityLog] = []
 //        act.append(activity)

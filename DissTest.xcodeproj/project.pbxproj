@@ -64,6 +64,8 @@
 		5AF9272C2449C5AB00198213 /* planDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9272B2449C5AB00198213 /* planDetailTableViewCell.swift */; };
 		5AF9272E2449CB2000198213 /* ActivityPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9272D2449CB2000198213 /* ActivityPlan.swift */; };
 		5AF92730244A09F300198213 /* todaysPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9272F244A09F300198213 /* todaysPlanTableViewController.swift */; };
+		5AF92732244B133100198213 /* newGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF92731244B133100198213 /* newGoalViewController.swift */; };
+		5AF92734244B1C4E00198213 /* todaysPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF92733244B1C4E00198213 /* todaysPlanTableViewCell.swift */; };
 		E5EBC7FE22717F752E90F28F /* Pods_DissTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +130,8 @@
 		5AF9272B2449C5AB00198213 /* planDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planDetailTableViewCell.swift; sourceTree = "<group>"; };
 		5AF9272D2449CB2000198213 /* ActivityPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPlan.swift; sourceTree = "<group>"; };
 		5AF9272F244A09F300198213 /* todaysPlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todaysPlanTableViewController.swift; sourceTree = "<group>"; };
+		5AF92731244B133100198213 /* newGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGoalViewController.swift; sourceTree = "<group>"; };
+		5AF92733244B1C4E00198213 /* todaysPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todaysPlanTableViewCell.swift; sourceTree = "<group>"; };
 		DC0CC1B5C0625E2D5C460747 /* Pods-DissTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DissTest.debug.xcconfig"; path = "Target Support Files/Pods-DissTest/Pods-DissTest.debug.xcconfig"; sourceTree = "<group>"; };
 		DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DissTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -196,6 +200,7 @@
 				5AF9272B2449C5AB00198213 /* planDetailTableViewCell.swift */,
 				5ABAC1D7242A92B90019D62A /* ColorExtension.swift */,
 				5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */,
+				5AF92733244B1C4E00198213 /* todaysPlanTableViewCell.swift */,
 				5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */,
 				5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */,
 				5A7C5B1D241BCB510047CD0B /* ActivitiesViewController.swift */,
@@ -212,6 +217,7 @@
 				5A95EB4F241FE1D4007F2E93 /* databaseForNewProject.db */,
 				5A95EB4D241FE1C0007F2E93 /* DataStoreRebuild.swift */,
 				5A264B9024485A2E007F3657 /* FinalDatabase.swift */,
+				5AF92731244B133100198213 /* newGoalViewController.swift */,
 				5AF9272D2449CB2000198213 /* ActivityPlan.swift */,
 				5A264B9224485AC8007F3657 /* moodAppDatabase.db */,
 				5AA18161242BA6F200A37ED2 /* activityLog.swift */,
@@ -366,8 +372,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF92734244B1C4E00198213 /* todaysPlanTableViewCell.swift in Sources */,
 				5ABAC1D6242A402E0019D62A /* EntryTableViewCell.swift in Sources */,
 				5A7C5B18241BB4F50047CD0B /* MoodEntryViewController.swift in Sources */,
+				5AF92732244B133100198213 /* newGoalViewController.swift in Sources */,
 				5A3FFA22242CE45300F842F6 /* ChartsScreenViewController.swift in Sources */,
 				5A7C5B04240BEFD90047CD0B /* NotesViewController.swift in Sources */,
 				5AE394E0243CA94800544B89 /* scatterGraphViewController.swift in Sources */,

@@ -904,6 +904,36 @@ sqlite3_finalize(statement)
             sqlite3_finalize(insertStatement)
         }
     
+    
+   let l = "INSERT INTO ACTIVITYLOg (NAME,HOURS,MINUTES,DATE,DESCRIPTION) VALUES (?,?,?,?,?);"
+    
+    func addNewGoal(goal : ActivityPlan) {
+        var insertStatement: OpaquePointer?
+        let insertGoalStatement = "INSERT INTO DailyPlan (DATE,NAME,DESCRIPTION,COMPLETED) VALUES (?,?,?,?);"
+        if sqlite3_prepare_v2(database,insertGoalStatement, -1, &insertStatement, nil) == SQLITE_OK {
+            let insertedDate = goal.date as NSString
+            let insertedName = goal.name as NSString
+            let insertedDescription = goal.description as NSString
+            sqlite3_bind_text(insertStatement, 1, insertedDate.utf8String, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_text(insertStatement, 2, insertedName.utf8String, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_text(insertStatement, 3, insertedDescription.utf8String, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_int(insertStatement, 3, Int32(goal.completed))
+            if sqlite3_step(insertStatement) == SQLITE_DONE {
+                print("\nSuccessfully inserted row.")
+              } else {
+                print("\nCould not insert row.")
+              }
+            } else {
+              print("\nINSERT statement is not prepared.")
+            }
+            sqlite3_finalize(insertStatement)
+            
+        
+    }
+    
+    
+    
+    
     //let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
        let insertStatementString = "INSERT INTO main (DATE) VALUES (?);"
        func insert(){
