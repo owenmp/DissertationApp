@@ -181,7 +181,7 @@
             </objects>
             <point key="canvasLocation" x="2843" y="-2097"/>
         </scene>
-        <!--Todays Plan Table View Controller-->
+        <!--Todays Plan-->
         <scene sceneID="Pax-ks-24P">
             <objects>
                 <tableViewController id="t4H-H4-hOZ" customClass="todaysPlanTableViewController" customModule="DissTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -224,7 +224,7 @@
                             <outlet property="delegate" destination="t4H-H4-hOZ" id="SBQ-D3-Ogn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="JLr-vp-Rg5">
+                    <navigationItem key="navigationItem" title="Todays Plan" largeTitleDisplayMode="never" id="JLr-vp-Rg5">
                         <barButtonItem key="rightBarButtonItem" title="Add Goal" id="TBT-Xz-hex">
                             <connections>
                                 <segue destination="B9N-lp-cTD" kind="show" id="8tL-au-09Z"/>
@@ -2139,18 +2139,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nGM-cK-OBu">
-                                        <rect key="frame" x="5" y="46" width="365" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MgW-Xp-smG">
+                                        <rect key="frame" x="8" y="46" width="362" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="locationTxt:" destination="5BU-lt-ua6" eventType="editingDidEnd" id="Llr-sl-Pba"/>
+                                            <action selector="locationTxtField:" destination="5BU-lt-ua6" eventType="editingChanged" id="mqy-UH-evc"/>
                                         </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8p-By-Hcs">
+                                <rect key="frame" x="258" y="663" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="printBtn:" destination="5BU-lt-ua6" eventType="touchUpInside" id="nyy-SN-fg9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="RfG-fT-q3Q"/>
@@ -2163,7 +2171,7 @@
                         <outlet property="exerciseHouseTxt" destination="Iid-Ak-aXv" id="GAh-II-jRi"/>
                         <outlet property="exerciseMinutes" destination="ZEJ-HH-gqX" id="SqO-8i-bWy"/>
                         <outlet property="exerciseView" destination="Qai-GS-rf3" id="YMu-iE-erK"/>
-                        <outlet property="locationTxt" destination="nGM-cK-OBu" id="72f-eE-2pg"/>
+                        <outlet property="locationTxtField" destination="MgW-Xp-smG" id="ifd-Ot-Awz"/>
                         <outlet property="locationView" destination="lae-bN-TyV" id="5wD-Gc-w1R"/>
                         <outlet property="sleepHoursTxt" destination="1nH-KC-ct6" id="n45-n0-LbD"/>
                         <outlet property="sleepMinutes" destination="MGu-FM-4Nq" id="tly-Yw-ghy"/>

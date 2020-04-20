@@ -58,6 +58,11 @@ class MoodEntryViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    
+    
     @IBOutlet weak var pNotAtLbl: UILabel!
     
     @IBOutlet weak var moderatlyLbl: UILabel!

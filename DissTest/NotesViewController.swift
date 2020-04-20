@@ -18,7 +18,7 @@ class NotesViewController: UIViewController {
     var valueForAlcohol = 0
     var valueForSleepMinutes = 0
     var valueForExerciseMinutes = 0
-    var valueForLocation = notesLocation
+    var valueForLocation = ""
     var valueForNotes = ""
     
     

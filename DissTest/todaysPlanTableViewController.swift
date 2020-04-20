@@ -29,7 +29,12 @@ class todaysPlanTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+       // load datas
+           plan = database.databaseStore.getPlan(date: dateString)
+       tableView.reloadData()
+       }
     
     
     

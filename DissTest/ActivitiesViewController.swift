@@ -33,7 +33,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
         print(ValueForExercise)
         print(valueForWater)
         print(valueForAlcohol)
-        print(notesLocation)
+        print(valueForLocation)
         print(valueForSleepMinutes)
         print(valueForExerciseMinutes)
         tableView.delegate = self
@@ -49,6 +49,12 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
         advanceBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+       // load datas
+           
+       tableView.reloadData()
+       }
     
     
     @IBOutlet weak var addActivityBtn: UIButton!

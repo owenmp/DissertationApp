@@ -97,8 +97,13 @@ class LifestyleEntryViewController: UIViewController{
 //    }
 //
     
+    @IBAction func printBtn(_ sender: Any) {
+        //var text = locationTxtField.text!
+        print(valueForLocation)
+    }
     
     
+    @IBOutlet weak var locationTxtField: UITextField!
     
     
     
@@ -191,12 +196,25 @@ class LifestyleEntryViewController: UIViewController{
     }
     
     
-    @IBOutlet weak var locationTxt: UITextField!
+//    @IBAction func locationTxtField(_ sender: Any) {
+//        var text: String = locationTxtField.text!
+//        valueForLocation = text
+//        print(valueForLocation)
+//    }
+//
+   
+    @IBAction func locationTxtField(_ sender: Any) {
+        var text: String = locationTxtField.text!
+               valueForLocation = text
+               //print(valueForLocation)
+    }
     
-    @IBAction func locationTxt(_ sender: Any) {
-        var text:String = valueForLocation
-        valueForLocation = text
-        notesLocation = text
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if locationTxtField.text == "" {
+            return false
+            
+        }
+        return true
     }
     
     
@@ -227,9 +245,8 @@ class LifestyleEntryViewController: UIViewController{
        let minSleep = Int(minutesSleep) ?? 0
         guard var minutesExercise = exerciseMinutes.text else { return}
         let minExercise = Int(minutesExercise) ?? 0
-        guard var location = locationTxt.text else { return}
-        let valueForloc = location
-        valueForLocation = valueForloc
+        
+        
         ////////////
         valueForExerciseMinutes = minExercise
         valueForSleepMinutes = minSleep
@@ -237,7 +254,7 @@ class LifestyleEntryViewController: UIViewController{
         valueForWater = valueForWate
         ValueForExerciseHours = valueForEx
         valueForSleepHours = valueForSlee
-        valueForLocation = valueForloc
+       
         print(valueForSleepHours)
     }
     
@@ -263,12 +280,13 @@ class LifestyleEntryViewController: UIViewController{
         activitiesVC.ValueForExercise = ValueForExerciseHours
             activitiesVC.valueForWater = valueForWater
             activitiesVC.valueForAlcohol = valueForAlcohol
-            activitiesVC.valueForLocation = valueForLocation
+           
             activitiesVC.valueForMood = valueForMood
             activitiesVC.valueForProductivity = valueForProductivity
             activitiesVC.valueForStress = valueForStress
             activitiesVC.valueForSleepMinutes = valueForSleepMinutes
             activitiesVC.valueForExerciseMinutes = valueForExerciseMinutes
+            activitiesVC.valueForLocation = valueForLocation
             
             //  let activitiesVC = segue.destination as!
     }

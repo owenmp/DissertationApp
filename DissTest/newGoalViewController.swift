@@ -54,13 +54,13 @@ class newGoalViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
+       @IBOutlet weak var saveBtn: UIButton!
     @IBAction func saveBtn(_ sender: Any) {
-        guard var name = nameTxt.text else{return}
+       // guard var name = nameTxt.text else{return}
        
-        guard var description = descriptionTxt.text else{return}
-        valueForName = name
-        valueForDescription = description
+       // guard var description = descriptionTxt.text else{return}
+       // valueForName = name
+        //valueForDescription = description
         
         var dailyPlan = ActivityPlan(date: dateString, name: valueForName, description: valueForDescription, completed: 0)
 //        print(dailyPlan.name)
@@ -77,7 +77,7 @@ class newGoalViewController: UIViewController {
     }
     
     
-    @IBOutlet weak var saveBtn: UIButton!
+ 
     
     @IBOutlet weak var backGroundView: UIView!
     
