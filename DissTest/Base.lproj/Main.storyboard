@@ -32,7 +32,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="nameTxt:" destination="B9N-lp-cTD" eventType="editingDidEnd" id="i3f-UE-sdF"/>
+                                            <action selector="nameTxt:" destination="B9N-lp-cTD" eventType="editingChanged" id="jtW-B8-SY2"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgG-XX-lKW">
@@ -49,6 +49,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="descriptionTxt:" destination="B9N-lp-cTD" eventType="editingDidEnd" id="Rjb-FE-HDd"/>
+                                            <action selector="descriptionTxt:" destination="B9N-lp-cTD" eventType="editingChanged" id="uGP-yo-WDg"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ylc-tA-SKb">
@@ -86,8 +87,8 @@
                     <navigationItem key="navigationItem" id="MP1-ze-3Ke"/>
                     <connections>
                         <outlet property="backGroundView" destination="wVS-Kx-NPs" id="Uau-I9-Mqf"/>
-                        <outlet property="descriptionTxt" destination="7Nf-JO-wbF" id="U8b-5d-jCu"/>
-                        <outlet property="nameTxt" destination="IeP-eJ-43G" id="r1K-xW-zd1"/>
+                        <outlet property="descriptionTxt" destination="7Nf-JO-wbF" id="rDN-T1-YgZ"/>
+                        <outlet property="nameTxt" destination="IeP-eJ-43G" id="bgY-Ze-mdH"/>
                         <outlet property="saveBtn" destination="Ylc-tA-SKb" id="3uM-fO-Nid"/>
                     </connections>
                 </viewController>
@@ -227,7 +228,7 @@
                     <navigationItem key="navigationItem" title="Todays Plan" largeTitleDisplayMode="never" id="JLr-vp-Rg5">
                         <barButtonItem key="rightBarButtonItem" title="Add Goal" id="TBT-Xz-hex">
                             <connections>
-                                <segue destination="B9N-lp-cTD" kind="show" id="8tL-au-09Z"/>
+                                <segue destination="B9N-lp-cTD" kind="show" id="b1e-2Z-Mrh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2151,14 +2152,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8p-By-Hcs">
-                                <rect key="frame" x="258" y="663" width="46" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not all text fields completed!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnb-4e-cac">
+                                <rect key="frame" x="20" y="652" width="374" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="printBtn:" destination="5BU-lt-ua6" eventType="touchUpInside" id="nyy-SN-fg9"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="RfG-fT-q3Q"/>
@@ -2168,6 +2168,7 @@
                         <outlet property="advanceBtn" destination="yka-FT-qgh" id="Wgd-3V-9cp"/>
                         <outlet property="alcoholTxt" destination="W4S-6F-AxT" id="kia-pv-U8G"/>
                         <outlet property="alcoholView" destination="xld-Qb-9Xd" id="Mwc-QI-Nb6"/>
+                        <outlet property="errorTxt" destination="pnb-4e-cac" id="Oh8-6e-yfp"/>
                         <outlet property="exerciseHouseTxt" destination="Iid-Ak-aXv" id="GAh-II-jRi"/>
                         <outlet property="exerciseMinutes" destination="ZEJ-HH-gqX" id="SqO-8i-bWy"/>
                         <outlet property="exerciseView" destination="Qai-GS-rf3" id="YMu-iE-erK"/>

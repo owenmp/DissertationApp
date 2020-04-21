@@ -585,7 +585,7 @@ class FinalDatabase {
             var objectPlan = ActivityPlan(date: date, name: name, description: description, completed: objectCompleted)
             
             plan.append(objectPlan)
-            print(objectPlan.name)
+            print(objectPlan.description)
             
             
             
@@ -905,6 +905,42 @@ sqlite3_finalize(statement)
         }
     
     
+    
+    func setCompleteGoal(goal: ActivityPlan) {
+        var query = "UPDATE DailyPlan set COMPLETED = 1 WHERE DATE = '\(goal.date)' AND NAME = '\(goal.name)' AND DESCRIPTION = '\(goal.description)';"
+        var updateStatement: OpaquePointer?
+        if sqlite3_prepare_v2(database, query, -1, &updateStatement, nil) == SQLITE_OK {
+            if sqlite3_step(updateStatement) == SQLITE_DONE {
+                print("Row Inserted")
+            } else {
+                print("Couldnt insert row")
+            }
+        } else {
+            ("Statement not prepared")
+        }
+        sqlite3_finalize(updateStatement)
+    }
+    
+    
+    func setIncompleteGoal(goal: ActivityPlan) {
+          var query = "UPDATE DailyPlan set COMPLETED = 0 WHERE DATE = '\(goal.date)' AND NAME = '\(goal.name)' AND DESCRIPTION = '\(goal.description)';"
+          var updateStatement: OpaquePointer?
+          if sqlite3_prepare_v2(database, query, -1, &updateStatement, nil) == SQLITE_OK {
+              if sqlite3_step(updateStatement) == SQLITE_DONE {
+                  print("Row Inserted")
+              } else {
+                  print("Couldnt insert row")
+              }
+          } else {
+              ("Statement not prepared")
+          }
+          sqlite3_finalize(updateStatement)
+      }
+    
+    
+    
+    
+    
    let l = "INSERT INTO ACTIVITYLOg (NAME,HOURS,MINUTES,DATE,DESCRIPTION) VALUES (?,?,?,?,?);"
     
     func addNewGoal(goal : ActivityPlan) {
@@ -917,7 +953,7 @@ sqlite3_finalize(statement)
             sqlite3_bind_text(insertStatement, 1, insertedDate.utf8String, -1, SQLITE_TRANSIENT)
             sqlite3_bind_text(insertStatement, 2, insertedName.utf8String, -1, SQLITE_TRANSIENT)
             sqlite3_bind_text(insertStatement, 3, insertedDescription.utf8String, -1, SQLITE_TRANSIENT)
-            sqlite3_bind_int(insertStatement, 3, Int32(goal.completed))
+            sqlite3_bind_int(insertStatement, 4, Int32(goal.completed))
             if sqlite3_step(insertStatement) == SQLITE_DONE {
                 print("\nSuccessfully inserted row.")
               } else {

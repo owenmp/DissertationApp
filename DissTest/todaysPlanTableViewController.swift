@@ -22,6 +22,9 @@ class todaysPlanTableViewController: UITableViewController {
                dateString = dateFormatter.string(from:date)
         
         plan = database.databaseStore.getPlan(date: dateString)
+        self.tableView.allowsSelection = true
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -72,6 +75,45 @@ class todaysPlanTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 110
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
+        if plan[indexPath.row].completed == 0 {
+        
+        let alert = UIAlertController(title: "Confirmation", message: "Do you want to set \(plan[indexPath.row].name) as complete?", preferredStyle: .alert)
+               alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+                action in self.database.databaseStore.setCompleteGoal(goal: self.plan[indexPath.row])
+                self.plan.removeAll()
+                self.plan = self.database.databaseStore.getPlan(date: self.dateString)
+                self.tableView.reloadData()
+                
+                
+               }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert,animated: true)
+        } else if plan[indexPath.row].completed == 1 {
+            
+             let alert = UIAlertController(title: "Confirmation", message: "Do you want to set \(plan[indexPath.row].name) as incomplete?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+                action in self.database.databaseStore.setIncompleteGoal(goal: self.plan[indexPath.row])
+                self.plan.removeAll()
+                self.plan = self.self.database.databaseStore.getPlan(date: self.dateString)
+                self.tableView.reloadData()
+                
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            self.present(alert,animated: true)
+            
+            
+            
+            
+            
+        }
+    
+        
+        
+        //print(plan[indexPath.row].name)
     }
 
     /*

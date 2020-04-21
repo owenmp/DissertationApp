@@ -55,6 +55,7 @@ class LifestyleEntryViewController: UIViewController{
         advanceBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
         advanceBtn.layer.cornerRadius = 7
         advanceBtn.layer.masksToBounds = true
+        errorTxt.isHidden = true
         //sleepHoursTxt.keyboardType = UIKeyboardType.numberPad
 
         // Do any additional setup after loading the view.
@@ -97,11 +98,12 @@ class LifestyleEntryViewController: UIViewController{
 //    }
 //
     
-    @IBAction func printBtn(_ sender: Any) {
-        //var text = locationTxtField.text!
-        print(valueForLocation)
-    }
+//    @IBAction func printBtn(_ sender: Any) {
+//        //var text = locationTxtField.text!
+//        print(valueForLocation)
+//    }
     
+    @IBOutlet weak var errorTxt: UILabel!
     
     @IBOutlet weak var locationTxtField: UITextField!
     
@@ -210,11 +212,32 @@ class LifestyleEntryViewController: UIViewController{
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if locationTxtField.text == "" {
+        if locationTxtField.text == "" || sleepHoursTxt.text == "" || sleepMinutes.text == "" || exerciseMinutes.text == "" || exerciseHouseTxt.text == "" || alcoholTxt.text == "" {
+            errorTxt.isHidden = false
+            errorTxt.text = "Not all fields completed"
             return false
+        }else if valueForSleepHours > 23 || valueForSleepHours < 0 {
             
-        }
+            errorTxt.text = "Hours for sleep cannot be over 23"
+            errorTxt.isHidden = false
+            return false
+        } else if valueForSleepMinutes > 59 || valueForSleepMinutes < 0{
+            errorTxt.text = "Minutes for sleep must be between 0 and 59"
+            errorTxt.isHidden = false
+            return false
+        }else if valueForExerciseMinutes > 59 || valueForExerciseMinutes < 0 {
+            errorTxt.text = "Minutes for exercise must be between 0 and 59"
+            errorTxt.isHidden = false
+            return false
+        } else if ValueForExerciseHours > 23 || ValueForExerciseHours < 0 {
+            errorTxt.text = "Hours for exercise must be between 0 and 23"
+            errorTxt.isHidden = false
+            return false
+            } else{
+        errorTxt.isHidden = true
         return true
+        }
+        
     }
     
     

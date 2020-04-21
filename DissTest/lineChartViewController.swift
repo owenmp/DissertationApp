@@ -39,6 +39,7 @@ class lineChartViewController: UIViewController {
             let dataEntry = ChartDataEntry(x: Double(values[i]), y: Double(i))
             dataEntries.append(dataEntry)
         }
+        dataEntries.sort(by: {$0.x < $1.x})
         
         let lineChartDataSet = LineChartDataSet(entries: dataEntries, label:nil)
         let lineChartData = LineChartData(dataSet: lineChartDataSet)

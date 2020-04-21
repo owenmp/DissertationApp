@@ -76,8 +76,19 @@ class detailActivityViewController: UIViewController {
         
         
         
-        var dailyActivitiy = activityLog(name: valueForName, length: valueForLength, description: valueForDescription,minutes: valueForMinutes)
-        entryActivities.append(dailyActivitiy)
+         var dailyActivitiy = activityLog(name: valueForName, length: valueForLength, description: valueForDescription,minutes: valueForMinutes)
+        
+        if valueForLength > 24 || valueForLength < 0{
+            
+            
+        }else if  valueForMinutes > 59 || valueForMinutes < 0{
+            
+            
+        } else { 
+                entryActivities.append(dailyActivitiy)
+        }
+        
+     
         
         //for i in previousVC.entryActivities{
           //  print(i.name)

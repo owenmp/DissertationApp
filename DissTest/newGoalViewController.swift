@@ -34,19 +34,33 @@ class newGoalViewController: UIViewController {
     }
     
     
-    @IBAction func nameTxt(_ sender: Any) {
-        var text: String = nameTxt.text!
-        valueForName = text
-    }
+//    @IBAction func nameTxt(_ sender: Any) {
+//        var text: String = nameTxt.text!
+//        valueForName = text
+//    }
+//
+   @IBOutlet weak var nameTxt: UITextField!
+//
+//
+   @IBOutlet weak var descriptionTxt: UITextField!
+//    @IBAction func descriptionTxt(_ sender: Any) {
+//        var text: String = descriptionTxt.text!
+//        valueForDescription = text
+//    }
     
-    @IBOutlet weak var nameTxt: UITextField!
-    
-    
-    @IBOutlet weak var descriptionTxt: UITextField!
     @IBAction func descriptionTxt(_ sender: Any) {
-        var text: String = descriptionTxt.text!
+          var text: String = descriptionTxt.text!
         valueForDescription = text
+        
     }
+    
+    @IBAction func nameTxt(_ sender: Any) {
+         var text: String = nameTxt.text!
+            valueForName = text
+    }
+    
+    
+    
     
     
     @IBAction func cancelBtn(_ sender: Any) {
