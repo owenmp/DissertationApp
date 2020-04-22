@@ -126,6 +126,29 @@ class LifestyleEntryViewController: UIViewController{
     
     
     @IBOutlet weak var sleepHoursTxt: UITextField!
+//    @IBAction func sleepHoursField(_ sender: Any) {
+//        if sleepHoursTxt.text == "" {
+//            valueForSleepHours = 0
+//        } else {
+//        var text: String = sleepHoursTxt.text!
+//        var value = Int(text)
+//        valueForSleepHours = value!
+//        }
+        
+   // }
+    
+    
+//    @IBAction func sleepHoursField(_ sender: Any) {
+//        if sleepHoursTxt.text == "" {
+//            valueForSleepHours = 0
+//        } else {
+//        var text: String = sleepHoursTxt.text!
+//        var value = Int(text)
+//        valueForSleepHours = value!
+//        }
+//    }
+    
+    
     @IBAction func sleepHoursField(_ sender: Any) {
         if sleepHoursTxt.text == "" {
             valueForSleepHours = 0
@@ -134,22 +157,53 @@ class LifestyleEntryViewController: UIViewController{
         var value = Int(text)
         valueForSleepHours = value!
         }
-        
+
     }
+    
     
     
     @IBOutlet weak var exerciseHouseTxt: UITextField!
-    @IBAction func exerciseHoursTxt(_ sender: Any) {
+//    @IBAction func exerciseHoursTxt(_ sender: Any) {
+//        if exerciseHouseTxt.text == "" {
+//            ValueForExerciseHours = 0
+//        } else {
+//        var text: String = exerciseHouseTxt.text!
+//        var value = Int(text)
+//        ValueForExerciseHours = value!
+//        }
+//    }
+    
+    @IBAction func exerciseHouseTxt(_ sender: Any) {
         if exerciseHouseTxt.text == "" {
-            ValueForExerciseHours = 0
-        } else {
-        var text: String = exerciseHouseTxt.text!
-        var value = Int(text)
-        ValueForExerciseHours = value!
-        }
+                   ValueForExerciseHours = 0
+               } else {
+               var text: String = exerciseHouseTxt.text!
+               var value = Int(text)
+               ValueForExerciseHours = value!
+               }
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var waterTxt: UITextField!
+    
+//    @IBAction func waterTxt(_ sender: Any) {
+//        if waterTxt.text == "" {
+//            valueForWater = 0
+//        } else {
+//        var text: String = waterTxt.text!
+//        var value = Int(text)
+//        valueForWater = value!
+//        }
+//    }
+    
     
     @IBAction func waterTxt(_ sender: Any) {
         if waterTxt.text == "" {
@@ -161,6 +215,24 @@ class LifestyleEntryViewController: UIViewController{
         }
     }
     
+    
+    
+    
+    
+    
+//    @IBAction func exerciseMinutes(_ sender: Any) {
+//        if exerciseMinutes.text == "" {
+//            valueForExerciseMinutes = 0
+//        } else {
+//        var text: String = exerciseMinutes.text!
+//        var value = Int(text)!
+//        valueForExerciseMinutes = value
+//        }
+//
+//    }
+    
+    
+   
     @IBAction func exerciseMinutes(_ sender: Any) {
         if exerciseMinutes.text == "" {
             valueForExerciseMinutes = 0
@@ -169,8 +241,22 @@ class LifestyleEntryViewController: UIViewController{
         var value = Int(text)!
         valueForExerciseMinutes = value
         }
-        
     }
+    
+    
+    
+    
+    
+//    @IBAction func sleepMinutes(_ sender: Any) {
+//        if sleepMinutes.text == "" {
+//            valueForSleepMinutes = 0
+//
+//        } else {
+//        var text: String = sleepMinutes.text!
+//        var value = Int(text)!
+//        valueForSleepMinutes = value
+//        }
+   // }
     
     
     @IBAction func sleepMinutes(_ sender: Any) {
@@ -182,7 +268,11 @@ class LifestyleEntryViewController: UIViewController{
         var value = Int(text)!
         valueForSleepMinutes = value
         }
+
     }
+    
+    
+    
     
     
     @IBOutlet weak var alcoholTxt: UITextField!

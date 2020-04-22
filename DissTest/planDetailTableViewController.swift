@@ -62,7 +62,7 @@ class planDetailTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-               return 110
+               return 108
        }
 
     /*

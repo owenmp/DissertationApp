@@ -906,6 +906,18 @@ sqlite3_finalize(statement)
     
     
     
+    func checkEntryComplete(date: String) -> Bool{
+        var query = "SELECT DATE FROM MAIN WHERE DATE = '\(date)';"
+        var statement: OpaquePointer?
+        if sqlite3_prepare_v2(database,query , -1, &statement, nil) == SQLITE_OK {
+                  while (sqlite3_step(statement) == SQLITE_ROW) {
+                    return true
+            }
+        }
+        return false
+    }
+    
+    
     func setCompleteGoal(goal: ActivityPlan) {
         var query = "UPDATE DailyPlan set COMPLETED = 1 WHERE DATE = '\(goal.date)' AND NAME = '\(goal.name)' AND DESCRIPTION = '\(goal.description)';"
         var updateStatement: OpaquePointer?
@@ -1089,10 +1101,6 @@ sqlite3_finalize(statement)
                 
             }
             sqlite3_finalize(statement)
-        
-        
-        
-        
     }
     
     let deleteStatementString = "DELETE FROM MAIN WHERE DATE = '80-03-20'"

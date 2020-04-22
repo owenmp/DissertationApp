@@ -62,21 +62,14 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
     
     @IBOutlet weak var advanceBtn: UIButton!
     
-    @IBAction func refreshBtn(_ sender: Any) {
-        
-        self.tableView.reloadData()
-        self.viewDidLoad()
-        
-        for i in entryActivities{
-            print(i.name)
-        }
+   
 //        activitiesArray = nextVC.entryActivities
 //        print(activitiesArray[0].name)
 //        print(activitiesArray[1].name)
        // for i in nextVC.entryActivities{
          //   print(i.name)
         //}
-    }
+    
     
     
    func numberOfSections(in tableView: UITableView) -> Int {

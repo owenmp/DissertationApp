@@ -74,7 +74,7 @@ class todaysPlanTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 110
+            return 108
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){

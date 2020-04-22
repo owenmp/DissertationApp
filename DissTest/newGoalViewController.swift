@@ -29,6 +29,12 @@ class newGoalViewController: UIViewController {
         saveBtn.layer.cornerRadius = 7
         saveBtn.layer.masksToBounds = true
         saveBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        statusView.layer.cornerRadius = 7
+        statusView.layer.masksToBounds = true
+        statusView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        statusView.isHidden = true
+        descriptionTxt.layer.backgroundColor = UIColor.white.cgColor
+        descriptionTxt.layer.borderColor = UIColor.systemGray6.cgColor
 
         // Do any additional setup after loading the view.
     }
@@ -39,9 +45,11 @@ class newGoalViewController: UIViewController {
 //        valueForName = text
 //    }
 //
-   @IBOutlet weak var nameTxt: UITextField!
+    @IBOutlet weak var statusLbl: UILabel!
+    @IBOutlet weak var nameTxt: UITextField!
 //
-//
+    @IBOutlet weak var statusView: UIView!
+    //
    @IBOutlet weak var descriptionTxt: UITextField!
 //    @IBAction func descriptionTxt(_ sender: Any) {
 //        var text: String = descriptionTxt.text!
@@ -63,31 +71,32 @@ class newGoalViewController: UIViewController {
     
     
     
-    @IBAction func cancelBtn(_ sender: Any) {
-        
-        dismiss(animated: true, completion: nil)
-    }
+   
     
        @IBOutlet weak var saveBtn: UIButton!
     @IBAction func saveBtn(_ sender: Any) {
-       // guard var name = nameTxt.text else{return}
-       
-       // guard var description = descriptionTxt.text else{return}
-       // valueForName = name
-        //valueForDescription = description
         
+        if valueForName == "" {
+            statusView.isHidden = false
+            statusLbl.text = "Enter a name"
+            statusLbl.textColor = UIColor.systemRed        }
+        else if valueForDescription == "" {
+            statusView.isHidden = false
+            statusLbl.text = "Enter a description"
+            statusLbl.textColor = UIColor.systemRed
+        } else {
+        statusLbl.text = "\(valueForName) added to todays goals."
+            statusLbl.textColor = UIColor.black
+        statusView.isHidden = false
         var dailyPlan = ActivityPlan(date: dateString, name: valueForName, description: valueForDescription, completed: 0)
-//        print(dailyPlan.name)
-//        print(dailyPlan.description)
         database.databaseStore.addNewGoal(goal: dailyPlan)
         if let presenter = presentingViewController as? todaysPlanTableViewController {
             presenter.plan.removeAll()
             presenter.plan = presenter.database.databaseStore.getPlan(date: dateString)
             presenter.tableView.reloadData()
             presenter.viewDidLoad()
+                    }
         }
-        
-        dismiss(animated: true, completion: nil)
     }
     
     

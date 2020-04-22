@@ -33,7 +33,7 @@ class NotesViewController: UIViewController {
     let database = LogsViewController()
     
     
-       
+      
                
     
     //let database = DataStore()
@@ -44,6 +44,8 @@ class NotesViewController: UIViewController {
     override func viewDidLoad() {
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let dateString = dateFormatter.string(from:date)
+        notesTxt.layer.backgroundColor = UIColor.white.cgColor
+        print(dateString)
         for i in entryActivities{
             print (i.name)
             print (i.description)

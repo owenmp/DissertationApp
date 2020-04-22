@@ -20,18 +20,18 @@ class ActivitiesTableViewController: UITableViewController {
     
     
     
-    @IBAction func refreshBtn(_ sender: Any) {
-        print("Refresh")
-        activities.removeAll()
-        activities = blabla.databaseStore.getActivities()
-        self.tableView.reloadData()
-        self.viewDidLoad()
-       // for i in entryActivities{
-         //   print(i)
-        //}
+//    @IBAction func refreshBtn(_ sender: Any) {
+//        print("Refresh")
+//        activities.removeAll()
+//        activities = blabla.databaseStore.getActivities()
 //        self.tableView.reloadData()
 //        self.viewDidLoad()
-    }
+//       // for i in entryActivities{
+//         //   print(i)
+//        //}
+////        self.tableView.reloadData()
+////        self.viewDidLoad()
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ViewLoaded")

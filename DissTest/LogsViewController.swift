@@ -11,82 +11,39 @@ import UIKit
 class LogsViewController: UIViewController {
     //let databaseStore = DataStoreRebuild()
    let databaseStore = FinalDatabase()
-    
+//    let dateValue = Date()
+//          let dateForCheck = DateFormatter()
+       
 
     
     @IBOutlet weak var a: UINavigationItem!
     
     override func viewDidLoad() {
         
-        //hello.insertNewActivity(Name: "Drawing", Description: "SecondTest") //hello.searchEntries(filter: "Location", value: "University")
-        //print("The segue test worked")
+       
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d"
         let dateString: String = dateFormatter.string(from:date)
+        databaseStore.getAllDates()
+        
+//        dateForCheck.dateFormat = "dd-MM-yyyy"
+//        let dateCheckString = dateForCheck.string(from:dateValue)
         
         
-        //print(dateString)
-        //let test = Mood(Date: dateString, Sleep: 5, Water: 5, Stress: 5, Exercise: 5, Location: "K", Alcohol: 3, Mood: 4, Productivity: 7, Notes: "I had a great day today")
         
-//        var one = activityLog(name: "Run", length: 2, description: "TestRun")
-//        var two = activityLog(name: "Swim", length: 3, description: "TestSwim")
-//        var three = activityLog(name: "Testing", length: 1, description: "testTest")
-//        var activitiesArray : [activityLog] = []
-//        activitiesArray.append(one)
-//        activitiesArray.append(two)
-//        activitiesArray.append(three)
-       // hello.getScatterData(filter: "Sleep", value: 8)
-    // hello.getBarAverages(search: "Location", value: "University")
-       // hello.searchEntries(filter: "Notes", value: "Worked")
-//        hello.getPoorWaterAverage()
-//        hello.getMediumAverage()
-//        hello.getGoodAverage()
-//        hello.getPoorSleepAverage()
-//        hello.getGoodSleepAverage()
-//        hello.getMediumSleepAverage()
-//        hello.getMediumALCOHOLAverage()
-//        hello.getPoorAlcoholAverage()
-//        hello.getGoodAlcoholAverage()
-//        hello.getGoodExerciseAverage()
-//        hello.getMediumExerciseAverage()
-//        hello.getPoorExerciseAverage()
-//        hello.getOverallSleep()
-//        hello.getOverallExercise()
-//        hello.getOverallAlcohol()
-//        hello.getOverallWater()
-//        print(a[0])
-//        print(a[1])
-//        print(a[2])
-       // databaseStore.getAllDates()
-       // databaseStore.getAllMood()
-        
-    //    hello.insertDailyActivities(dailyActivities: activitiesArray, date: "15-03-2020")
         
    
        
         //////// It can still enter the database, button to enter it must be broken, maybe to do with the segue change i attempted
 
-        //databaseStore.getPlan(date: "13-04-2020")
-        super.viewDidLoad()
-//        var goal = ActivityPlan(date: "18-04-2020", name: "Make breakfast", description: "Make a healthy breakfast to start the day off", completed: 0)
-//        databaseStore.addNewGoal(goal: goal)
-//        var activity = activityLog(name: "Dissertation", length: 7, description: "Completed re build of my database", minutes: 20)
-//        var act: [activityLog] = []
-//        act.append(activity)
-//        //print(dateString)
-//        databaseStore.insertDailyActivities(dailyActivities: act, date: "16-04-2020")
         
-       // hello.insertMoodObject(dailyEntry: test)
-      //  hello.readRows()
-       // hello.insertMoodObject(dailyEntry: test)
-       // hello.readRows()
-      //  hello.deleteEntries()
-        //hello.getAllEntries()
-       // hello.getAllEntries()
-        //hello.getEntryActivities(date: "07-03-2020")
-       // hello.getAveragesForMood3(moodLevel: 7)
-       // self.presentedViewController?.title = dateString
+        super.viewDidLoad()
+//        var check = databaseStore.checkEntryComplete(date: "01-04-2020")
+//        print(check)
+//        var check2 = databaseStore.checkEntryComplete(date: "30-04-2020")
+//        print(check2)
+
         self.navigationController?.navigationBar.topItem?.title = dateString
         dailyQuoteView.layer.borderWidth = 5
         dailyQuoteView.layer.borderColor = UIColor.systemGray6.cgColor
@@ -108,12 +65,46 @@ class LogsViewController: UIViewController {
         startBtn.layer.cornerRadius = 5
         startBtn.layer.masksToBounds = true
         dailyTxt.adjustsFontSizeToFitWidth = true
+        symptomsView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        symptomsView.layer.cornerRadius = 20
+        symptomsView.layer.masksToBounds = true
+        
+        symptomsBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        symptomsBtn.layer.cornerRadius = 5
+        symptomsBtn.layer.masksToBounds = true
+//        var dailyCheck = databaseStore.checkEntryComplete(date: dateCheckString)
+//        if dailyCheck == true {
+//            startBtn.isHidden = true
+//        }
+        
+      //  databaseStore.getAllDates()
+        
        
 //
         // Do any additional setup after loading the view.
     }
     
-   
+    
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//            //dateForCheck.dateFormat = "dd-MM-yyyy"
+//        var check = databaseStore.checkEntryComplete(date: "22-04-2020")
+//        if check == true {
+//            startBtn.isHidden = true
+//            print("worked")
+//        }
+//
+//
+//    }
+    
+    
+    
+    
+    @IBOutlet weak var symptomsBtn: UIButton!
+    
+    @IBOutlet weak var symptomsView: UIView!
+    
     @IBOutlet weak var dailyTxt: UILabel!
     @IBOutlet weak var dailyView: UIView!
     @IBOutlet weak var startBtn: UIButton!
