@@ -11,8 +11,8 @@ import UIKit
 class LogsViewController: UIViewController {
     //let databaseStore = DataStoreRebuild()
    let databaseStore = FinalDatabase()
-//    let dateValue = Date()
-//          let dateForCheck = DateFormatter()
+   let dateValue = Date()
+    let dateForCheck = DateFormatter()
        
 
     
@@ -25,11 +25,11 @@ class LogsViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d"
         let dateString: String = dateFormatter.string(from:date)
-        databaseStore.getAllDates()
+       // databaseStore.getAllDates()
         
-//        dateForCheck.dateFormat = "dd-MM-yyyy"
+//       dateForCheck.dateFormat = "dd-MM-yyyy"
 //        let dateCheckString = dateForCheck.string(from:dateValue)
-        
+       // checkComplete()
         
         
         
@@ -39,9 +39,9 @@ class LogsViewController: UIViewController {
 
         
         super.viewDidLoad()
-//        var check = databaseStore.checkEntryComplete(date: "01-04-2020")
+//        var check = databaseStore.checkEntryComplete(date: "22-04-2020")
 //        print(check)
-//        var check2 = databaseStore.checkEntryComplete(date: "30-04-2020")
+//        var check2 = databaseStore.checkEntryComplete(date: "01-04-2020")
 //        print(check2)
 
         self.navigationController?.navigationBar.topItem?.title = dateString
@@ -72,6 +72,9 @@ class LogsViewController: UIViewController {
         symptomsBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
         symptomsBtn.layer.cornerRadius = 5
         symptomsBtn.layer.masksToBounds = true
+        
+        //var sym = Symptom(Date: "22-04-2020", Name: "Coughing", Description: "Woke up with a painful cough", Drugs: "Paracetemol")
+       // databaseStore.addNewSymptom(symptom: sym)
 //        var dailyCheck = databaseStore.checkEntryComplete(date: dateCheckString)
 //        if dailyCheck == true {
 //            startBtn.isHidden = true
@@ -98,7 +101,18 @@ class LogsViewController: UIViewController {
 //
 //    }
     
-    
+//    func checkComplete(){
+//        //dateForCheck.dateStyle = "dd-MM-yyyy"
+//        dateForCheck.dateFormat = "dd-MM-yyyy"
+//        let dateCheckString = dateForCheck.string(from:dateValue)
+//        var check = databaseStore.checkEntryComplete(date: dateCheckString)
+//        if check == true {
+//            startBtn.isHidden = true
+//        } else {
+//            startBtn.isHidden = false
+//        }
+//
+//    }
     
     
     @IBOutlet weak var symptomsBtn: UIButton!

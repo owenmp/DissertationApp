@@ -22,7 +22,7 @@ class NotesViewController: UIViewController {
     var valueForNotes = ""
     
     
-    
+  
     
     
     
@@ -79,11 +79,20 @@ class NotesViewController: UIViewController {
         saveBtn.layer.cornerRadius = 7
         saveBtn.layer.masksToBounds = true
         
+        informationView.isHidden = true
+        informationView.layer.cornerRadius = 7
+        informationView.layer.masksToBounds = true
+        informationView.layer.shadowRadius = 2.5
+        informationView.layer.shadowColor = UIColor.systemGray.cgColor
+        informationView.layer.shadowOffset = .zero
+        informationView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        
     }
     @IBOutlet weak var saveBtn: UIButton!
     
     @IBOutlet weak var backgroundView: UIView!
     
+    @IBOutlet weak var informationView: UIView!
     
     @IBOutlet weak var notesText: UITextView!
     @IBOutlet weak var notesTxt: UITextField!
@@ -91,7 +100,42 @@ class NotesViewController: UIViewController {
         //dailyEntry.Notes = notesTxt.text!
     }
     
+    @IBAction func informationBtn(_ sender: Any) {
+        backgroundView.alpha = 1
+        saveBtn.alpha = 1
+        informationView.alpha = 0
+        
+        UIView.animate(withDuration: 1.5, animations: {
+            self.backgroundView.alpha = 0
+            self.backgroundView.isHidden = true
+            self.saveBtn.alpha = 0
+            self.saveBtn.isHidden = true
+            self.informationView.alpha = 1
+            self.informationView.isHidden = false
+            
+    })
+    }
     
+    @IBAction func closeBtn(_ sender: Any) {
+        backgroundView.alpha = 0
+              saveBtn.alpha = 0
+              informationView.alpha = 1
+              
+              UIView.animate(withDuration: 1.5, animations: {
+                  self.backgroundView.alpha = 1
+                  self.backgroundView.isHidden = false
+                  self.saveBtn.alpha = 1
+                  self.saveBtn.isHidden = false
+                  self.informationView.alpha = 0
+                  self.informationView.isHidden = true
+                  
+          })
+        
+        
+        
+        
+    }
+    @IBOutlet weak var informationBtn: UIBarButtonItem!
     @IBAction func saveBtn(_ sender: Any) {
         guard var notesValue = notesTxt.text else{ return
         }
@@ -106,6 +150,7 @@ class NotesViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:  {
                 action in self.database.databaseStore.insertMoodObject(dailyEntry: dailyEntry)
             self.database.databaseStore.insertDailyActivities(dailyActivities: entryActivities, date: dateString)
+           // self.database.checkComplete()
             
             
                 self.performSegue(withIdentifier: "unwindToLogsView", sender: self)
@@ -117,6 +162,13 @@ class NotesViewController: UIViewController {
             
 }
 }
+
+
+
+
+
+
+
         
     //blabla.hello.insertMoodObject(dailyEntry: dailyEntry )
 

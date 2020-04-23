@@ -56,6 +56,12 @@ class LifestyleEntryViewController: UIViewController{
         advanceBtn.layer.cornerRadius = 7
         advanceBtn.layer.masksToBounds = true
         errorTxt.isHidden = true
+        informationView.isHidden = true
+        informationView.layer.cornerRadius = 7
+        informationView.layer.masksToBounds = true
+        informationView.layer.shadowColor = UIColor.systemGray.cgColor
+        informationView.layer.shadowRadius = 2.5
+        informationView.layer.backgroundColor = UIColor.systemGray6.cgColor
         //sleepHoursTxt.keyboardType = UIKeyboardType.numberPad
 
         // Do any additional setup after loading the view.
@@ -108,11 +114,64 @@ class LifestyleEntryViewController: UIViewController{
     @IBOutlet weak var locationTxtField: UITextField!
     
     
+    @IBAction func informationBtn(_ sender: Any) {
+        alcoholView.alpha = 1
+        sleepView.alpha = 1
+        locationView.alpha = 1
+        exerciseView.alpha = 1
+        waterView.alpha = 1
+        advanceBtn.alpha = 1
+        informationView.alpha = 0
+        UIView.animate(withDuration: 1.5, animations: {
+            self.alcoholView.alpha = 0
+            self.alcoholView.isHidden = true
+            self.sleepView.alpha = 0
+            self.sleepView.isHidden = true
+            self.locationView.alpha = 0
+            self.locationView.isHidden = true
+            self.exerciseView.alpha = 0
+            self.exerciseView.isHidden = true
+            self.waterView.alpha = 0
+            self.waterView.isHidden = true
+            self.advanceBtn.alpha = 0
+            self.advanceBtn.isHidden = true
+            self.informationView.alpha = 1
+            self.informationView.isHidden = false
+        })
+    }
     
+    @IBAction func closeBtn(_ sender: Any) {
+        alcoholView.alpha = 0
+               sleepView.alpha = 0
+               locationView.alpha = 0
+               exerciseView.alpha = 0
+               waterView.alpha = 0
+               advanceBtn.alpha = 0
+               informationView.alpha = 1
+               UIView.animate(withDuration: 1.5, animations: {
+                   self.alcoholView.alpha = 1
+                   self.alcoholView.isHidden = false
+                   self.sleepView.alpha = 1
+                   self.sleepView.isHidden = false
+                   self.locationView.alpha = 1
+                   self.locationView.isHidden = false
+                   self.exerciseView.alpha = 1
+                   self.exerciseView.isHidden = false
+                   self.waterView.alpha = 1
+                   self.waterView.isHidden = false
+                   self.advanceBtn.alpha = 1
+                   self.advanceBtn.isHidden = false
+                   self.informationView.alpha = 0
+                   self.informationView.isHidden = false
+               })
+        
+        
+    }
     
     @IBOutlet weak var exerciseMinutes: UITextField!
     
     
+    @IBOutlet weak var informationView: UIView!
     
     @IBOutlet weak var sleepMinutes: UITextField!
     @IBOutlet weak var advanceBtn: UIButton!

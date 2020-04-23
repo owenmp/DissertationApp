@@ -49,18 +49,70 @@ class MoodEntryViewController: UIViewController {
         pNotAtLbl.adjustsFontSizeToFitWidth = true
         moderatlyLbl.adjustsFontSizeToFitWidth = true
         veryLbl.adjustsFontSizeToFitWidth = true
+        
+        informationView.isHidden = true
+        informationView.layer.cornerRadius = 7
+        informationView.layer.masksToBounds = true
+        informationView.layer.shadowRadius = 2.5
+        informationView.layer.shadowColor = UIColor.systemGray.cgColor
 
         //productiveLbl.adjustsFontSizeToFitWidth = true
 
 
-
+        informationView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        //closeBtn.layer.backgroundColor = UIColor.systemBlue.cgColor
+        closeBtn.layer.cornerRadius = 7
+        closeBtn.layer.masksToBounds = true
 
 
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var closeBtn: UIButton!
+    
+    @IBAction func informationBtn(_ sender: Any) {
+        
+        informationView.alpha = 0
+        moodView.alpha = 1
+        stressView.alpha = 1
+        productiveView.alpha = 1
+        advanceBtn.alpha = 1
+        UIView.animate(withDuration: 1.5, animations: {
+            self.moodView.alpha = 0
+            self.stressView.alpha = 0
+            self.productiveView.alpha = 0
+            self.moodView.isHidden = true
+            self.stressView.isHidden = true
+            self.productiveView.isHidden = true
+            self.informationView.alpha = 1
+            self.informationView.isHidden = false
+            self.advanceBtn.alpha = 0
+            self.advanceBtn.isHidden = true
+        })
+    }
     
     
+    @IBAction func closeViewBtn(_ sender: Any) {
+        informationView.alpha = 1
+        moodView.alpha = 0
+        stressView.alpha = 0
+        productiveView.alpha = 0
+        advanceBtn.alpha = 0
+        UIView.animate(withDuration: 1.5, animations: {
+            self.informationView.alpha = 0
+            self.moodView.alpha = 1
+            self.stressView.alpha = 1
+            self.productiveView.alpha = 1
+            self.informationView.isHidden = true
+            self.moodView.isHidden = false
+            self.stressView.isHidden = false
+            self.productiveView.isHidden = false
+            self.advanceBtn.alpha = 1
+            self.advanceBtn.isHidden = false
+        })
+    
+    }
+    @IBOutlet weak var informationView: UIView!
     
     
     @IBOutlet weak var pNotAtLbl: UILabel!

@@ -43,6 +43,11 @@
 		5AA1815E242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1815D242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift */; };
 		5AA18160242BA53700A37ED2 /* EntryActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1815F242BA53700A37ED2 /* EntryActivityTableViewCell.swift */; };
 		5AA18162242BA6F200A37ED2 /* activityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA18161242BA6F200A37ED2 /* activityLog.swift */; };
+		5AAA9D9C2451B58000BF3523 /* SymptomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA9D9B2451B58000BF3523 /* SymptomsTableViewController.swift */; };
+		5AAA9D9E2451B5E800BF3523 /* AddSymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA9D9D2451B5E800BF3523 /* AddSymptomViewController.swift */; };
+		5AAA9DA02451BA2500BF3523 /* SymptomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA9D9F2451BA2500BF3523 /* SymptomTableViewCell.swift */; };
+		5AAA9DA22451BAEB00BF3523 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA9DA12451BAEB00BF3523 /* Symptom.swift */; };
+		5AAA9DA42451D4F700BF3523 /* entrySymptomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA9DA32451D4F700BF3523 /* entrySymptomsTableViewController.swift */; };
 		5AB2FBEC2428D37B009336E7 /* chartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2FBEB2428D37B009336E7 /* chartsViewController.swift */; };
 		5ABAC1D02428EDC10019D62A /* pieChartDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAC1CF2428EDC10019D62A /* pieChartDatePickerViewController.swift */; };
 		5ABAC1D2242903F60019D62A /* pieChartResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAC1D1242903F60019D62A /* pieChartResultViewController.swift */; };
@@ -109,6 +114,11 @@
 		5AA1815D242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		5AA1815F242BA53700A37ED2 /* EntryActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryActivityTableViewCell.swift; sourceTree = "<group>"; };
 		5AA18161242BA6F200A37ED2 /* activityLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityLog.swift; sourceTree = "<group>"; };
+		5AAA9D9B2451B58000BF3523 /* SymptomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsTableViewController.swift; sourceTree = "<group>"; };
+		5AAA9D9D2451B5E800BF3523 /* AddSymptomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSymptomViewController.swift; sourceTree = "<group>"; };
+		5AAA9D9F2451BA2500BF3523 /* SymptomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTableViewCell.swift; sourceTree = "<group>"; };
+		5AAA9DA12451BAEB00BF3523 /* Symptom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
+		5AAA9DA32451D4F700BF3523 /* entrySymptomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = entrySymptomsTableViewController.swift; sourceTree = "<group>"; };
 		5AB2FBEB2428D37B009336E7 /* chartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chartsViewController.swift; sourceTree = "<group>"; };
 		5ABAC1CF2428EDC10019D62A /* pieChartDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pieChartDatePickerViewController.swift; sourceTree = "<group>"; };
 		5ABAC1D1242903F60019D62A /* pieChartResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pieChartResultViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +185,7 @@
 				5A844DF3241E79E70048EDD0 /* NavViewController.swift */,
 				5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */,
 				5A72D86223F9D25600441B9B /* Main.storyboard */,
+				5AAA9D9D2451B5E800BF3523 /* AddSymptomViewController.swift */,
 				5AF9272F244A09F300198213 /* todaysPlanTableViewController.swift */,
 				5AF927252449C20D00198213 /* previousPlanTableViewCell.swift */,
 				5AF927272449C26D00198213 /* previousPlansTableViewController.swift */,
@@ -204,6 +215,7 @@
 				5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */,
 				5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */,
 				5A7C5B1D241BCB510047CD0B /* ActivitiesViewController.swift */,
+				5AAA9D9B2451B58000BF3523 /* SymptomsTableViewController.swift */,
 				5A9185442441E36400A4AEEC /* adviceViewController.swift */,
 				5A7C5B17241BB4F40047CD0B /* MoodEntryViewController.swift */,
 				5A7C5B03240BEFD90047CD0B /* NotesViewController.swift */,
@@ -217,7 +229,10 @@
 				5A95EB4F241FE1D4007F2E93 /* databaseForNewProject.db */,
 				5A95EB4D241FE1C0007F2E93 /* DataStoreRebuild.swift */,
 				5A264B9024485A2E007F3657 /* FinalDatabase.swift */,
+				5AAA9DA12451BAEB00BF3523 /* Symptom.swift */,
 				5AF92731244B133100198213 /* newGoalViewController.swift */,
+				5AAA9D9F2451BA2500BF3523 /* SymptomTableViewCell.swift */,
+				5AAA9DA32451D4F700BF3523 /* entrySymptomsTableViewController.swift */,
 				5AF9272D2449CB2000198213 /* ActivityPlan.swift */,
 				5A264B9224485AC8007F3657 /* moodAppDatabase.db */,
 				5AA18161242BA6F200A37ED2 /* activityLog.swift */,
@@ -389,6 +404,7 @@
 				5AF9272A2449C52A00198213 /* planDetailTableViewController.swift in Sources */,
 				5A95EB5224213033007F2E93 /* TrendsViewController.swift in Sources */,
 				5AE394D424335DA600544B89 /* BarChartViewController.swift in Sources */,
+				5AAA9DA02451BA2500BF3523 /* SymptomTableViewCell.swift in Sources */,
 				5ABAC1D4242A3FD40019D62A /* EntriesTableViewController.swift in Sources */,
 				5AF9272E2449CB2000198213 /* ActivityPlan.swift in Sources */,
 				5A264B9124485A2E007F3657 /* FinalDatabase.swift in Sources */,
@@ -397,12 +413,16 @@
 				5AA1815E242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift in Sources */,
 				5AE394DA243B4AF200544B89 /* detailActivityViewController.swift in Sources */,
 				5A844DF4241E79E70048EDD0 /* NavViewController.swift in Sources */,
+				5AAA9D9E2451B5E800BF3523 /* AddSymptomViewController.swift in Sources */,
 				5AA18160242BA53700A37ED2 /* EntryActivityTableViewCell.swift in Sources */,
 				5AF9272C2449C5AB00198213 /* planDetailTableViewCell.swift in Sources */,
 				5AA18162242BA6F200A37ED2 /* activityLog.swift in Sources */,
+				5AAA9DA22451BAEB00BF3523 /* Symptom.swift in Sources */,
 				5A7C5B142416C64C0047CD0B /* DataStore.swift in Sources */,
 				5ABAC1D2242903F60019D62A /* pieChartResultViewController.swift in Sources */,
 				5AE394D82434B48700544B89 /* searchTableViewCell.swift in Sources */,
+				5AAA9DA42451D4F700BF3523 /* entrySymptomsTableViewController.swift in Sources */,
+				5AAA9D9C2451B58000BF3523 /* SymptomsTableViewController.swift in Sources */,
 				5AE394DE243B6A2D00544B89 /* dailyActivityTableViewCell.swift in Sources */,
 				5ABAC1D02428EDC10019D62A /* pieChartDatePickerViewController.swift in Sources */,
 				5A7C5B1E241BCB510047CD0B /* ActivitiesViewController.swift in Sources */,

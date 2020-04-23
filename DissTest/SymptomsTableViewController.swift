@@ -1,22 +1,29 @@
 //
-//  EntryActivitiesTableViewController.swift
+//  SymptomsTableViewController.swift
 //  DissTest
 //
-//  Created by Owen Malcolmson-Priest on 25/03/2020.
+//  Created by Owen Malcolmson-Priest on 23/04/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
 //
 
 import UIKit
 
-class EntryActivitiesTableViewController: UITableViewController {
+class SymptomsTableViewController: UITableViewController {
     var database = LogsViewController()
-    var activities: [activityLog] = []
-    var dateValue = ""
+       var symptoms: [Symptom] = []
+       var dateString = ""
+       let date = Date()
+       let dateFormatter = DateFormatter()
+    
 
     override func viewDidLoad() {
-        activities = database.databaseStore.getEntryActivities(date: dateValue)
         super.viewDidLoad()
-
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateString = dateFormatter.string(from:date)
+        self.tableView.allowsSelection = true
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        symptoms = database.databaseStore.getSymptoms(date: dateString)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,6 +31,14 @@ class EntryActivitiesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    // load datas
+        symptoms = database.databaseStore.getSymptoms(date: dateString)
+    tableView.reloadData()
+    }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,20 +48,18 @@ class EntryActivitiesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return activities.count
+        return symptoms.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "activities", for: indexPath)as! EntryActivityTableViewCell
-        let wantedName = activities[indexPath.row].name
-        //let wantedType = activities[indexPath.row].type
-        let wantedDescription = activities[indexPath.row].description
-        let wantedLength = activities[indexPath.row].length
+        let cell = tableView.dequeueReusableCell(withIdentifier: "symptomIdentifier", for: indexPath)as! SymptomTableViewCell
+        let wantedName = symptoms[indexPath.row].Name
+        let wantedDrugs = symptoms[indexPath.row].Drugs
+        let wantedDescription = symptoms[indexPath.row].Description
         cell.nameLbl.text = wantedName
         cell.descriptionLbl.text = wantedDescription
-        cell.lengthLbl.text = String(wantedLength)
-        
+        cell.drugLbl.text = wantedDrugs
 
         // Configure the cell...
 
@@ -54,15 +67,8 @@ class EntryActivitiesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 150
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath){
-        print("Hello")
-        
-    }
-    
-    
+               return 108
+       }
     
 
     /*

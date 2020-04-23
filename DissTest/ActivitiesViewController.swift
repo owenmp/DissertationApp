@@ -48,6 +48,14 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
         advanceBtn.layer.masksToBounds = true
         advanceBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
         
+        informationView.layer.cornerRadius = 7
+        informationView.layer.shadowRadius = 2.5
+        informationView.layer.masksToBounds = true
+        informationView.layer.shadowColor = UIColor.systemGray.cgColor
+        informationView.isHidden = true
+        informationView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
@@ -55,6 +63,52 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
            
        tableView.reloadData()
        }
+    
+    @IBOutlet weak var informationView: UIView!
+    
+    @IBAction func informationBtn(_ sender: Any) {
+        tableView.alpha = 1
+        addActivityBtn.alpha = 1
+        advanceBtn.alpha = 1
+        informationView.alpha = 0
+        UIView.animate(withDuration: 1.5, animations: {
+            self.tableView.alpha = 0
+            self.addActivityBtn.alpha = 0
+            self.advanceBtn.alpha = 0
+            self.tableView.isHidden = true
+            self.addActivityBtn.isHidden = true
+            self.advanceBtn.isHidden = true
+            self.informationView.alpha = 1
+            self.informationView.isHidden = false
+            
+            
+        })
+        
+        
+    }
+    
+    
+    @IBAction func closeBtn(_ sender: Any) {
+        tableView.alpha = 0
+               addActivityBtn.alpha = 0
+               advanceBtn.alpha = 0
+               informationView.alpha = 1
+               UIView.animate(withDuration: 1.5, animations: {
+                   self.tableView.alpha = 1
+                   self.addActivityBtn.alpha = 1
+                   self.advanceBtn.alpha = 1
+                   self.tableView.isHidden = false
+                   self.addActivityBtn.isHidden = false
+                   self.advanceBtn.isHidden = false
+                   self.informationView.alpha = 0
+                   self.informationView.isHidden = true
+                   
+                   
+               })
+        
+        
+        
+    }
     
     
     @IBOutlet weak var addActivityBtn: UIButton!

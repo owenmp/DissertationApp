@@ -570,6 +570,29 @@ class FinalDatabase {
            
        }
     
+    
+    func getSymptoms(date: String) -> [Symptom] {
+        var symptoms : [Symptom] = []
+        var statement: OpaquePointer? = nil
+        let query = "SELECT * FROM SYMPTOMS WHERE DATE = '\(date)';"
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+            var objectDate = date
+            var name = stringAtField(statement!, fieldIndex: 1)
+            var drugs = stringAtField(statement!, fieldIndex: 2)
+            var description = stringAtField(statement!, fieldIndex: 3)
+            var objectSymptom = Symptom(Date: date, Name: name, Description: description, Drugs: drugs)
+            symptoms.append(objectSymptom)
+
+            
+            }
+            sqlite3_finalize(statement)
+            
+        }
+        return symptoms
+    }
+    
+    
     func getPlan(date: String) -> [ActivityPlan] {
         var plan : [ActivityPlan] = []
         var statement: OpaquePointer? = nil
@@ -979,6 +1002,31 @@ sqlite3_finalize(statement)
         
     }
     
+    
+    func addNewSymptom(symptom: Symptom){
+        var insertStatement: OpaquePointer?
+        let insertSymptomStatement = "INSERT INTO SYMPTOMS (DATE,NAME,DRUGS,DESCRIPTION) VALUES (?,?,?,?);"
+        if sqlite3_prepare_v2(database,insertSymptomStatement, -1, &insertStatement, nil) == SQLITE_OK {
+            let insertedDate = symptom.date as NSString
+            let insertedName = symptom.Name as NSString
+            let insertedDrug = symptom.Drugs as NSString
+            let insertedDescription = symptom.Description as NSString
+            sqlite3_bind_text(insertStatement, 1, insertedDate.utf8String, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_text(insertStatement, 2, insertedName.utf8String, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_text(insertStatement, 3, insertedDrug.utf8String, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_text(insertStatement, 4, insertedDescription.utf8String, -1, SQLITE_TRANSIENT)
+        if sqlite3_step(insertStatement) == SQLITE_DONE {
+            print("\nSuccessfully inserted row.")
+          } else {
+            print("\nCould not insert row.")
+          }
+        } else {
+          print("\nINSERT statement is not prepared.")
+        }
+        sqlite3_finalize(insertStatement)
+            
+
+    }
     
     
     

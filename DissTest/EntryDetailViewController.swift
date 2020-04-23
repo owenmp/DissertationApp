@@ -57,11 +57,17 @@ class EntryDetailViewController: UIViewController {
         productivityDescription = getProductivityDescription(value: valueForProductivity)
         productivityDescLbl.text = productivityDescription
         locationValueLbl.text = valueForLocation
+        symptomsBtn.layer.backgroundColor = UIColor.systemBlue.cgColor
+        symptomsBtn.layer.cornerRadius = 7
+        symptomsBtn.layer.masksToBounds = true
+        
         
         
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBOutlet weak var symptomsBtn: UIButton!
     
     @IBOutlet weak var locationValueLbl: UILabel!
     
@@ -189,6 +195,9 @@ class EntryDetailViewController: UIViewController {
         if segue.identifier == "activities" {
             let activitiesVC = segue.destination as! EntryActivitiesTableViewController
             activitiesVC.dateValue = valueForDate
+        } else if segue.identifier == "symptomIdentifier" {
+            let symptomsVC = segue.destination as! entrySymptomsTableViewController
+            symptomsVC.dateString = valueForDate
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
