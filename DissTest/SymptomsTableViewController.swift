@@ -70,6 +70,46 @@ class SymptomsTableViewController: UITableViewController {
                return 108
        }
     
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    {
+        
+      
+        
+//        // 1
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+//        // 2
+            let deleteMenu = UIAlertController(title: nil, message: "Are you sure you want to delete \(self.symptoms[indexPath.row].Name)", preferredStyle: .actionSheet)
+//
+            let confirmAction = UIAlertAction(title: "Yes", style: .default, handler: {
+                action in print("deleted \(self.symptoms[indexPath.row].Name)")
+                
+                self.database.databaseStore.deleteSymptom(symptom: self.symptoms[indexPath.row])
+                self.symptoms.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                
+                
+                
+                })
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            
+            
+
+       deleteMenu.addAction(confirmAction)
+       deleteMenu.addAction(cancelAction)
+
+       self.present(deleteMenu, animated: true, completion: nil)
+        })
+
+        return [deleteAction]
+        }
+    
+    
+    
+    
+    
+    
 
     /*
     // Override to support conditional editing of the table view.

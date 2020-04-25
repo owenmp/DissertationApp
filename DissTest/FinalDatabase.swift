@@ -1299,14 +1299,60 @@ sqlite3_finalize(statement)
 //                    return moodValue
 //            }
     
-
+    func deleteGoal(goal: ActivityPlan) {
+         var deleteStatement: OpaquePointer?
+         var nameForDelete = ""
+         nameForDelete = goal.name
+         var dateForDelete = goal.date
+         var descriptionForDelete = goal.description
+        var completionForDelete = goal.completed
+         
+         var deleteStatementString = "DELETE FROM DailyPlan WHERE DATE = '\(dateForDelete)' AND NAME = '\(nameForDelete)' AND DESCRIPTION = '\(descriptionForDelete)' AND COMPLETED = \(completionForDelete);"
+       if sqlite3_prepare_v2(database, deleteStatementString, -1, &deleteStatement, nil) ==
+               SQLITE_OK {
+             if sqlite3_step(deleteStatement) == SQLITE_DONE {
+               print("\nSuccessfully deleted row.")
+             } else {
+               print("\nCould not delete row.")
+             }
+           } else {
+             print("\nDELETE statement could not be prepared")
+           }
+           
+           sqlite3_finalize(deleteStatement)
+         }
+    
+    
+    func deleteSymptom(symptom: Symptom) {
+        var deleteStatement: OpaquePointer?
+        var nameForDelete = ""
+        nameForDelete = symptom.Name
+        var dateForDelete = symptom.date
+        var descriptionForDelete = symptom.Description
+        var drugForDelete = symptom.Drugs
+        var deleteStatementString = "DELETE FROM SYMPTOMS WHERE DATE = '\(dateForDelete)' AND NAME = '\(nameForDelete)' AND DRUGS = '\(drugForDelete)' AND DESCRIPTION = '\(descriptionForDelete)';"
+      if sqlite3_prepare_v2(database, deleteStatementString, -1, &deleteStatement, nil) ==
+              SQLITE_OK {
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+              print("\nSuccessfully deleted row.")
+            } else {
+              print("\nCould not delete row.")
+            }
+          } else {
+            print("\nDELETE statement could not be prepared")
+          }
+          
+          sqlite3_finalize(deleteStatement)
+        }
+    
+    
     
     func searchEntries(filter: String, value: String) -> [Mood]{
        // var moodRead: Mood!
         var moodArray: [Mood] = []
         var query = ""
         var percent = "%"
-        if filter == "Mood" || filter == "Stress" || filter == "Productivity" || filter == "Exercise" || filter == "Sleep" || filter == "Alcohol" || filter == "Water" {
+        if filter == "Mood" || filter == "Stress" || filter == "Productivity" || filter == "ExerciseHours" || filter == "SleepHours" || filter == "Alcohol" || filter == "Water" {
              query = "SELECT * FROM MAIN WHERE (\(filter)) = (\(value));"
         } else if filter == "Notes"{
             percent += value

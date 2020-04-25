@@ -115,6 +115,41 @@ class todaysPlanTableViewController: UITableViewController {
         
         //print(plan[indexPath.row].name)
     }
+    
+    
+        override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+        {
+            
+          
+            
+    //        // 1
+            let deleteAction = UITableViewRowAction(style: .default, title: "Delete" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+    //        // 2
+                let deleteMenu = UIAlertController(title: nil, message: "Are you sure you want to delete \(self.plan[indexPath.row].name)", preferredStyle: .actionSheet)
+    //
+                let confirmAction = UIAlertAction(title: "Yes", style: .default, handler: {
+                    action in print("deleted \(self.plan[indexPath.row].name)")
+                    
+                    self.database.databaseStore.deleteGoal(goal: self.plan[indexPath.row])
+                    self.plan.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    
+                    
+                    
+                    })
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+                
+                
+
+           deleteMenu.addAction(confirmAction)
+           deleteMenu.addAction(cancelAction)
+
+           self.present(deleteMenu, animated: true, completion: nil)
+            })
+
+            return [deleteAction]
+            }
 
     /*
     // Override to support conditional editing of the table view.

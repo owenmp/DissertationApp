@@ -31,6 +31,8 @@ class detailActivityViewController: UIViewController {
         detailBackground.layer.backgroundColor = UIColor.systemGray6.cgColor
         // Do any additional setup after loading the view.
         saveBtn.layer.backgroundColor = UIColor.systemBlue.cgColor
+        lengthTxt.keyboardType = UIKeyboardType.numberPad
+        minutesTxt.keyboardType = UIKeyboardType.numberPad
     
     }
     

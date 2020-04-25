@@ -155,6 +155,34 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
             
         }
     }
+        func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+        {
+            
+          
+            
+    //        // 1
+            let deleteAction = UITableViewRowAction(style: .default, title: "Delete" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+    //        // 2
+                let deleteMenu = UIAlertController(title: nil, message: "Are you sure you want to delete \(entryActivities[indexPath.row].name)", preferredStyle: .actionSheet)
+    //
+                let confirmAction = UIAlertAction(title: "Yes", style: .default, handler: {
+                    action in print("deleted \(entryActivities[indexPath.row].name)")
+                    entryActivities.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    })
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+                
+                
+
+           deleteMenu.addAction(confirmAction)
+           deleteMenu.addAction(cancelAction)
+
+           self.present(deleteMenu, animated: true, completion: nil)
+            })
+
+            return [deleteAction]
+            }
     
     
 //     func tableView(_tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

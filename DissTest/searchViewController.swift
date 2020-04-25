@@ -25,7 +25,7 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     let cellReuseIdentifier = "searchIdentifier"
     @IBOutlet weak var pickerText: UITextField!
-    let options = ["Notes","Water","Exercise","Location","Mood","Stress","Productivity","Sleep","Activities","Alcohol"]
+    let options = ["Notes","Water","ExerciseHours","Location","Mood","Stress","Productivity","SleepHours","Activities","Alcohol"]
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -106,6 +106,13 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         selectionTxt.text = options[row]
         option = options[row]
         valueForSearch = option
+        if valueForSearch == "SleepHours" || valueForSearch == "ExerciseHours" || valueForSearch ==  "Water" || valueForSearch == "Mood" || valueForSearch ==  "Stress" || valueForSearch == "Productivity" {
+            textSearch.keyboardType = UIKeyboardType.numberPad
+           // sleepHoursTxt.keyboardType = UIKeyboardType.numberPad
+
+        } else {
+            textSearch.keyboardType = UIKeyboardType.default
+        }
         print(options[row])
     }
     

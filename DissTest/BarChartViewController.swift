@@ -13,7 +13,7 @@ import Charts
 class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     var option = "SleepHours"
     var valueForSearch = "8"
-    let options = ["Water","Exercise","SleepHours","Location","Alcohol"]
+    let options = ["Water","ExerciseHours","SleepHours","Location","Alcohol"]
     var db = LogsViewController()
     var formatter = ChartStringFormatter()
     
@@ -48,8 +48,22 @@ class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerV
     
     
     @IBAction func pdfButton(_ sender: Any) {
-        let pdfFilePath = barChart.exportAsPdfFromView()
-        print(pdfFilePath)
+        let alert = UIAlertController(title: "PDF", message: "Are you sure you want to save this chart as a PDF?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+            action in
+            let pdfFilePath = self.barChart.exportAsPdfFromView()
+            print(pdfFilePath)
+            
+            let secondAlert = UIAlertController(title: "Confirmed", message: "Chart saved to \(pdfFilePath)", preferredStyle: .alert)
+            secondAlert.addAction(UIAlertAction(title: "Copy to clipboard", style: .default, handler: {
+                action in
+                UIPasteboard.general.string = pdfFilePath
+            }))
+            self.present(secondAlert,animated: true)
+            
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert,animated: true)
     }
     
     @IBOutlet weak var createBtn: UIButton!

@@ -62,7 +62,12 @@ class LifestyleEntryViewController: UIViewController{
         informationView.layer.shadowColor = UIColor.systemGray.cgColor
         informationView.layer.shadowRadius = 2.5
         informationView.layer.backgroundColor = UIColor.systemGray6.cgColor
-        //sleepHoursTxt.keyboardType = UIKeyboardType.numberPad
+        sleepHoursTxt.keyboardType = UIKeyboardType.numberPad
+        waterTxt.keyboardType = UIKeyboardType.numberPad
+        sleepMinutes.keyboardType = UIKeyboardType.numberPad
+        exerciseHouseTxt.keyboardType = UIKeyboardType.numberPad
+        exerciseMinutes.keyboardType = UIKeyboardType.numberPad
+        alcoholTxt.keyboardType = UIKeyboardType.numberPad
 
         // Do any additional setup after loading the view.
     }

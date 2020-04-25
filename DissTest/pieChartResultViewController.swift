@@ -14,7 +14,7 @@ class pieChartResultViewController: UIViewController {
     let mood: [String] = ["Sleep","Water","Stress","Exercise","Alcohol","Productivity"]
     //let values = []
     var databaseCall = LogsViewController()
-    var valueForPie = 0
+    var valueForPie = 1
     
    // var valuesForPie: [Int] = []
    
@@ -39,6 +39,8 @@ class pieChartResultViewController: UIViewController {
         pie.layer.shadowOffset = .zero
         //pie.layer.
         let legend = pie.legend
+        pie.holeRadiusPercent = 0
+        pie.transparentCircleRadiusPercent = 0
         
         
         
@@ -50,6 +52,30 @@ class pieChartResultViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func createPdfBtn(_
+    sender: Any) {
+        
+        let alert = UIAlertController(title: "PDF", message: "Are you sure you want to save this chart as a PDF?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+            action in
+            let pdfFilePath = self.pie.exportAsPdfFromView()
+            print(pdfFilePath)
+            
+            let secondAlert = UIAlertController(title: "Confirmed", message: "Chart saved to \(pdfFilePath)", preferredStyle: .alert)
+            secondAlert.addAction(UIAlertAction(title: "Copy to clipboard", style: .default, handler: {
+                action in
+                UIPasteboard.general.string = pdfFilePath
+            }))
+            self.present(secondAlert,animated: true)
+            
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert,animated: true)
+        
+    }
+    
+    
     
     @IBOutlet weak var valueView: UIView!
     
@@ -136,10 +162,9 @@ class pieChartResultViewController: UIViewController {
         
         pieChartData.setValueFormatter(formatter)
         // 4. Assign it to the chart’s data
-        
-        
 
         pie.data = pieChartData
+        pie.animate(yAxisDuration: 1.5)
 
         
 
@@ -150,21 +175,54 @@ class pieChartResultViewController: UIViewController {
       var colors: [UIColor] = []
       for _ in 0..<numbersOfColor {
         
+       // Double(arc4random_uniform(256))
+        
 //        let red = Double(arc4random_uniform(256))
 //        let green = Double(arc4random_uniform(256))
 //        let blue = Double(arc4random_uniform(256))
 //        let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
 //        colors.append(color)
-        colors.append(UIColor.red)
-        colors.append(UIColor.yellow)
-        colors.append(UIColor.green)
-        colors.append(UIColor.blue)
-        colors.append(UIColor.systemPink)
-        colors.append(UIColor.purple)
+        colors.append(getColourForCell(value: 6))
+        colors.append(getColourForCell(value: 1))
+        colors.append(getColourForCell(value: 5))
+        colors.append(getColourForCell(value: 4))
+        colors.append(getColourForCell(value: 8))
+        colors.append(getColourForCell(value: 10))
         
       }
       return colors
     }
+    
+    
+    func getColourForCell(value: Int) -> UIColor {
+          let number = value
+          switch number {
+          case 1 :
+            return UIColor.init(red: 0.521569, green: 0.03921, blue: 0.003921, alpha: 1)
+              case 2:
+                  return UIColor.init(red: 0.98823529, green: 0.83921569, blue: 0.8, alpha: 1)
+              case 3:
+                  return UIColor.init(red: 0.98823529, green: 0.9911111, blue: 0.90666667, alpha: 1)
+              case 4:
+                return UIColor.init(red: 0.011765, green: 0.0039216, blue: 0.3686274, alpha: 1)
+          case 5:
+                  return UIColor.init(red: 0.365, green: 0.6353, blue: 0.8235, alpha: 1)
+          case 6:
+              return UIColor.init(red: 0.36863, green: 0.823529, blue: 0.5804, alpha: 1)
+              case 7:
+                  return UIColor.init(red: 0.894117, green: 0.988235, blue: 0.8, alpha: 1)
+              case 8:
+                return UIColor.init(red: 0.07056, green: 0.30980, blue: 0.003922, alpha: 1)
+              case 9:
+                  return UIColor.init(red: 0.7099, green: 0.9215, blue: 0.74901, alpha: 1)
+              case 10:
+              return UIColor.init(red: 0.03922, green: 0.30981, blue: 0.278431, alpha: 1)
+          default: return UIColor.systemBlue
+          }
+          
+          
+          
+      }
 
     /*
     // MARK: - Navigation
