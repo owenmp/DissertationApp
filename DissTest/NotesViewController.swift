@@ -150,7 +150,7 @@ class NotesViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:  {
                 action in self.database.databaseStore.insertMoodObject(dailyEntry: dailyEntry)
             self.database.databaseStore.insertDailyActivities(dailyActivities: entryActivities, date: dateString)
-           // self.database.checkComplete()
+            //self.database.checkComplete()
             
             
                 self.performSegue(withIdentifier: "unwindToLogsView", sender: self)

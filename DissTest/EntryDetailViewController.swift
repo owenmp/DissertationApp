@@ -22,6 +22,8 @@ class EntryDetailViewController: UIViewController {
     var valueForProductivity = 0
     var valueForLocation = ""
     var valueForDate = ""
+    var valueForSleepMins = 0
+    var valueForExerciseMins = 0
     var valueForColor = UIColor.systemGray6.cgColor
 
     override func viewDidLoad() {
@@ -29,11 +31,34 @@ class EntryDetailViewController: UIViewController {
         self.title = valueForDate
         let colour = getColourForCell(value: valueForMood)
         moodValueLbl.text = String(valueForMood)
-        alcoholValueLbl.text = String(valueForAlcohol)
+        var alcoholText = ""
+        alcoholText += String(valueForAlcohol)
+        alcoholText += " Units"
+        
+        alcoholValueLbl.text = alcoholText
         productivityValueLbl.text = String(valueForProductivity)
-        waterValueLbl.text = String(valueForWater)
-        sleepValueLbl.text = String(valueForSleep)
-        exerciseValueLbl.text = String(valueForExercise)
+        
+        var waterText = ""
+        waterText += String(valueForWater)
+        waterText += " Litres"
+        
+        waterValueLbl.text = waterText
+        var sleepHoursText = ""
+        sleepHoursText += String(valueForSleep)
+        sleepHoursText += "h"
+        sleepValueLbl.text = sleepHoursText
+        var exerciseHoursText = ""
+        exerciseHoursText += String(valueForExercise)
+        exerciseHoursText += "h"
+        exerciseValueLbl.text = exerciseHoursText
+        var sleepMinsText = ""
+            sleepMinsText += String(valueForSleepMins)
+        sleepMinsText += "m"
+        sleepMinsLbl.text = sleepMinsText
+        var exerciseMinsText = ""
+        exerciseMinsText += String(valueForExerciseMins)
+        exerciseMinsText += "m"
+        exerciseMinsLbl.text = exerciseMinsText
         notesLbl.text = valueForNotes
         stressValueLbl.text = String(valueForStress)
         lifestyleView.layer.backgroundColor = colour.cgColor
@@ -61,11 +86,23 @@ class EntryDetailViewController: UIViewController {
         symptomsBtn.layer.cornerRadius = 7
         symptomsBtn.layer.masksToBounds = true
         
+        goalsBtn.layer.backgroundColor = UIColor.systemGreen.cgColor
+              goalsBtn.layer.cornerRadius = 7
+              goalsBtn.layer.masksToBounds = true
         
         
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBOutlet weak var goalsBtn: UIButton!
+    @IBAction func goalsBtn(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var exerciseMinsLbl: UILabel!
+    
+    @IBOutlet weak var sleepMinsLbl: UILabel!
     
     @IBOutlet weak var symptomsBtn: UIButton!
     
@@ -198,6 +235,12 @@ class EntryDetailViewController: UIViewController {
         } else if segue.identifier == "symptomIdentifier" {
             let symptomsVC = segue.destination as! entrySymptomsTableViewController
             symptomsVC.dateString = valueForDate
+        } else if segue.identifier == "goals" {
+            let goalsVC = segue.destination as! entryGoalsTableViewController
+            goalsVC.dateString = valueForDate
+            
+            
+            
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.

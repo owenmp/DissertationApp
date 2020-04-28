@@ -154,6 +154,8 @@ class EntriesTableViewController: UITableViewController {
                 entryDetailVC.valueForProductivity = entries[indexPath.row].Productivity
                 entryDetailVC.valueForDate = entries[indexPath.row].Date
                 entryDetailVC.valueForLocation = entries[indexPath.row].Location
+                entryDetailVC.valueForExerciseMins = entries[indexPath.row].ExerciseMinutes
+                entryDetailVC.valueForSleepMins = entries[indexPath.row].SleepMinutes
 //                entryDetailVC.valueForColor = getColourForCell(value: entries[indexPath.row].Mood) as! CGColor
                 
 //                entryDetailVC.valueForAlcohol = entries[indexPath.row].Alcohol

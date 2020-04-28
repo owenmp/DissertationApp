@@ -20,12 +20,13 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var option = ""
     var entries: [Mood] = []
     var database = LogsViewController()
+    
   //  @IBOutlet weak var pickerView: UIPickerView!
     
     
     let cellReuseIdentifier = "searchIdentifier"
     @IBOutlet weak var pickerText: UITextField!
-    let options = ["Notes","Water","ExerciseHours","Location","Mood","Stress","Productivity","SleepHours","Activities","Alcohol"]
+    let options = ["Notes","Water","Exercise","Location","Mood","Stress","Productivity","Sleep","Activities","Alcohol"]
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -43,20 +44,66 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         pickerView.delegate = self
         selectionTxt.inputView = pickerView
+        hoursTxt.isHidden = true
+        minutesTxt.isHidden = true
+        hoursTxt.keyboardType = UIKeyboardType.numberPad
+        minutesTxt.keyboardType = UIKeyboardType.numberPad
+
+        
 
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var minutesTxt: UITextField!
+    
+    @IBAction func minutesTxt(_ sender: Any) {
+    }
+    
+    @IBAction func hoursTxt(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var hoursTxt: UITextField!
+    
     
     @IBAction func searchBtn(_ sender: Any) {
         //self.viewDidLoad()
+        if textSearch.isHidden == false {
         valueSearched = textSearch.text! 
         entries.removeAll()
+            if valueForSearch == "Notes" {
+                entries = database.databaseStore.searchNotes(hours: valueSearched)
+                self.tableView.reloadData()
+                self.viewDidLoad()
+            
+            } else {
         entries = database.databaseStore.searchEntries(filter: valueForSearch, value: String(valueSearched))
         self.tableView.reloadData()
         self.viewDidLoad()
+            }
+        } else {
+            hoursTxt.isHidden = false
+            minutesTxt.isHidden = false
+            var hoursForSearch = hoursTxt.text!
+            var minutesForSearch = minutesTxt.text!
+            valueSearched = selectionTxt.text!
+            if valueSearched == "Sleep" {
+            entries.removeAll()
+            entries = database.databaseStore.searchSleep(hours: hoursForSearch, minutes: minutesForSearch)
+            self.tableView.reloadData()
+            } else if valueSearched == "Exercise" {
+                entries.removeAll()
+                entries = database.databaseStore.searchExercise(hours: hoursForSearch, minutes: minutesForSearch)
+                self.tableView.reloadData()
+                
+            }
+            //self.viewDidLoad()
+            
+            
+        }
        // print(entries[0].Date)
         //print(valueSearched)
+        
+        
         
     }
     
@@ -103,16 +150,60 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        textSearch.text = ""
+        hoursTxt.text = ""
+        minutesTxt.text = ""
         selectionTxt.text = options[row]
         option = options[row]
         valueForSearch = option
-        if valueForSearch == "SleepHours" || valueForSearch == "ExerciseHours" || valueForSearch ==  "Water" || valueForSearch == "Mood" || valueForSearch ==  "Stress" || valueForSearch == "Productivity" {
-            textSearch.keyboardType = UIKeyboardType.numberPad
-           // sleepHoursTxt.keyboardType = UIKeyboardType.numberPad
+        if valueForSearch == "Sleep" || valueForSearch == "Exercise" {
+            
+            if hoursTxt.isHidden == true {
+                hoursTxt.alpha = 0
+                minutesTxt.alpha = 0
+                textSearch.alpha = 1
+                UITextField.animate(withDuration: 1, animations: {
+                    self.hoursTxt.alpha = 1
+                    self.minutesTxt.alpha = 1
+                    self.textSearch.alpha = 0
+                        self.hoursTxt.isHidden = false
+                    self.minutesTxt.isHidden = false
+                    self.textSearch.isHidden = true
+                })
+                
+            }
+          
+          
+            
+
 
         } else {
-            textSearch.keyboardType = UIKeyboardType.default
+            if textSearch.isHidden == true {
+                hoursTxt.alpha = 1
+                minutesTxt.alpha = 1
+                textSearch.alpha = 0
+                UITextField.animate(withDuration: 0.5, animations: {
+                    self.hoursTxt.alpha = 0
+                    self.minutesTxt.alpha = 0
+                    self.textSearch.alpha = 1
+                    self.hoursTxt.isHidden = true
+                    self.minutesTxt.isHidden = true
+                    self.textSearch.isHidden = false
+                })
+                
+            }
+           
+            
+//            textSearch.keyboardType = UIKeyboardType.default
         }
+        
+        if valueForSearch == "Sleep" || valueForSearch == "Exercise" || valueForSearch ==  "Water" || valueForSearch == "Mood" || valueForSearch ==  "Stress" || valueForSearch == "Productivity" {
+                    textSearch.keyboardType = UIKeyboardType.numberPad
+        } else {
+                textSearch.keyboardType = UIKeyboardType.default
+                
+            }
+                   // sleepHoursTxt.keyboardType = UIKeyboardType.numberPad
         print(options[row])
     }
     
@@ -174,6 +265,8 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             entryDetailVC.valueForSleep = entries[indexPath.row].Sleep
             entryDetailVC.valueForProductivity = entries[indexPath.row].Productivity
             entryDetailVC.valueForDate = entries[indexPath.row].Date
+            entryDetailVC.valueForExerciseMins = entries[indexPath.row].ExerciseMinutes
+                           entryDetailVC.valueForSleepMins = entries[indexPath.row].SleepMinutes
 
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.

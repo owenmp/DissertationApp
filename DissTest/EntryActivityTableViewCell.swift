@@ -21,6 +21,7 @@ class EntryActivityTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBOutlet weak var minutesLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
     

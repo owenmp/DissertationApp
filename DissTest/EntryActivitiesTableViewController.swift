@@ -40,12 +40,17 @@ class EntryActivitiesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "activities", for: indexPath)as! EntryActivityTableViewCell
         let wantedName = activities[indexPath.row].name
+        
         //let wantedType = activities[indexPath.row].type
         let wantedDescription = activities[indexPath.row].description
         let wantedLength = activities[indexPath.row].length
+        var lengthText = String(wantedLength) + "h"
         cell.nameLbl.text = wantedName
         cell.descriptionLbl.text = wantedDescription
-        cell.lengthLbl.text = String(wantedLength)
+        cell.lengthLbl.text = lengthText
+        let wantedMins = activities[indexPath.row].minutes
+        var minutesText = String(wantedMins) + "m"
+        cell.minutesLbl.text = minutesText
         
 
         // Configure the cell...

@@ -29,7 +29,7 @@ class LogsViewController: UIViewController {
         
 //       dateForCheck.dateFormat = "dd-MM-yyyy"
 //        let dateCheckString = dateForCheck.string(from:dateValue)
-       // checkComplete()
+        checkComplete()
         
         
         
@@ -72,6 +72,24 @@ class LogsViewController: UIViewController {
         symptomsBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
         symptomsBtn.layer.cornerRadius = 5
         symptomsBtn.layer.masksToBounds = true
+        //databaseStore.getGoodSleepAverage()
+        
+       // var array : [String] = ["Gym", "Diss","Diss","Football","Gym"]
+        
+        var badDates = databaseStore.getBadDates()
+        var badActivity = databaseStore.getGoodActivities(dates: badDates)
+        var a = badActivity.removingDuplicate()
+        for i in badActivity {
+            print(i)
+        }
+        
+        databaseStore.searchNotes(hours: "Today")
+//        let unique = databaseStore.getGoodDates()
+//        let a = databaseStore.getGoodActivities(dates: unique)
+//        let removedArray = a.removingDuplicate()
+//        for i in removedArray {
+//            print(i)
+//        }
         
         //var sym = Symptom(Date: "22-04-2020", Name: "Coughing", Description: "Woke up with a painful cough", Drugs: "Paracetemol")
        // databaseStore.addNewSymptom(symptom: sym)
@@ -101,18 +119,31 @@ class LogsViewController: UIViewController {
 //
 //    }
     
-//    func checkComplete(){
-//        //dateForCheck.dateStyle = "dd-MM-yyyy"
-//        dateForCheck.dateFormat = "dd-MM-yyyy"
-//        let dateCheckString = dateForCheck.string(from:dateValue)
-//        var check = databaseStore.checkEntryComplete(date: dateCheckString)
-//        if check == true {
-//            startBtn.isHidden = true
-//        } else {
-//            startBtn.isHidden = false
-//        }
-//
-//    }
+    func checkComplete()-> Bool {
+        //dateForCheck.dateStyle = "dd-MM-yyyy"
+        dateForCheck.dateFormat = "dd-MM-yyyy"
+        let dateCheckString = dateForCheck.string(from:dateValue)
+        var check = databaseStore.checkEntryComplete(date: dateCheckString)
+        if check == true {
+            startBtn.isHidden = true
+        } else {
+            startBtn.isHidden = false
+        }
+        return check
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        var check = checkComplete()
+        
+        return check
+        
+    }
+    
+    
+    
+    
+    
     
     
     @IBOutlet weak var symptomsBtn: UIButton!
