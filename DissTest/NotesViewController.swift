@@ -52,6 +52,8 @@ class NotesViewController: UIViewController {
             print (i.length)
         }
         
+        notesLbl.adjustsFontSizeToFitWidth = true
+        
         print(valueForLocation)
        // dailyEntry.Date = dateString
       //  var dailyEntry: Mood = Mood(Date: dateString, Sleep: valueForSleep, Water: valueForWater, Stress: valueForStress, Exercise: ValueForExercise, Location: valueForLocation, Alcohol: valueForAlcohol, Mood: valueForMood, Productivity: valueForProductivity, Notes: "Today was a  bad day")
@@ -135,6 +137,10 @@ class NotesViewController: UIViewController {
         
         
     }
+    
+    
+    @IBOutlet weak var notesLbl: UILabel!
+    
     @IBOutlet weak var informationBtn: UIBarButtonItem!
     @IBAction func saveBtn(_ sender: Any) {
         guard var notesValue = notesTxt.text else{ return

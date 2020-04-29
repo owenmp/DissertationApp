@@ -169,9 +169,16 @@ class LifestyleEntryViewController: UIViewController{
                    self.informationView.alpha = 0
                    self.informationView.isHidden = false
                })
-        
+        sleepTxt.adjustsFontSizeToFitWidth = true
+        waterLbl.adjustsFontSizeToFitWidth = true
         
     }
+    
+    
+    @IBOutlet weak var waterLbl: UILabel!
+    
+    @IBOutlet weak var sleepTxt: UILabel!
+    
     
     @IBOutlet weak var exerciseMinutes: UITextField!
     

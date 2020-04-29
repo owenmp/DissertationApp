@@ -45,16 +45,16 @@ class LogsViewController: UIViewController {
 //        print(check2)
 
         self.navigationController?.navigationBar.topItem?.title = dateString
-        dailyQuoteView.layer.borderWidth = 5
-        dailyQuoteView.layer.borderColor = UIColor.systemGray6.cgColor
-        dailyQuoteView.layer.backgroundColor = UIColor.systemGray6.cgColor
-        dailyQuoteView.layer.shadowColor = UIColor.black.cgColor
-        
-        dailyQuoteView.layer.shadowOpacity = 10
-        dailyQuoteView.layer.shadowOffset = .zero
-        dailyQuoteView.layer.shadowRadius = 20
-        dailyQuoteView.layer.cornerRadius = 20
-        dailyQuoteView.layer.masksToBounds = true
+//        dailyQuoteView.layer.borderWidth = 5
+//        dailyQuoteView.layer.borderColor = UIColor.systemGray6.cgColor
+//        dailyQuoteView.layer.backgroundColor = UIColor.systemGray6.cgColor
+//        dailyQuoteView.layer.shadowColor = UIColor.black.cgColor
+//
+//        dailyQuoteView.layer.shadowOpacity = 10
+//        dailyQuoteView.layer.shadowOffset = .zero
+//        dailyQuoteView.layer.shadowRadius = 20
+//        dailyQuoteView.layer.cornerRadius = 20
+//        dailyQuoteView.layer.masksToBounds = true
         
         dailyEntryView.layer.cornerRadius = 20
         dailyEntryView.layer.masksToBounds = true
@@ -64,7 +64,10 @@ class LogsViewController: UIViewController {
         startBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
         startBtn.layer.cornerRadius = 5
         startBtn.layer.masksToBounds = true
-        dailyTxt.adjustsFontSizeToFitWidth = true
+        entryTxt.adjustsFontSizeToFitWidth = true
+        symptomTxt.adjustsFontSizeToFitWidth = true
+        
+//        dailyTxt.adjustsFontSizeToFitWidth = true
         symptomsView.layer.backgroundColor = UIColor.systemGray6.cgColor
         symptomsView.layer.cornerRadius = 20
         symptomsView.layer.masksToBounds = true
@@ -132,19 +135,21 @@ class LogsViewController: UIViewController {
         return check
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
-        var check = checkComplete()
-        
-        return check
-        
-    }
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//
+//        var check = checkComplete()
+//
+//        return check
+//
+//    }
+//
     
     
     
     
+    @IBOutlet weak var symptomTxt: UILabel!
     
-    
+    @IBOutlet weak var entryTxt: UILabel!
     
     @IBOutlet weak var symptomsBtn: UIButton!
     
@@ -153,7 +158,7 @@ class LogsViewController: UIViewController {
     @IBOutlet weak var dailyTxt: UILabel!
     @IBOutlet weak var dailyView: UIView!
     @IBOutlet weak var startBtn: UIButton!
-    @IBOutlet weak var dailyQuoteView: UIView!
+//    @IBOutlet weak var dailyQuoteView: UIView!
     
     @IBOutlet weak var dailyEntryView: UIView!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
