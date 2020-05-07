@@ -233,8 +233,28 @@ class adviceViewController: UIViewController {
     
     @IBAction func pdfBtn(_ sender: Any) {
         
-        let pdfFilePath = backGroundView.exportAsPdfFromView()
+        let pdfFilePath = backGroundView.exportAsPdfFromView(name: "advice")
                print(pdfFilePath)
+        
+        
+        let alert = UIAlertController(title: "PDF", message: "Are you sure you want to save this advice as a PDF?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+            action in
+            var filename = "Advice"
+
+            let pdfFilePath = self.backGroundView.exportAsPdfFromView(name: filename)
+            print(pdfFilePath)
+            
+            let secondAlert = UIAlertController(title: "Confirmed", message: "Advice saved to \(pdfFilePath)", preferredStyle: .alert)
+            secondAlert.addAction(UIAlertAction(title: "Copy to clipboard", style: .default, handler: {
+                action in
+                UIPasteboard.general.string = pdfFilePath
+            }))
+            self.present(secondAlert,animated: true)
+            
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert,animated: true)
         
     }
     

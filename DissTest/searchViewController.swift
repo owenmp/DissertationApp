@@ -74,6 +74,15 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 entries = database.databaseStore.searchNotes(hours: valueSearched)
                 self.tableView.reloadData()
                 self.viewDidLoad()
+            } else if valueForSearch == "Activities" {
+//            hoursTxt.isHidden = true
+//            minutesTxt.isHidden = true
+//            textSearch.isHidden = false
+            entries.removeAll()
+            var dates = database.databaseStore.getActivityDates(activityName: valueSearched)
+            entries = database.databaseStore.getSearchedActivities(dates: dates)
+            self.tableView.reloadData()
+            self.viewDidLoad()
             
             } else {
         entries = database.databaseStore.searchEntries(filter: valueForSearch, value: String(valueSearched))
@@ -96,6 +105,9 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 self.tableView.reloadData()
                 
             }
+                
+                
+            
             //self.viewDidLoad()
             
             

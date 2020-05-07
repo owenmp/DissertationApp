@@ -106,7 +106,9 @@ class lineChartViewController: UIViewController {
         let alert = UIAlertController(title: "PDF", message: "Are you sure you want to save this chart as a PDF?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
             action in
-            let pdfFilePath = self.lineChart.exportAsPdfFromView()
+            
+            
+            let pdfFilePath = self.lineChart.exportAsPdfFromView(name: "LineChart")
             print(pdfFilePath)
             
             let secondAlert = UIAlertController(title: "Confirmed", message: "Chart saved to \(pdfFilePath)", preferredStyle: .alert)

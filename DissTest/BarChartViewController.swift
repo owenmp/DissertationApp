@@ -13,7 +13,7 @@ import Charts
 class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     var option = "SleepHours"
     var valueForSearch = "8"
-    let options = ["Water","ExerciseHours","SleepHours","Location","Alcohol"]
+    let options = ["Water","Exercise","Sleep","Location","Alcohol","Activities"]
     var db = LogsViewController()
     var formatter = ChartStringFormatter()
     
@@ -38,6 +38,11 @@ class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerV
         backgroundView.layer.cornerRadius = 7
         backgroundView.layer.masksToBounds = true
         backgroundView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        
+        hoursTxt.isHidden = true
+        minutesTxt.isHidden = true
+        hoursTxt.keyboardType = UIKeyboardType.numberPad
+        minutesTxt.keyboardType = UIKeyboardType.numberPad
 //        createBtn.layer.cornerRadius = 7
 //        createBtn.layer.masksToBounds = true
 //        createBtn.layer.backgroundColor = UIColor.white.cgColor
@@ -46,12 +51,32 @@ class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerV
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func minutesTxt(_ sender: Any) {
+    }
+    
+    @IBAction func hoursTxt(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var hoursTxt: UITextField!
+    
+    @IBOutlet weak var minutesTxt: UITextField!
+    
     
     @IBAction func pdfButton(_ sender: Any) {
         let alert = UIAlertController(title: "PDF", message: "Are you sure you want to save this chart as a PDF?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
             action in
-            let pdfFilePath = self.barChart.exportAsPdfFromView()
+            var filename = self.option
+            if self.valueTxt.isHidden == false {
+            filename += self.valueForSearch
+            } else {
+                filename += self.hoursTxt.text!
+                filename += "Hours"
+                filename += self.minutesTxt.text!
+                filename += "Minutes"
+                
+            }
+            let pdfFilePath = self.barChart.exportAsPdfFromView(name: filename)
             print(pdfFilePath)
             
             let secondAlert = UIAlertController(title: "Confirmed", message: "Chart saved to \(pdfFilePath)", preferredStyle: .alert)
@@ -83,19 +108,99 @@ class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerV
           }
           
           func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            
+            valueTxt.text = ""
+            hoursTxt.text = ""
+            minutesTxt.text = ""
               searchTxt.text = options[row]
               option = options[row]
               valueForSearch = option
+            if valueForSearch == "Sleep" || valueForSearch == "Exercise" {
+                
+                if hoursTxt.isHidden == true {
+                hoursTxt.alpha = 0
+                minutesTxt.alpha = 0
+                    valueTxt.alpha = 1
+                    
+                    
+                    UITextField.animate(withDuration: 0.25, animations: {
+                                       self.hoursTxt.alpha = 1
+                                       self.minutesTxt.alpha = 1
+                                       self.valueTxt.alpha = 0
+                                           self.hoursTxt.isHidden = false
+                                       self.minutesTxt.isHidden = false
+                                       self.valueTxt.isHidden = true
+                    })
+                    
+                    
+                
+            }
+            } else {
+                if valueTxt.isHidden == true {
+                    hoursTxt.alpha = 1
+                    minutesTxt.alpha = 1
+                    valueTxt.alpha = 0
+                    UITextField.animate(withDuration: 0.25, animations: {
+                        self.hoursTxt.alpha = 0
+                        self.minutesTxt.alpha = 0
+                        self.valueTxt.alpha = 1
+                        self.hoursTxt.isHidden = true
+                        self.minutesTxt.isHidden = true
+                        self.valueTxt.isHidden = false
+                    })
+                    
+                }
+                
+                if valueForSearch == "Water" || valueForSearch == "Alcohol" {
+                    valueTxt.keyboardType = UIKeyboardType.numberPad
+                } else {
+                    valueTxt.keyboardType = UIKeyboardType.default
+                }
+                
+            
+            
             print(option)
+    }
     }
     
     
     
+    
     @IBAction func createBar(_ sender: Any) {
-        valueForSearch = valueTxt.text!
-        print(valueForSearch)
-        print(option)
-        self.viewDidLoad()
+        
+        if valueTxt.isHidden == false {
+            
+            var types = ["Mood","Stress","Productivity"]
+            valueForSearch = valueTxt.text!
+            if option == "Activities" {
+                var dates = db.databaseStore.getActivityDates(name: valueForSearch)
+                var values = db.databaseStore.getBarActivityAverage(dates: dates)
+                setChart(dataPoints: types, values: values)
+            
+                
+            } else{
+            
+            var dataValues = db.databaseStore.getBarAverages(search: option, value: valueForSearch)
+            setChart(dataPoints: types, values: dataValues)
+            }
+        } else {
+            
+            var types = ["Mood","Stress","Productivity"]
+            var hours = hoursTxt.text!
+            var minutes = minutesTxt.text!
+            var dataValues = db.databaseStore.getBarSleepOrExercise(search: option, hours: hours, minutes: minutes)
+            setChart(dataPoints: types, values: dataValues)
+            
+        }
+        
+        
+//        valueForSearch = valueTxt.text!
+//        print(valueForSearch)
+//        print(option)
+//        var array = ["1","2","3"]
+//        var val = [8,3,6]
+//        setChart(dataPoints: array , values: val)
+       // self.viewDidLoad()
     }
     
     

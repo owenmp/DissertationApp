@@ -35,6 +35,19 @@ class TrendsViewController: UIViewController {
         trendsView.layer.cornerRadius = 7
         trendsView.layer.masksToBounds = true
         
+        searchBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        searchBtn.layer.cornerRadius = 7
+        searchBtn.layer.masksToBounds = true
+        
+        barCharts.layer.borderColor = UIColor.black.cgColor
+        barCharts.layer.borderWidth = 0.25
+        calendarBtn.layer.borderWidth = 0.25
+        calendarBtn.layer.borderColor = UIColor.black.cgColor
+        searchBtn.layer.borderWidth = 0.25
+        searchBtn.layer.borderColor = UIColor.black.cgColor
+        
+        adviceBtn.layer.borderWidth = 0.25
+        adviceBtn.layer.backgroundColor = UIColor.black.cgColor
         
         
         //
@@ -46,7 +59,10 @@ class TrendsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var searchBtn: UIButton!
     
+    @IBAction func searchBtn(_ sender: Any) {
+    }
     @IBOutlet weak var ChartsView: UIView!
     @IBOutlet weak var trendsView: UIView!
     @IBOutlet weak var adviceBtn: UIButton!

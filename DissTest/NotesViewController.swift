@@ -88,8 +88,12 @@ class NotesViewController: UIViewController {
         informationView.layer.shadowColor = UIColor.systemGray.cgColor
         informationView.layer.shadowOffset = .zero
         informationView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        informationLbl.text = "Enter any notes about your day that may be relevant to your mood. These notes can be later used to filter your daily entries."
         
     }
+    
+    @IBOutlet weak var informationLbl: UILabel!
+    
     @IBOutlet weak var saveBtn: UIButton!
     
     @IBOutlet weak var backgroundView: UIView!

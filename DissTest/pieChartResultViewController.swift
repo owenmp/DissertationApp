@@ -59,7 +59,9 @@ class pieChartResultViewController: UIViewController {
         let alert = UIAlertController(title: "PDF", message: "Are you sure you want to save this chart as a PDF?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
             action in
-            let pdfFilePath = self.pie.exportAsPdfFromView()
+            var filename = "MoodValue"
+            filename += String(self.valueForPie)
+            let pdfFilePath = self.pie.exportAsPdfFromView(name: filename)
             print(pdfFilePath)
             
             let secondAlert = UIAlertController(title: "Confirmed", message: "Chart saved to \(pdfFilePath)", preferredStyle: .alert)

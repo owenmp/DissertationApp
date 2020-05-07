@@ -68,6 +68,7 @@ class LifestyleEntryViewController: UIViewController{
         exerciseHouseTxt.keyboardType = UIKeyboardType.numberPad
         exerciseMinutes.keyboardType = UIKeyboardType.numberPad
         alcoholTxt.keyboardType = UIKeyboardType.numberPad
+        errorTxt.adjustsFontSizeToFitWidth = true
 
         // Do any additional setup after loading the view.
     }
@@ -142,6 +143,8 @@ class LifestyleEntryViewController: UIViewController{
             self.advanceBtn.isHidden = true
             self.informationView.alpha = 1
             self.informationView.isHidden = false
+            self.informationLbl.text = "An individuals lifestyle can have a big effect on mood. Enter accurately your lifestyle details from today and it will be used to find trends"
+
         })
     }
     
@@ -172,6 +175,8 @@ class LifestyleEntryViewController: UIViewController{
         sleepTxt.adjustsFontSizeToFitWidth = true
         waterLbl.adjustsFontSizeToFitWidth = true
         
+        informationLbl.text = "An individuals lifestyle can have a big effect on mood. Enter accurately your lifestyle details from today and it will be used to find trends"
+        
     }
     
     
@@ -195,6 +200,7 @@ class LifestyleEntryViewController: UIViewController{
     
     @IBOutlet weak var waterView: UIView!
     
+    @IBOutlet weak var informationLbl: UILabel!
     
     @IBOutlet weak var sleepHoursTxt: UITextField!
 //    @IBAction func sleepHoursField(_ sender: Any) {
@@ -383,11 +389,11 @@ class LifestyleEntryViewController: UIViewController{
             errorTxt.isHidden = false
             return false
         } else if valueForSleepMinutes > 59 || valueForSleepMinutes < 0{
-            errorTxt.text = "Minutes for sleep must be between 0 and 59"
+            errorTxt.text = "Minutes for sleep must be under 59"
             errorTxt.isHidden = false
             return false
         }else if valueForExerciseMinutes > 59 || valueForExerciseMinutes < 0 {
-            errorTxt.text = "Minutes for exercise must be between 0 and 59"
+            errorTxt.text = "Minutes for exercise must be under 59"
             errorTxt.isHidden = false
             return false
         } else if ValueForExerciseHours > 23 || ValueForExerciseHours < 0 {

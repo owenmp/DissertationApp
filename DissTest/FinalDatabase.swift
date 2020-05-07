@@ -778,6 +778,164 @@ class FinalDatabase {
 //    }
     
     
+    func getActivityDates (name: String) -> [String] {
+        var dates : [String] = []
+        var statement: OpaquePointer? = nil
+        var query = "SELECT DISTINCT DATE FROM ACTIVITYLOG WHERE NAME = '\(name)';"
+        
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+            let readDate = stringAtField(statement!, fieldIndex: 0)
+            dates.append(readDate)
+            }
+            sqlite3_finalize(statement)
+        }
+        return dates
+    }
+    
+    
+    
+    
+    
+    func getCompleteGoals(dates: [String])  {
+        var completeGoals: [String] = []
+        var total = 0
+        var array: [String] = []
+        var statement: OpaquePointer? = nil
+        var query = "SELECT COMPLETED, DATE FROM DAILYPLAN;"
+        for date in dates {
+            var count = 0
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+            var completedRead = sqlite3_column_int(statement, 0)
+            var date = stringAtField(statement!, fieldIndex: 1)
+            var array: [Int] = []
+            total += Int(completedRead)
+           // var count = 0
+            
+            count += 1
+            }
+            
+            
+            }
+            if total == count {
+                array.append(date)
+                print(date)
+                print("added")
+            
+                
+            } else {
+                print("None added")
+            }
+            
+            
+            
+    
+            
+            
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    func getBarActivityAverage(dates: [String]) -> [Int] {
+        var averages: [Int] = []
+        var statement: OpaquePointer? = nil
+        var mood = 0
+        var stress = 0
+        var productivity = 0
+        var count = 0
+        for date in dates {
+        
+        var query = "SELECT MOOD,STRESS,PRODUCTIVITY FROM MAIN WHERE DATE = '\(date)';"
+            
+            if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+                   while(sqlite3_step(statement) == SQLITE_ROW){
+                   let moodRead = sqlite3_column_int(statement!, 0)
+                   let stressRead = sqlite3_column_int(statement!, 1)
+                   let productivityRead = sqlite3_column_int(statement!, 2)
+                              
+                   mood += Int(moodRead)
+                   stress += Int(stressRead)
+                   productivity += Int(productivityRead)
+                   count += 1
+        }
+                
+            }
+            sqlite3_finalize(statement)
+                if count == 0 {
+                    mood = 0
+                    stress = 0
+                    productivity = 0
+                    averages.append(mood)
+                    averages.append(stress)
+                    averages.append(productivity)
+                } else {
+                    mood /= count
+                    stress /= count
+                    productivity /= count
+                    averages.append(mood)
+                    averages.append(stress)
+                    averages.append(productivity)
+                }
+                print(averages)
+            }
+    return averages
+    }
+    
+    func getBarSleepOrExercise (search: String, hours: String, minutes: String) -> [Int] {
+        var query = ""
+        var averages: [Int] = []
+        var statement: OpaquePointer? = nil
+        if search == "Sleep" {
+            query = "SELECT MOOD,STRESS,PRODUCTIVITY FROM MAIN WHERE SLEEPHOURS = '\(hours)' AND SLEEPMINUTES = '\(minutes)';"
+        }else if search == "Exercise" {
+            query = "SELECT MOOD,STRESS,PRODUCTIVITY FROM MAIN WHERE EXERCISEHOURS = '\(hours)' AND EXERCISEMINUTES = '\(minutes)';"
+            
+        }
+        var mood = 0
+        var stress = 0
+        var productivity = 0
+        var count = 0
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+        let moodRead = sqlite3_column_int(statement!, 0)
+        let stressRead = sqlite3_column_int(statement!, 1)
+        let productivityRead = sqlite3_column_int(statement!, 2)
+                   
+        mood += Int(moodRead)
+        stress += Int(stressRead)
+        productivity += Int(productivityRead)
+        count += 1
+                }
+                   sqlite3_finalize(statement)
+                   if count == 0 {
+                       mood = 0
+                       stress = 0
+                       productivity = 0
+                       averages.append(mood)
+                       averages.append(stress)
+                       averages.append(productivity)
+                   } else {
+                       mood /= count
+                       stress /= count
+                       productivity /= count
+                       averages.append(mood)
+                       averages.append(stress)
+                       averages.append(productivity)
+                   }
+                   print(averages)
+               }
+        return averages
+    }
+    
+    
+    
     func getBarAverages(search: String, value: String) -> [Int] {
         var averages: [Int] = []
         var statement: OpaquePointer? = nil
@@ -1381,6 +1539,12 @@ sqlite3_finalize(statement)
          }
     
     
+    
+    
+    
+    
+    
+    
     func deleteSymptom(symptom: Symptom) {
         var deleteStatement: OpaquePointer?
         var nameForDelete = ""
@@ -1402,6 +1566,86 @@ sqlite3_finalize(statement)
           
           sqlite3_finalize(deleteStatement)
         }
+    
+    
+    func getSearchedActivities(dates: [String]) -> [Mood] {
+        var moodArray: [Mood] = []
+        var statement: OpaquePointer? = nil
+        
+        for i in dates {
+            var query = "SELECT * FROM MAIN WHERE DATE = '\(i)';"
+            if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+            while(sqlite3_step(statement) == SQLITE_ROW){
+                let date = stringAtField(statement!, fieldIndex: 0)
+                     let sleep = sqlite3_column_int(statement!, 1)
+                      let water = sqlite3_column_int(statement!, 2)
+                      let stress = sqlite3_column_int(statement!, 3)
+                      let exercise = sqlite3_column_int(statement!, 4)
+                     let location = stringAtField(statement!,fieldIndex: 5)
+                      let alcohol = sqlite3_column_int(statement!, 6)
+                     let mood = sqlite3_column_int(statement!, 7)
+                      let productivity = sqlite3_column_int(statement!, 8)
+                     let notes = stringAtField(statement!,fieldIndex: 9)
+                     let exerciseMinutes = sqlite3_column_int(statement!, 10)
+                     let sleepMinutes = sqlite3_column_int(statement!, 11)
+                     let objectDate: String
+                     objectDate = String(date)
+                              //  print(objectDate)
+                     let objectSleep: Int
+                     objectSleep = Int(sleep)
+                     let objectWater: Int
+                     objectWater = Int(water)
+                     let objectStress: Int
+                     objectStress = Int(stress)
+                     let objectExercise: Int
+                     objectExercise = Int(exercise)
+                     let objectLocation : String
+                     objectLocation = String(location)
+                     let objectAlcohol : Int
+                     objectAlcohol = Int(alcohol)
+                     let objectMood : Int
+                     objectMood = Int(mood)
+                     let objectProductivity: Int
+                     objectProductivity = Int(productivity)
+                     let objectNotes: String
+                     objectNotes = String(notes)
+                     let objectExerciseMins: Int
+                     objectExerciseMins = Int(exerciseMinutes)
+                     let objectSleepMins: Int
+                     objectSleepMins = Int(sleepMinutes)
+                     
+                 
+                var object = Mood(Date: objectDate, Sleep: objectSleep, Water: objectWater, Stress: objectStress, Exercise: objectExercise, Location: objectLocation, Alcohol: objectAlcohol, Mood: objectMood, Productivity: objectProductivity, Notes: objectNotes, SleepMinutes: objectSleepMins, ExerciseMinutes: objectExerciseMins)
+                     print(object.Date)
+                     moodArray.append(object)
+                }
+            }
+            sqlite3_finalize(statement)
+        }
+         return moodArray
+    }
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    func getActivityDates(activityName: String) -> [String]{
+        var dates: [String] = []
+        var query = "SELECT DISTINCT DATE FROM ACTIVITYLOG WHERE NAME = '\(activityName)' COLLATE NOCASE;"
+        var statement : OpaquePointer? = nil
+        if sqlite3_prepare_v2( database, query, -1, &statement, nil) == SQLITE_OK {
+        while(sqlite3_step(statement) == SQLITE_ROW){
+            let readDate = stringAtField(statement!, fieldIndex: 0)
+            dates.append(readDate)
+            }
+            sqlite3_finalize(statement)
+        }
+        return dates
+    }
     
     
     func searchNotes(hours: String) -> [Mood] {

@@ -12,8 +12,9 @@ import UIKit
 extension UIView {
     
       // Export pdf from Save pdf in drectory and return pdf file path
-        func exportAsPdfFromView() -> String {
-            
+    func exportAsPdfFromView(name: String) -> String {
+            var filename = name
+            filename += ".pdf"
             let pdfPageFrame = self.bounds
             let pdfData = NSMutableData()
             UIGraphicsBeginPDFContextToData(pdfData, pdfPageFrame, nil)
@@ -21,16 +22,19 @@ extension UIView {
             guard let pdfContext = UIGraphicsGetCurrentContext() else { return "" }
             self.layer.render(in: pdfContext)
             UIGraphicsEndPDFContext()
-            return self.saveViewPdf(data: pdfData)
+        
+        return self.saveViewPdf(data: pdfData, name: filename)
             
         }
         
         // Save pdf file in document directory
-        func saveViewPdf(data: NSMutableData) -> String {
-            
+    func saveViewPdf(data: NSMutableData, name: String) -> String {
+           
+        var fileName = name
+        fileName += ".pdf"
             let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
             let docDirectoryPath = paths[0]
-            let pdfPath = docDirectoryPath.appendingPathComponent("viewPdf.pdf")
+            let pdfPath = docDirectoryPath.appendingPathComponent(fileName)
             if data.write(to: pdfPath, atomically: true) {
                 return pdfPath.path
             } else {

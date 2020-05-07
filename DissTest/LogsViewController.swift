@@ -39,6 +39,8 @@ class LogsViewController: UIViewController {
 
         
         super.viewDidLoad()
+        var dates = databaseStore.getPlanDates()
+        databaseStore.getCompleteGoals(dates: dates)
 //        var check = databaseStore.checkEntryComplete(date: "22-04-2020")
 //        print(check)
 //        var check2 = databaseStore.checkEntryComplete(date: "01-04-2020")
@@ -86,7 +88,18 @@ class LogsViewController: UIViewController {
             print(i)
         }
         
-        databaseStore.searchNotes(hours: "Today")
+       // databaseStore.searchNotes(hours: "Today")
+        
+       var y = databaseStore.getActivityDates(activityName: "Running")
+        for i in y{
+            print(i)
+        }
+        
+        var q = databaseStore.getSearchedActivities(dates: y)
+        for i in q {
+            var name = i.Location
+            print(name)
+        }
 //        let unique = databaseStore.getGoodDates()
 //        let a = databaseStore.getGoodActivities(dates: unique)
 //        let removedArray = a.removingDuplicate()

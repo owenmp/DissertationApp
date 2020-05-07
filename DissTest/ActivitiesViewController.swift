@@ -54,7 +54,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
         informationView.layer.shadowColor = UIColor.systemGray.cgColor
         informationView.isHidden = true
         informationView.layer.backgroundColor = UIColor.systemGray6.cgColor
-        
+        informationLbl.text = "What happens throughout your day can effect your mood. Break down your day into activities, these activities will help analyse trends in your mood."
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +80,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
             self.advanceBtn.isHidden = true
             self.informationView.alpha = 1
             self.informationView.isHidden = false
+            self.informationLbl.text = "What happens throughout your day can effect your mood. Break down your day into activities, these activities will help analyse trends in your mood."
             
             
         })
@@ -110,6 +111,8 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
         
     }
     
+    
+    @IBOutlet weak var informationLbl: UILabel!
     
     @IBOutlet weak var addActivityBtn: UIButton!
     

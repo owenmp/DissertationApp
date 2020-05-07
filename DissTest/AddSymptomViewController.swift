@@ -32,17 +32,24 @@ class AddSymptomViewController: UIViewController {
         informationView.layer.backgroundColor = UIColor.systemGray6.cgColor
         informationView.layer.cornerRadius = 7
         informationView.layer.masksToBounds = true
-        
+        symptomBtn.layer.cornerRadius = 7
+        symptomBtn.layer.masksToBounds = true
+        symptomBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        infoLbl.text = "Symptoms can have an affect on your mood. Enter any physical or mental symptoms you have experienced today, along with any drugs you may have taken to treat it."
 
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    @IBOutlet weak var symptomBtn: UIButton!
     
     @IBOutlet weak var informationView: UIView!
     
     @IBAction func informationBtn(_ sender: Any) {
         backgroundView.alpha = 1
         informationView.alpha = 0
+       // closeBtn.alpha = 0
         if popUpView.isHidden == false {
             popUpView.alpha = 1
         } else {
@@ -51,9 +58,11 @@ class AddSymptomViewController: UIViewController {
         UIView.animate(withDuration: 1.5, animations: {
             self.backgroundView.alpha = 0
             self.backgroundView.isHidden = true
+            
             if self.popUpView.isHidden == false {
                 self.popUpView.alpha = 0
                 self.popUpView.isHidden = true
+                
             }
             self.informationView.alpha = 1
             self.informationView.isHidden = false
@@ -100,6 +109,7 @@ class AddSymptomViewController: UIViewController {
     
     @IBOutlet weak var popUpTxt: UILabel!
     
+    @IBOutlet weak var infoLbl: UILabel!
     @IBAction func saveBtn(_ sender: Any) {
         
         self.popUpView.isHidden = false
