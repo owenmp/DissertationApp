@@ -23,7 +23,6 @@
 		5A7C5B18241BB4F50047CD0B /* MoodEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B17241BB4F40047CD0B /* MoodEntryViewController.swift */; };
 		5A7C5B1A241BBD190047CD0B /* LifestyleEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */; };
 		5A7C5B1E241BCB510047CD0B /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B1D241BCB510047CD0B /* ActivitiesViewController.swift */; };
-		5A844DF4241E79E70048EDD0 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A844DF3241E79E70048EDD0 /* NavViewController.swift */; };
 		5A844DF6241E9A4B0048EDD0 /* createNewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */; };
 		5A844DF8241E9F950048EDD0 /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */; };
 		5A9185452441E36400A4AEEC /* adviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9185442441E36400A4AEEC /* adviceViewController.swift */; };
@@ -97,7 +96,6 @@
 		5A7C5B17241BB4F40047CD0B /* MoodEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryViewController.swift; sourceTree = "<group>"; };
 		5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestyleEntryViewController.swift; sourceTree = "<group>"; };
 		5A7C5B1D241BCB510047CD0B /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
-		5A844DF3241E79E70048EDD0 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewActivityViewController.swift; sourceTree = "<group>"; };
 		5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		5A9185442441E36400A4AEEC /* adviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adviceViewController.swift; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 				5A72D85C23F9D25600441B9B /* AppDelegate.swift */,
 				5A72D85E23F9D25600441B9B /* SceneDelegate.swift */,
 				5A72D86023F9D25600441B9B /* LogsViewController.swift */,
-				5A844DF3241E79E70048EDD0 /* NavViewController.swift */,
 				5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */,
 				5A72D86223F9D25600441B9B /* Main.storyboard */,
 				5AB6FDBC24571D60002D2C32 /* ArrayExtension.swift */,
@@ -423,7 +420,6 @@
 				5AC4A474243DE9D1007F2818 /* ChartStringFormatter.swift in Sources */,
 				5AA1815E242BA4EA00A37ED2 /* EntryActivitiesTableViewController.swift in Sources */,
 				5AE394DA243B4AF200544B89 /* detailActivityViewController.swift in Sources */,
-				5A844DF4241E79E70048EDD0 /* NavViewController.swift in Sources */,
 				5AAA9D9E2451B5E800BF3523 /* AddSymptomViewController.swift in Sources */,
 				5AA18160242BA53700A37ED2 /* EntryActivityTableViewCell.swift in Sources */,
 				5AF9272C2449C5AB00198213 /* planDetailTableViewCell.swift in Sources */,

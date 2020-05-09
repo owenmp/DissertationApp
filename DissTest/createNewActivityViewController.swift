@@ -29,29 +29,37 @@ class createNewActivityViewController: UIViewController {
         finishBtn.layer.cornerRadius = 7
         finishBtn.layer.backgroundColor = UIColor.systemBlue.cgColor
         finishBtn.layer.masksToBounds = true
+        
+        errorView.layer.backgroundColor = UIColor.systemGray6.cgColor
+        errorView.layer.cornerRadius = 7
+        errorView.layer.masksToBounds = true
+        errorView.isHidden = true
 
         // Do any additional setup after loading the view.
     }
     
     
+    @IBOutlet weak var errorTxt: UILabel!
+    @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var finishBtn: UIButton!
     
     @IBOutlet weak var backgroundView: UIView!
     
    
-    
-    @IBOutlet weak var nameTxt: UITextField!
     @IBAction func nameTxt(_ sender: Any) {
         var text: String = nameTxt.text!
         valueForName = text
-     
     }
     
-    @IBOutlet weak var descriptionTxt: UITextField!
+    @IBOutlet weak var nameTxt: UITextField!
+    
+    
     @IBAction func descriptionTxt(_ sender: Any) {
         var description: String = descriptionTxt.text!
         valueForDescription = description
     }
+    @IBOutlet weak var descriptionTxt: UITextField!
+    
     
     
     @IBAction func createBtn(_ sender: Any) {
@@ -83,9 +91,25 @@ class createNewActivityViewController: UIViewController {
     
     @IBAction func finishBtn(_ sender: Any) {
         print(valueForName)
+        
+        if valueForName == ""{
+            errorView.isHidden = false
+            errorTxt.text = "Please enter an activity name"
+            errorTxt.textColor = UIColor.red
+            
+        } else {
+            
         var valueForDesc = descriptionTxt.text!
         print(valueForDesc)
 database.databaseStore.insertNewActivity(Name: valueForName, Description: valueForDesc)
+            errorView.isHidden = false
+           // errorTxt.text = valueForName
+            var message = valueForName
+            message += " added to activity list."
+            errorTxt.text = message
+            errorTxt.textColor = UIColor.black
+            
+
            
         if let presenter = presentingViewController as? ActivitiesTableViewController { presenter.activities.removeAll()
             presenter.activities = presenter.blabla.databaseStore.getActivities()
@@ -94,6 +118,7 @@ database.databaseStore.insertNewActivity(Name: valueForName, Description: valueF
     }
           dismiss(animated: true, completion: nil)
               
+    }
     }
     
     /*

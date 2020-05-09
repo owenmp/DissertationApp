@@ -31,9 +31,9 @@ class TrendsViewController: UIViewController {
                 adviceBtn.layer.shadowOpacity = 3
                 adviceBtn.layer.shadowOffset = .zero
         
-        trendsView.layer.backgroundColor = UIColor.systemGray6.cgColor
-        trendsView.layer.cornerRadius = 7
-        trendsView.layer.masksToBounds = true
+//        trendsView.layer.backgroundColor = UIColor.systemGray6.cgColor
+//        trendsView.layer.cornerRadius = 7
+//        trendsView.layer.masksToBounds = true
         
         searchBtn.layer.backgroundColor = UIColor.systemIndigo.cgColor
         searchBtn.layer.cornerRadius = 7
@@ -64,7 +64,7 @@ class TrendsViewController: UIViewController {
     @IBAction func searchBtn(_ sender: Any) {
     }
     @IBOutlet weak var ChartsView: UIView!
-    @IBOutlet weak var trendsView: UIView!
+   // @IBOutlet weak var trendsView: UIView!
     @IBOutlet weak var adviceBtn: UIButton!
     @IBOutlet weak var barCharts: UIButton!
     

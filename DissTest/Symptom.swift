@@ -8,13 +8,17 @@
 
 import Foundation
 
+
 class Symptom {
+    
+    //Variables
     var date: String
     var Name: String
     var Description: String
     var Drugs: String
     
     
+    //initializes the object
     init(Date: String, Name: String, Description: String, Drugs: String) {
         
         self.date = Date

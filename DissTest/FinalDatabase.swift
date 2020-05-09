@@ -939,7 +939,7 @@ class FinalDatabase {
     func getBarAverages(search: String, value: String) -> [Int] {
         var averages: [Int] = []
         var statement: OpaquePointer? = nil
-        let query = "SELECT MOOD,STRESS,PRODUCTIVITY FROM MAIN WHERE (\(search)) = ('\(value)');"
+        let query = "SELECT MOOD,STRESS,PRODUCTIVITY FROM MAIN WHERE (\(search)) = ('\(value)') COLLATE NOCASE;"
         var mood = 0
         var stress = 0
         var productivity = 0

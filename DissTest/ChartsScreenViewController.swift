@@ -15,9 +15,9 @@ class ChartsScreenViewController: UIViewController {
         optionsView.layer.backgroundColor = UIColor.systemGray6.cgColor
         optionsView.layer.cornerRadius = 7
         optionsView.layer.masksToBounds = true
-        titleView.layer.backgroundColor = UIColor.systemGray6.cgColor
-        titleView.layer.cornerRadius = 7
-        titleView.layer.masksToBounds = true
+//        titleView.layer.backgroundColor = UIColor.systemGray6.cgColor
+//        titleView.layer.cornerRadius = 7
+//        titleView.layer.masksToBounds = true
         
         pieChartBtn.layer.cornerRadius = 7
         pieChartBtn.layer.masksToBounds = true
@@ -41,7 +41,7 @@ class ChartsScreenViewController: UIViewController {
     
     @IBOutlet weak var pieChartBtn: UIButton!
     @IBOutlet weak var lineChartBtn: UIButton!
-    @IBOutlet weak var titleView: UIView!
+//    @IBOutlet weak var titleView: UIView!
     
     @IBOutlet weak var barChartBtn: UIButton!
     

@@ -33,8 +33,14 @@ class detailActivityViewController: UIViewController {
         saveBtn.layer.backgroundColor = UIColor.systemBlue.cgColor
         lengthTxt.keyboardType = UIKeyboardType.numberPad
         minutesTxt.keyboardType = UIKeyboardType.numberPad
+        errorView.isHidden = true
+        errorLbl.adjustsFontSizeToFitWidth = true
     
     }
+    
+    @IBOutlet weak var errorLbl: UILabel!
+    @IBOutlet weak var errorView: UIView!
+    
     
     @IBAction func cancelBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -81,13 +87,14 @@ class detailActivityViewController: UIViewController {
          var dailyActivitiy = activityLog(name: valueForName, length: valueForLength, description: valueForDescription,minutes: valueForMinutes)
         
         if valueForLength > 24 || valueForLength < 0{
-            
+            errorView.isHidden = false
             
         }else if  valueForMinutes > 59 || valueForMinutes < 0{
             
             
         } else { 
                 entryActivities.append(dailyActivitiy)
+            dismiss(animated: true, completion: nil)
         }
         
      
@@ -97,7 +104,7 @@ class detailActivityViewController: UIViewController {
         
         
         
-       dismiss(animated: true, completion: nil)
+       
         
     }
     

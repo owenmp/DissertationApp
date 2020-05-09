@@ -9,7 +9,10 @@
 import Foundation
 
 
+//Array extension which allows duplicate elements to be removed
+
 extension Array where Element: Hashable {
+    //function that removes duplicates
     func removingDuplicate() -> [Element] {
         var addedDict = [Element:Bool]()
         
