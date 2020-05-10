@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 11/04/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Presents user with their average values
 
 import UIKit
 
@@ -142,6 +142,26 @@ class adviceViewController: UIViewController {
         statsBtn.layer.masksToBounds = true
         backGroundView.isHidden = false
         
+        goodSleepValLbl.adjustsFontSizeToFitWidth = true
+        goodAlcoholLifeLbl.adjustsFontSizeToFitWidth = true
+        goodExerciseLifeLbl.adjustsFontSizeToFitWidth = true
+        goodLifeWaterLbl.adjustsFontSizeToFitWidth = true
+        avSleepVal.adjustsFontSizeToFitWidth = true
+        badSleepValLbl.adjustsFontSizeToFitWidth = true
+        badSleepDescLbl.adjustsFontSizeToFitWidth = true
+        sleepLifeLbl.adjustsFontSizeToFitWidth = true
+//        averageAlcoholLbl.adjustsFontSizeToFitWidth = true
+        avAlcoholValLbl.adjustsFontSizeToFitWidth = true
+        alcoholLifeLbl.adjustsFontSizeToFitWidth = true
+        alcoholLifeValLbl.adjustsFontSizeToFitWidth = true
+        badAlcoholDescLbl.adjustsFontSizeToFitWidth = true
+        badExerciseDescLbl.adjustsFontSizeToFitWidth = true
+        goodExerciseDescLbl.adjustsFontSizeToFitWidth = true
+        badWaterValLbl.adjustsFontSizeToFitWidth = true
+        goodLifeWaterLbl.adjustsFontSizeToFitWidth = true
+        goodWaterDescLbl.adjustsFontSizeToFitWidth = true
+        
+        
     }
     
     @IBOutlet weak var backGroundView: UIView!
@@ -257,6 +277,11 @@ class adviceViewController: UIViewController {
         self.present(alert,animated: true)
         
     }
+    
+    /**
+     All functions animate to show next view, presenting labels that show average lifestyle values
+     */
+    
     
     @IBAction func sleepNextBtn(_ sender: Any) {
         

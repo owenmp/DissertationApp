@@ -2,13 +2,12 @@
 //  FinalDatabase.swift
 //  DissTest
 //
-//  Created by Owen Malcolmson-Priest on 16/04/2020.
+//  Created by Owen Malcolmson-Priest on 16/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
 //
 
-// Created by Owen Malcolmson-Priest on 16/03/2020.
-//  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+
+
 
 import Foundation
 import SQLite3
@@ -40,7 +39,7 @@ class FinalDatabase {
     }
     
     /**
-     *
+     *Copies database to phone
      */
     fileprivate func prepareDatabasePath() -> String? {
         
@@ -97,6 +96,7 @@ class FinalDatabase {
         return data
     }
     
+    //allows string to be accessed from database
     func stringAtField(_ statementPointer: OpaquePointer, fieldIndex: Int ) -> String {
             var answer = "Error - DBAccess failed"
             if let rawString = sqlite3_column_text(statementPointer, Int32(fieldIndex) ) {
@@ -104,6 +104,7 @@ class FinalDatabase {
             }
             return answer
         }
+    //test read
     func readNew(){
         let query =  "SELECT Name FROM ActivityLog WHERE DATE = '07-03-2020'"
         var statement: OpaquePointer? = nil
@@ -118,7 +119,7 @@ class FinalDatabase {
         
     }
     
-    
+    //gets average alcohol value
     func getOverallAlcohol() -> Double {
           let query = "SELECT ALCOHOL FROM MAIN;"
           var average: Double = 0
@@ -143,7 +144,7 @@ class FinalDatabase {
               
       }
     
-    
+    //gets average water value
     func getOverallWater() -> Double {
           let query = "SELECT WATER FROM MAIN;"
           var average: Double = 0
@@ -169,7 +170,7 @@ class FinalDatabase {
       }
     
     
-    
+    //gets average exercise
     func getOverallExercise() -> Double {
           let query = "SELECT EXERCISEHOURS,EXERCISEMINUTES FROM MAIN;"
           var average: Double = 0
@@ -203,7 +204,7 @@ class FinalDatabase {
       }
     
     
-    
+    //gets every date
     func getAllDates() -> [String]{
      let query = "SELECT DATE FROM MAIN;"
         var dates : [String] = []
@@ -220,7 +221,7 @@ class FinalDatabase {
         return dates
     }
     
-    
+    //gets every mood value
     func getAllMood() -> [Int]{
       let query = "SELECT MOOD FROM MAIN;"
          var moods : [Int] = []
@@ -237,7 +238,7 @@ class FinalDatabase {
      }
     
    
-    
+    //gets sleep average
     func getOverallSleep() -> Double {
         let query = "SELECT SLEEPHOURS,SLEEPMINUTES FROM MAIN;"
         var average: Double = 0
@@ -270,6 +271,8 @@ class FinalDatabase {
             
     }
     
+    //gets alcohol average
+    
     func getPoorAlcoholAverage () -> Double {
           let query = "SELECT ALCOHOL FROM MAIN WHERE MOOD < 4;"
           var averages: [Double] = []
@@ -298,6 +301,7 @@ class FinalDatabase {
           
       }
     
+    //gets medium alcohol average
     
     func getMediumALCOHOLAverage () -> Double {
             let query = "SELECT ALCOHOL FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
@@ -327,7 +331,7 @@ class FinalDatabase {
     
     
     
-    
+    //gets good alcohol average
     func getGoodAlcoholAverage () -> Double {
             let query = "SELECT ALCOHOL FROM MAIN WHERE MOOD > 7;"
             var averages: [Double] = []
@@ -354,7 +358,7 @@ class FinalDatabase {
            return poorAverage
        }
     
-    
+    //gets exercise average where mood is good
     
     func getGoodExerciseAverage () -> Double {
          let query = "SELECT EXERCISEHOURS,EXERCISEMINUTES FROM MAIN WHERE MOOD > 7;"
@@ -390,7 +394,7 @@ class FinalDatabase {
     }
     
     
-    
+    //gets exercise average where mood is average
     func getMediumExerciseAverage () -> Double {
          let query = "SELECT EXERCISEHOURS,EXERCISEMINUTES FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
          var averages: [Double] = []
@@ -424,6 +428,8 @@ class FinalDatabase {
         return poorAverage
         }
     
+    
+    //gets exercise average where mood is poor
     func getPoorExerciseAverage () -> Double {
         let query = "SELECT EXERCISEHOURS,EXERCISEMINUTES FROM MAIN WHERE MOOD < 4;"
         var averages: [Double] = []
@@ -461,7 +467,7 @@ class FinalDatabase {
 
     
     
-    
+    //gets sleeo average where mood is poor
     func getPoorSleepAverage () -> Double {
         let query = "SELECT SLEEPHOURS,SLEEPMINUTES FROM MAIN WHERE MOOD < 4;"
         var averages: [Double] = []
@@ -497,7 +503,7 @@ class FinalDatabase {
         
     }
     
-    
+    //gets sleep average where mood is poor
     func getMediumSleepAverage () -> Double {
         let query = "SELECT SLEEPHOURS,SLEEPMINUTES FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
         var averages: [Double] = []
@@ -533,7 +539,7 @@ class FinalDatabase {
         
     }
     
-    
+    //gets sleep average where mood is good
     func getGoodSleepAverage () -> Double {
         let query = "SELECT SLEEPHOURS,SLEEPMINUTES FROM MAIN WHERE MOOD > 7"
         var averages: [Double] = []
@@ -569,7 +575,7 @@ class FinalDatabase {
         
     }
     
-    
+    //gets water average where mood is good
     func getGoodAverage () -> Double {
            let query = "SELECT WATER FROM MAIN WHERE MOOD > 7"
            var averages: [Double] = []
@@ -599,7 +605,7 @@ class FinalDatabase {
        }
     
     
-    
+    //gets water average where mood is average
     func getMediumAverage () -> Double {
            let query = "SELECT WATER FROM MAIN WHERE MOOD BETWEEN 4 AND 6;"
            var averages: [Double] = []
@@ -629,6 +635,7 @@ class FinalDatabase {
        }
     
     
+    //gets symptoms from specific date
     func getSymptoms(date: String) -> [Symptom] {
         var symptoms : [Symptom] = []
         var statement: OpaquePointer? = nil
@@ -650,6 +657,7 @@ class FinalDatabase {
         return symptoms
     }
     
+    //gets plan from specific date
     
     func getPlan(date: String) -> [ActivityPlan] {
         var plan : [ActivityPlan] = []
@@ -684,7 +692,7 @@ class FinalDatabase {
     
     
     
-    
+    //gets all dates with a plan
     func getPlanDates() -> [String] {
         var dates : [String] = []
         var statement: OpaquePointer? = nil
@@ -698,7 +706,7 @@ class FinalDatabase {
         }
         return dates
     }
-    
+    //gets water where mood is poor
     func getPoorWaterAverage () -> Double {
         let query = "SELECT WATER FROM MAIN WHERE MOOD < 4;"
         var averages: [Double] = []
@@ -777,7 +785,7 @@ class FinalDatabase {
 //
 //    }
     
-    
+    //get dates of activities
     func getActivityDates (name: String) -> [String] {
         var dates : [String] = []
         var statement: OpaquePointer? = nil
@@ -796,7 +804,7 @@ class FinalDatabase {
     
     
     
-    
+    //sgets all complete goals
     func getCompleteGoals(dates: [String])  {
         var completeGoals: [String] = []
         var total = 0
@@ -842,7 +850,7 @@ class FinalDatabase {
     }
     
     
-    
+    //gets bar chart values
     func getBarActivityAverage(dates: [String]) -> [Int] {
         var averages: [Int] = []
         var statement: OpaquePointer? = nil
@@ -888,6 +896,8 @@ class FinalDatabase {
     return averages
     }
     
+    
+    //get sleep or exercises averages for bar chart
     func getBarSleepOrExercise (search: String, hours: String, minutes: String) -> [Int] {
         var query = ""
         var averages: [Int] = []
@@ -936,6 +946,8 @@ class FinalDatabase {
     
     
     
+    
+    //gets bar averages
     func getBarAverages(search: String, value: String) -> [Int] {
         var averages: [Int] = []
         var statement: OpaquePointer? = nil
@@ -981,7 +993,7 @@ class FinalDatabase {
     }
     
     
-    
+    //gets pie averages
     func getAveragesForMood3 (moodLevel: Int) -> [Int] {
         var averages: [Int] = []
         let query = "SELECT * FROM MAIN WHERE MOOD = (\(moodLevel));"
@@ -1090,6 +1102,7 @@ class FinalDatabase {
 sqlite3_finalize(statement)
     }
     }
+    //gets all activities
     func readActivities(){
         let query = "SELECT * FROM ACTIVITIES;"
         var statement:OpaquePointer? = nil
@@ -1120,6 +1133,7 @@ sqlite3_finalize(statement)
       let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
     let insertActivityString = "INSERT INTO Activities (NAME,DESCRIPTION) VALUES (?,?);"
     //let insertActivityString = "INSERT INTO ACTIVIITIES"
+    //inserts activitiy to database
     func insertNewActivity(Name: String, Description: String){
         var insertStatement: OpaquePointer?
         if sqlite3_prepare_v2(database,insertActivityString, -1, &insertStatement, nil) == SQLITE_OK {
@@ -1144,19 +1158,30 @@ sqlite3_finalize(statement)
         }
     
     
-    
-    func checkEntryComplete(date: String) -> Bool{
+    //checks if entry is completed
+    func checkEntryComplete(date: String) -> Bool  {
         var query = "SELECT DATE FROM MAIN WHERE DATE = '\(date)';"
         var statement: OpaquePointer?
         if sqlite3_prepare_v2(database,query , -1, &statement, nil) == SQLITE_OK {
                   while (sqlite3_step(statement) == SQLITE_ROW) {
+                    let dateRead = stringAtField(statement!, fieldIndex: 0)
+                    if date == String(dateRead){
+                    sqlite3_finalize(statement)
                     return true
+                    } else {
+                        sqlite3_finalize(statement)
+                        return false
+                    }
             }
+            
         }
+        sqlite3_finalize(statement)
+        
         return false
+        
     }
     
-    
+    //sets goal to complete
     func setCompleteGoal(goal: ActivityPlan) {
         var query = "UPDATE DailyPlan set COMPLETED = 1 WHERE DATE = '\(goal.date)' AND NAME = '\(goal.name)' AND DESCRIPTION = '\(goal.description)';"
         var updateStatement: OpaquePointer?
@@ -1172,7 +1197,7 @@ sqlite3_finalize(statement)
         sqlite3_finalize(updateStatement)
     }
     
-    
+    //sets goal to incomplete
     func setIncompleteGoal(goal: ActivityPlan) {
           var query = "UPDATE DailyPlan set COMPLETED = 0 WHERE DATE = '\(goal.date)' AND NAME = '\(goal.name)' AND DESCRIPTION = '\(goal.description)';"
           var updateStatement: OpaquePointer?
@@ -1193,7 +1218,7 @@ sqlite3_finalize(statement)
     
     
    let l = "INSERT INTO ACTIVITYLOg (NAME,HOURS,MINUTES,DATE,DESCRIPTION) VALUES (?,?,?,?,?);"
-    
+    //adds new goal to database
     func addNewGoal(goal : ActivityPlan) {
         var insertStatement: OpaquePointer?
         let insertGoalStatement = "INSERT INTO DailyPlan (DATE,NAME,DESCRIPTION,COMPLETED) VALUES (?,?,?,?);"
@@ -1218,7 +1243,7 @@ sqlite3_finalize(statement)
         
     }
     
-    
+    //adds new symptom to database
     func addNewSymptom(symptom: Symptom){
         var insertStatement: OpaquePointer?
         let insertSymptomStatement = "INSERT INTO SYMPTOMS (DATE,NAME,DRUGS,DESCRIPTION) VALUES (?,?,?,?);"
@@ -1301,7 +1326,7 @@ sqlite3_finalize(statement)
 //    }
 //
     
-
+    //inserts to activity log
     func insertDailyActivities(dailyActivities: [activityLog], date: String){
         var statement: OpaquePointer?
         var insertActivityStatement = "INSERT INTO ACTIVITYLOG (NAME,HOURS,MINUTES,DATE,DESCRIPTION) VALUES (?,?,?,?,?);"
@@ -1335,6 +1360,8 @@ sqlite3_finalize(statement)
     
     let insertStatementString2 = "INSERT INTO MAIN (DATE,SLEEPHOURS,WATER,STRESS,EXERCISEHOURS,LOCATION,ALCOHOL,NOTES,MOOD,PRODUCTIVITY,EXERCISEMINUTES,SLEEPMINUTES) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);"
 
+    
+    //inserts daily entry
     func insertMoodObject(dailyEntry: Mood){
         var statement : OpaquePointer?
         if sqlite3_prepare_v2(database,insertStatementString2, -1, &statement, nil) == SQLITE_OK {
@@ -1384,6 +1411,7 @@ sqlite3_finalize(statement)
                   sqlite3_finalize(deleteStatement)
                 }
     
+    //gets all activities
     func getActivities()-> [activity]{
         var activityRead: activity!
         var activityArray: [activity] = []
@@ -1515,6 +1543,8 @@ sqlite3_finalize(statement)
                     return moodValue
             }
     
+    
+    //deletes goal from database
     func deleteGoal(goal: ActivityPlan) {
          var deleteStatement: OpaquePointer?
          var nameForDelete = ""
@@ -1544,7 +1574,7 @@ sqlite3_finalize(statement)
     
     
     
-    
+    //deletes symptom from database
     func deleteSymptom(symptom: Symptom) {
         var deleteStatement: OpaquePointer?
         var nameForDelete = ""
@@ -1568,6 +1598,8 @@ sqlite3_finalize(statement)
         }
     
     
+    
+    //searches activities
     func getSearchedActivities(dates: [String]) -> [Mood] {
         var moodArray: [Mood] = []
         var statement: OpaquePointer? = nil
@@ -1632,7 +1664,7 @@ sqlite3_finalize(statement)
     
     
     
-    
+    //gets dates where activity name =
     func getActivityDates(activityName: String) -> [String]{
         var dates: [String] = []
         var query = "SELECT DISTINCT DATE FROM ACTIVITYLOG WHERE NAME = '\(activityName)' COLLATE NOCASE;"
@@ -1648,6 +1680,8 @@ sqlite3_finalize(statement)
     }
     
     
+    
+    //searches notes from mood entries
     func searchNotes(hours: String) -> [Mood] {
              var moodArray: [Mood] = []
              var query = "SELECT * FROM MAIN WHERE NOTES LIKE '%\(hours)%';"
@@ -1707,7 +1741,7 @@ sqlite3_finalize(statement)
     
     
     
-    
+    //searcehes mood entries used exercise values
     func searchExercise(hours: String, minutes: String) -> [Mood] {
           var moodArray: [Mood] = []
           var query = "SELECT * FROM MAIN WHERE EXERCISEHOURS = '\(hours)' AND EXERCISEMINUTES = '\(minutes)';"
@@ -1766,6 +1800,7 @@ sqlite3_finalize(statement)
       }
     
     
+        //gets dates of bad moods
         func getBadDates() -> [String] {
             var finalActivities: [String] = []
             let queryForDates = "SELECT DATE FROM MAIN WHERE MOOD < 4;"
@@ -1786,7 +1821,7 @@ sqlite3_finalize(statement)
         return dates
     }
 
-    
+    //gets date of good moves
     func getGoodDates() -> [String] {
         var finalActivities: [String] = []
         let queryForDates = "SELECT DATE FROM MAIN WHERE MOOD > 7;"
@@ -1807,7 +1842,7 @@ sqlite3_finalize(statement)
     return dates
 }
     
-    
+    //gets symptoms from dates with bad moods
     func getBadSymptoms(dates: [String]) -> [String]{
            var symptoms: [String] = []
            var dateForSearch: String = ""
@@ -1831,6 +1866,7 @@ sqlite3_finalize(statement)
        }
     
     
+    //gets activity from dates with good moods
     func getGoodActivities(dates: [String]) -> [String]{
         var activities: [String] = []
         var dateForSearch: String = ""
@@ -1857,7 +1893,7 @@ sqlite3_finalize(statement)
    
     
     
-    
+    //searches sleep values returns mood entries
     func searchSleep(hours: String, minutes: String) -> [Mood] {
         var moodArray: [Mood] = []
         var query = "SELECT * FROM MAIN WHERE SLEEPHOURS = '\(hours)' AND SLEEPMINUTES = '\(minutes)';"
@@ -1916,7 +1952,7 @@ sqlite3_finalize(statement)
     }
     
     
-    
+    //searches entries and returns mood entries
     func searchEntries(filter: String, value: String) -> [Mood]{
        // var moodRead: Mood!
         var moodArray: [Mood] = []
@@ -1987,6 +2023,7 @@ sqlite3_finalize(statement)
             return moodArray
     }
     
+    //gets activities from spcific date
     func getEntryActivities(date: String)-> [activityLog]{
         var activityRead: activityLog!
         var activityArray: [activityLog] = []
@@ -2030,7 +2067,7 @@ sqlite3_finalize(statement)
         sqlite3_finalize(statement)
     }
     
-    
+    //gets every mood entry
     func getAllEntries() -> [Mood] {
         var entries: [Mood] = []
         let query = "SELECT * FROM MAIN"

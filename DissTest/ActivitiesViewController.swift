@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 13/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Shows activities user has logged on their mood entry
 
 import UIKit
 var entryActivities: [activityLog] = []
@@ -65,7 +65,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
        }
     
     @IBOutlet weak var informationView: UIView!
-    
+    //information view appears
     @IBAction func informationBtn(_ sender: Any) {
         tableView.alpha = 1
         addActivityBtn.alpha = 1
@@ -88,7 +88,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
         
     }
     
-    
+    //closes information view
     @IBAction func closeBtn(_ sender: Any) {
         tableView.alpha = 0
                addActivityBtn.alpha = 0
@@ -147,7 +147,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate,UITableVie
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 50
     }
-    
+    //allows cell to be deleted
     
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

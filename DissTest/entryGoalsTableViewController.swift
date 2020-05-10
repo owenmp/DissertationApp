@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 28/04/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  shows goals from previous days
 
 import UIKit
 
@@ -54,6 +54,7 @@ class entryGoalsTableViewController: UITableViewController {
             return plan.count
         }
 
+    //populates table 
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "todaysPlan", for: indexPath)as! todaysPlanTableViewCell
             let wantedName = plan[indexPath.row].name

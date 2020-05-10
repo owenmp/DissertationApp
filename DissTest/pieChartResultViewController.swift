@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 23/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Creates pie charts
 
 import UIKit
 import Charts
@@ -20,12 +20,8 @@ class pieChartResultViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //pie.animate(xAxisDuration: 3000)
-        //pie.animate(yAxisDuration: 3000)
-     //   pie.animate(xAxisDuration: 3000, easing: ChartEasingOption.easeInCirc.self)
-        //pie.animate(xAxisDuration: 5000, easingOption: ChartEasingOption.easeInBack)
-       // pie.spin(duration: 3000, fromAngle: 500, toAngle: 360)
-       // pie.spin(duration: 3000, fromAngle: 500, toAngle: 360)
+        
+        //Formats chart
                 moodValueLbl.text = String(valueForPie)
         pie.layer.backgroundColor = UIColor.systemGray6.cgColor
         valueView.layer.backgroundColor = UIColor.systemGray6.cgColor
@@ -53,6 +49,7 @@ class pieChartResultViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //creates pdf
     @IBAction func createPdfBtn(_
     sender: Any) {
         
@@ -84,7 +81,7 @@ class pieChartResultViewController: UIViewController {
     
     @IBOutlet weak var moodValueLbl: UILabel!
     
-   
+   //functions redraw the pie chart
     @IBAction func oneBtn(_ sender: Any) {
         valueForPie = 1
         self.viewDidLoad()
@@ -144,7 +141,7 @@ class pieChartResultViewController: UIViewController {
     
     
    
-    
+   //sets pie chart data
     @IBOutlet weak var pie: PieChartView!
     func customizeChart(dataPoints: [String], values: [Int]) {
         
@@ -172,7 +169,7 @@ class pieChartResultViewController: UIViewController {
 
         
     }
-    
+    //colours the chart
     private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
       var colors: [UIColor] = []
       for _ in 0..<numbersOfColor {
@@ -195,7 +192,7 @@ class pieChartResultViewController: UIViewController {
       return colors
     }
     
-    
+    //gets colour for each slice
     func getColourForCell(value: Int) -> UIColor {
           let number = value
           switch number {

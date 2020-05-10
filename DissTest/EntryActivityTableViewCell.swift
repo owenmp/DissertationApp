@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 25/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Cell for activities
 
 import UIKit
 
@@ -21,6 +21,7 @@ class EntryActivityTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //IBoutlets
     @IBOutlet weak var minutesLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!

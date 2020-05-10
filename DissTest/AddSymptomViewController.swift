@@ -5,6 +5,7 @@
 //  Created by Owen Malcolmson-Priest on 23/04/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
 //  Class that adds symptoms to the database.
+//  Screen to add symptom for the day
 
 import UIKit
 

@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 24/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Allows hex value to be used for colours
 
 import UIKit
 extension UIColor {

@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 24/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Shows all mood entries
 
 import UIKit
 
@@ -37,7 +37,8 @@ class EntriesTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return entries.count
     }
-
+    
+    //populates table view
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)as! EntryTableViewCell
@@ -58,7 +59,7 @@ class EntriesTableViewController: UITableViewController {
     }
     
     //let green = UIColor(hex: "#a8edbb")
-    
+    //sets colour of cell based on mood value
     func getColourForCell(value: Int) -> UIColor {
         let number = value
         switch number {
@@ -138,6 +139,7 @@ class EntriesTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //opens details with all correct values
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "entryDetail" {

@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 17/04/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Screen to show todays goals
 
 import UIKit
 
@@ -17,12 +17,15 @@ class todaysPlanTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Loaded")
+        //print("Loaded")
+        //formats todays date
         dateFormatter.dateFormat = "dd-MM-yyyy"
                dateString = dateFormatter.string(from:date)
         
         plan = database.databaseStore.getPlan(date: dateString)
+        //allows actions for the table cells
         self.tableView.allowsSelection = true
+        //populates table view
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -32,6 +35,7 @@ class todaysPlanTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    //runs when view appears, updates table view
     override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
        // load datas
@@ -47,12 +51,15 @@ class todaysPlanTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
+    //sets number of rows
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return plan.count
     }
 
+    
+    //populates table view with cells
  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "todaysPlan", for: indexPath)as! todaysPlanTableViewCell
         let wantedName = plan[indexPath.row].name
@@ -61,6 +68,7 @@ class todaysPlanTableViewController: UITableViewController {
         cell.descriptionLbl.text = wantedDescription
         let wantedCompletion = plan[indexPath.row].completed
         if wantedCompletion == 1 {
+            //colour used to show whether goal is complete or not
             cell.layer.backgroundColor = UIColor.init(red: 0.894117, green: 0.988235, blue: 0.8, alpha: 1).cgColor
         } else {
             cell.layer.backgroundColor = UIColor.init(red: 0.98823529, green: 0.83921569, blue: 0.8, alpha: 1).cgColor
@@ -77,10 +85,12 @@ class todaysPlanTableViewController: UITableViewController {
             return 108
     }
     
+    //Action to allow setting a goal as complete
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
         if plan[indexPath.row].completed == 0 {
         
+            //Alert pops up when a cell is pressed.
         let alert = UIAlertController(title: "Confirmation", message: "Do you want to set \(plan[indexPath.row].name) as complete?", preferredStyle: .alert)
                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
                 action in self.database.databaseStore.setCompleteGoal(goal: self.plan[indexPath.row])
@@ -116,7 +126,7 @@ class todaysPlanTableViewController: UITableViewController {
         //print(plan[indexPath.row].name)
     }
     
-    
+    //Allows deletion of rows in the table view.
         override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
         {
             

@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 15/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Shows all the activities the user can choose
 
 import UIKit
 
@@ -12,9 +12,9 @@ class ActivitiesTableViewController: UITableViewController {
     var valueForName: String = ""
     var valueForDescription: String = ""
     var descriptionString: String = ""
-    let database = DataStoreRebuild()
+    //let database = DataStoreRebuild()
     var activities: [activity] = []
-    var blabla = LogsViewController()
+    var db = LogsViewController()
 //    var entryActivities: [activityLog] = []
     
     
@@ -37,7 +37,7 @@ class ActivitiesTableViewController: UITableViewController {
         print("ViewLoaded")
         tableView.allowsSelection = true
      
-        activities = blabla.databaseStore.getActivities()
+        activities = db.databaseStore.getActivities()
         //tableView.reloadData()
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -48,11 +48,11 @@ class ActivitiesTableViewController: UITableViewController {
         //tableView.reloadData()
         
     }
-    
+    //reloads the table view
     override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     // load datas
-        activities = blabla.databaseStore.getActivities()
+        activities = db.databaseStore.getActivities()
     tableView.reloadData()
     }
     
@@ -152,6 +152,7 @@ class ActivitiesTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //opens screen to add details about activity to daily entry
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
             if let indexPath = self.tableView.indexPathForSelectedRow{ let detailActivityVC = segue.destination as! detailActivityViewController

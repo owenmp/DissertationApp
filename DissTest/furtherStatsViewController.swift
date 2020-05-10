@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 27/04/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//Class to display further stats from the advice screen
 
 import UIKit
 
@@ -25,11 +25,15 @@ class furtherStatsViewController: UIViewController {
         createActivityText()
         symptomsView.layer.backgroundColor = UIColor.systemGray6.cgColor
         symptomsView.layer.cornerRadius = 7
+        
         symptomsView.layer.masksToBounds = true
         createSymptomsText()
         
     }
     
+    
+    
+    //Shows the good and bad activities
     func createActivityText(){
         activityText = "Your common activities when your mood is good, include: "
         badActivityText = "Your common activities when your mood is bad, include:"
@@ -43,6 +47,7 @@ class furtherStatsViewController: UIViewController {
         //nonDuplicateBad.removeAll(where: {$0 != "Dissertation "})
         for i in nonDuplicate {
             var word = i
+            //removes duplicates from the array
             var last = nonDuplicate[nonDuplicate.count-1]
             if word == last {
                 
@@ -51,7 +56,7 @@ class furtherStatsViewController: UIViewController {
                 
             } else {
             
-            
+            //formats the text to structure a sentence correctly.
             activityText += i
             activityText += ", "
             
@@ -84,6 +89,7 @@ class furtherStatsViewController: UIViewController {
         
     
     }
+    //Shows symptoms from days with poor mood.
     
     func createSymptomsText(){
         symptomsText = "Your common symptoms when your mood is poor include: "
@@ -115,9 +121,12 @@ class furtherStatsViewController: UIViewController {
         }
         symptomsLbl.text = symptomsText
         
+        
     }
     
     var symptomsText = ""
+    
+    //IBOutlets
     
     @IBOutlet weak var symptomsView: UIView!
     

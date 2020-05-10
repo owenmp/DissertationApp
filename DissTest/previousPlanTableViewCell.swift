@@ -14,7 +14,7 @@ class previousPlanTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    //Shows date of plan
     @IBOutlet weak var dateLbl: UILabel!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

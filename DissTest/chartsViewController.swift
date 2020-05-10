@@ -17,7 +17,7 @@ class chartsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          self.navigationController?.navigationBar.prefersLargeTitles = false
-        barChartView.noDataText = "Unlucky mate, no data for you"
+        barChartView.noDataText = "No data"
        
       //  print(values[0])
         //print(values[1])

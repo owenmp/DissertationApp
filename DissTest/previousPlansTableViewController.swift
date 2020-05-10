@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 17/04/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Class to show previous plans
 
 import UIKit
 
@@ -14,10 +14,7 @@ class previousPlansTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        dates.append("29-03-2020")
-//        dates.append("30-03-2020")
-//        dates.append("31-03-2020")
-        //self.tableView.isHidden = true
+
         dates = database.databaseStore.getPlanDates()
 
         // Uncomment the following line to preserve selection between presentations
@@ -33,13 +30,14 @@ class previousPlansTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
+    //sets number of rows
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return dates.count
     }
 
-    
+    //creates cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "previousPlans", for: indexPath)as! previousPlanTableViewCell
         let wantedDate = dates[indexPath.row]
@@ -95,6 +93,7 @@ class previousPlansTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //Opens a new view, passes date into the next screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "planDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow{

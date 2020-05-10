@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 01/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Finishes the mood entry
 
 import UIKit
 var notesLocation: String = ""
@@ -146,6 +146,7 @@ class NotesViewController: UIViewController {
     @IBOutlet weak var notesLbl: UILabel!
     
     @IBOutlet weak var informationBtn: UIBarButtonItem!
+    //Writes the mood entry to the database
     @IBAction func saveBtn(_ sender: Any) {
         guard var notesValue = notesTxt.text else{ return
         }

@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 17/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Gives the user option to start new plan or view previous
 
 import UIKit
 

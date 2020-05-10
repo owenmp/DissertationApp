@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 18/04/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Creates goal for that day
 
 import UIKit
 
@@ -72,7 +72,7 @@ class newGoalViewController: UIViewController {
     
     
    
-    
+    //saves goal to the database
        @IBOutlet weak var saveBtn: UIButton!
     @IBAction func saveBtn(_ sender: Any) {
         

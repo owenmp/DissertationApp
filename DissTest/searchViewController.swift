@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 31/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Searches the database to return entries the user desires.
 
 import UIKit
 
@@ -26,14 +26,15 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     let cellReuseIdentifier = "searchIdentifier"
     @IBOutlet weak var pickerText: UITextField!
-    let options = ["Notes","Water","Exercise","Location","Mood","Stress","Productivity","Sleep","Activities","Alcohol"]
+    //Filters the user can search from
+    let options = ["Notes","Water","Exercise","Location","Mood","Stress","Productivity","Sleep","Activities","Alcohol","Date"]
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //entries = database.hello.searchEntries(filter: "Location", value: "University")
-        
+        //populates table view
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -64,9 +65,10 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     @IBOutlet weak var hoursTxt: UITextField!
     
-    
+    //Searches database and populates table view with entries
     @IBAction func searchBtn(_ sender: Any) {
         //self.viewDidLoad()
+        //takes text search value if it visible
         if textSearch.isHidden == false {
         valueSearched = textSearch.text! 
         entries.removeAll()
@@ -89,6 +91,7 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.tableView.reloadData()
         self.viewDidLoad()
             }
+            //if minutes and hours value are visible,values from those fields are taken
         } else {
             hoursTxt.isHidden = false
             minutesTxt.isHidden = false
@@ -120,7 +123,7 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     
-    
+    //colours the cell based on what mood value it has.
     func getColourForCell(value: Int) -> UIColor {
            let number = value
            switch number {
@@ -161,6 +164,8 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return options[row]
     }
     
+    
+    //Gets the value for the search filter
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         textSearch.text = ""
         hoursTxt.text = ""
@@ -227,6 +232,7 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         entries.count
     }
     
+    //Populates the table cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)as! searchTableViewCell
         let wantedDate = entries[indexPath.row].Date
@@ -262,6 +268,7 @@ class searchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //Allows further details to be found on the entries, by passing object values through the segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "entryDetail" {

@@ -21,7 +21,7 @@ class lineChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //gets dates and mood based on those dates
         
         var data = db.databaseStore.getAllDates()
         
@@ -56,6 +56,7 @@ class lineChartViewController: UIViewController {
     
     @IBOutlet weak var backGroundView: UIView!
     
+    //gets weekly mood averages
     func getAverageMoods () -> [Int]{
         var i = 0
         var count = 0
@@ -77,6 +78,7 @@ class lineChartViewController: UIViewController {
         }
          return week
     }
+    
     func getAverageDates () -> [String]{
           var i = 0
           var count = 0
@@ -126,7 +128,7 @@ class lineChartViewController: UIViewController {
    
     
     
-    
+    //creates charts data points
     func setChart (dataPoints: [String], values:[Int]) {
         var dataEntries: [ChartDataEntry] = []
       //  var i = 0

@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A204F1E246865E600F2ABB9 /* helpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A204F1D246865E600F2ABB9 /* helpTableViewController.swift */; };
+		5A204F202468661D00F2ABB9 /* helpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A204F1F2468661D00F2ABB9 /* helpTableViewCell.swift */; };
 		5A264B9124485A2E007F3657 /* FinalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A264B9024485A2E007F3657 /* FinalDatabase.swift */; };
 		5A264B9324485AC8007F3657 /* moodAppDatabase.db in Resources */ = {isa = PBXBuildFile; fileRef = 5A264B9224485AC8007F3657 /* moodAppDatabase.db */; };
+		5A314635246838C700B7DBA3 /* DissTestUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A314634246838C700B7DBA3 /* DissTestUnitTests.swift */; };
+		5A31463C2468398300B7DBA3 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D86023F9D25600441B9B /* LogsViewController.swift */; };
+		5A31463D2468399200B7DBA3 /* FinalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A264B9024485A2E007F3657 /* FinalDatabase.swift */; };
+		5A31463E24683AF600B7DBA3 /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B15241A7E9E0047CD0B /* MoodEntry.swift */; };
+		5A31463F24683B4E00B7DBA3 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA9DA12451BAEB00BF3523 /* Symptom.swift */; };
+		5A31464024683B5100B7DBA3 /* ActivityPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9272D2449CB2000198213 /* ActivityPlan.swift */; };
+		5A31464124683B5600B7DBA3 /* activityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA18161242BA6F200A37ED2 /* activityLog.swift */; };
+		5A31464224683B5900B7DBA3 /* activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB5724218B9E007F2E93 /* activity.swift */; };
 		5A3FFA22242CE45300F842F6 /* ChartsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3FFA21242CE45200F842F6 /* ChartsScreenViewController.swift */; };
 		5A72D85D23F9D25600441B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D85C23F9D25600441B9B /* AppDelegate.swift */; };
 		5A72D85F23F9D25600441B9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72D85E23F9D25600441B9B /* SceneDelegate.swift */; };
@@ -17,8 +27,6 @@
 		5A72D86623F9D26700441B9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A72D86523F9D26700441B9B /* Assets.xcassets */; };
 		5A72D86923F9D26700441B9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A72D86723F9D26700441B9B /* LaunchScreen.storyboard */; };
 		5A7C5B04240BEFD90047CD0B /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B03240BEFD90047CD0B /* NotesViewController.swift */; };
-		5A7C5B10240D3FE80047CD0B /* DBAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B0F240D3FE80047CD0B /* DBAccess.swift */; };
-		5A7C5B142416C64C0047CD0B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B132416C64C0047CD0B /* DataStore.swift */; };
 		5A7C5B16241A7E9E0047CD0B /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B15241A7E9E0047CD0B /* MoodEntry.swift */; };
 		5A7C5B18241BB4F50047CD0B /* MoodEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B17241BB4F40047CD0B /* MoodEntryViewController.swift */; };
 		5A7C5B1A241BBD190047CD0B /* LifestyleEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */; };
@@ -26,14 +34,6 @@
 		5A844DF6241E9A4B0048EDD0 /* createNewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */; };
 		5A844DF8241E9F950048EDD0 /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */; };
 		5A9185452441E36400A4AEEC /* adviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9185442441E36400A4AEEC /* adviceViewController.swift */; };
-		5A95EB1C241FB713007F2E93 /* table.db in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB1B241FB713007F2E93 /* table.db */; };
-		5A95EB1E241FB839007F2E93 /* new.db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB1D241FB838007F2E93 /* new.db.sql */; };
-		5A95EB20241FB871007F2E93 /* newDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB1F241FB871007F2E93 /* newDatabase.swift */; };
-		5A95EB22241FBC4D007F2E93 /* anothertest in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB21241FBC4D007F2E93 /* anothertest */; };
-		5A95EB24241FC130007F2E93 /* anothertest.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB23241FC130007F2E93 /* anothertest.sql */; };
-		5A95EB26241FC1EE007F2E93 /* hello.db in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB25241FC1EE007F2E93 /* hello.db */; };
-		5A95EB4E241FE1C0007F2E93 /* DataStoreRebuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB4D241FE1C0007F2E93 /* DataStoreRebuild.swift */; };
-		5A95EB50241FE1D4007F2E93 /* databaseForNewProject.db in Resources */ = {isa = PBXBuildFile; fileRef = 5A95EB4F241FE1D4007F2E93 /* databaseForNewProject.db */; };
 		5A95EB5224213033007F2E93 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB5124213033007F2E93 /* TrendsViewController.swift */; };
 		5A95EB5424216E70007F2E93 /* ActivityPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB5324216E70007F2E93 /* ActivityPlanViewController.swift */; };
 		5A95EB562421881C007F2E93 /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */; };
@@ -76,10 +76,25 @@
 		E5EBC7FE22717F752E90F28F /* Pods_DissTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBE108438DB39A3E8D836AE /* Pods_DissTest.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5A314637246838C700B7DBA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A72D85123F9D25600441B9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A72D85823F9D25600441B9B;
+			remoteInfo = DissTest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0EC025DE24703C6E234DBD9E /* Pods-DissTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DissTest.release.xcconfig"; path = "Target Support Files/Pods-DissTest/Pods-DissTest.release.xcconfig"; sourceTree = "<group>"; };
+		5A204F1D246865E600F2ABB9 /* helpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpTableViewController.swift; sourceTree = "<group>"; };
+		5A204F1F2468661D00F2ABB9 /* helpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpTableViewCell.swift; sourceTree = "<group>"; };
 		5A264B9024485A2E007F3657 /* FinalDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalDatabase.swift; sourceTree = "<group>"; };
 		5A264B9224485AC8007F3657 /* moodAppDatabase.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = moodAppDatabase.db; path = ../../Databases/moodAppDatabase.db; sourceTree = "<group>"; };
+		5A314632246838C700B7DBA3 /* DissTestUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DissTestUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A314634246838C700B7DBA3 /* DissTestUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DissTestUnitTests.swift; sourceTree = "<group>"; };
+		5A314636246838C700B7DBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A3FFA21242CE45200F842F6 /* ChartsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsScreenViewController.swift; sourceTree = "<group>"; };
 		5A72D85923F9D25600441B9B /* DissTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DissTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A72D85C23F9D25600441B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,8 +105,6 @@
 		5A72D86823F9D26700441B9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A72D86A23F9D26700441B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A7C5B03240BEFD90047CD0B /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
-		5A7C5B0F240D3FE80047CD0B /* DBAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAccess.swift; sourceTree = "<group>"; };
-		5A7C5B132416C64C0047CD0B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		5A7C5B15241A7E9E0047CD0B /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
 		5A7C5B17241BB4F40047CD0B /* MoodEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryViewController.swift; sourceTree = "<group>"; };
 		5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestyleEntryViewController.swift; sourceTree = "<group>"; };
@@ -99,14 +112,6 @@
 		5A844DF5241E9A4B0048EDD0 /* createNewActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewActivityViewController.swift; sourceTree = "<group>"; };
 		5A844DF7241E9F950048EDD0 /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		5A9185442441E36400A4AEEC /* adviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adviceViewController.swift; sourceTree = "<group>"; };
-		5A95EB1B241FB713007F2E93 /* table.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = table.db; path = ../../../table.db; sourceTree = "<group>"; };
-		5A95EB1D241FB838007F2E93 /* new.db.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = new.db.sql; sourceTree = "<group>"; };
-		5A95EB1F241FB871007F2E93 /* newDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newDatabase.swift; sourceTree = "<group>"; };
-		5A95EB21241FBC4D007F2E93 /* anothertest */ = {isa = PBXFileReference; lastKnownFileType = file; name = anothertest; path = ../../../anothertest; sourceTree = "<group>"; };
-		5A95EB23241FC130007F2E93 /* anothertest.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = anothertest.sql; path = ../../../anothertest.sql; sourceTree = "<group>"; };
-		5A95EB25241FC1EE007F2E93 /* hello.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = hello.db; path = ../../../hello.db; sourceTree = "<group>"; };
-		5A95EB4D241FE1C0007F2E93 /* DataStoreRebuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreRebuild.swift; sourceTree = "<group>"; };
-		5A95EB4F241FE1D4007F2E93 /* databaseForNewProject.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = databaseForNewProject.db; path = ../../../databaseForNewProject.db; sourceTree = "<group>"; };
 		5A95EB5124213033007F2E93 /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
 		5A95EB5324216E70007F2E93 /* ActivityPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPlanViewController.swift; sourceTree = "<group>"; };
 		5A95EB552421881C007F2E93 /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +156,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A31462F246838C700B7DBA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A72D85623F9D25600441B9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,10 +174,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A314633246838C700B7DBA3 /* DissTestUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A314634246838C700B7DBA3 /* DissTestUnitTests.swift */,
+				5A314636246838C700B7DBA3 /* Info.plist */,
+			);
+			path = DissTestUnitTests;
+			sourceTree = "<group>";
+		};
 		5A72D85023F9D25600441B9B = {
 			isa = PBXGroup;
 			children = (
 				5A72D85B23F9D25600441B9B /* DissTest */,
+				5A314633246838C700B7DBA3 /* DissTestUnitTests */,
 				5A72D85A23F9D25600441B9B /* Products */,
 				8ED15F3CFCD8C1DE95130EAB /* Pods */,
 				8B8DC7E1FF06AE80480605C0 /* Frameworks */,
@@ -176,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				5A72D85923F9D25600441B9B /* DissTest.app */,
+				5A314632246838C700B7DBA3 /* DissTestUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,6 +211,7 @@
 				5A72D86023F9D25600441B9B /* LogsViewController.swift */,
 				5A7C5B19241BBD190047CD0B /* LifestyleEntryViewController.swift */,
 				5A72D86223F9D25600441B9B /* Main.storyboard */,
+				5A204F1F2468661D00F2ABB9 /* helpTableViewCell.swift */,
 				5AB6FDBC24571D60002D2C32 /* ArrayExtension.swift */,
 				5AB6FDBA24571B03002D2C32 /* furtherStatsViewController.swift */,
 				5AAA9D9D2451B5E800BF3523 /* AddSymptomViewController.swift */,
@@ -226,14 +250,9 @@
 				5A7C5B17241BB4F40047CD0B /* MoodEntryViewController.swift */,
 				5A7C5B03240BEFD90047CD0B /* NotesViewController.swift */,
 				5A72D86523F9D26700441B9B /* Assets.xcassets */,
-				5A7C5B0F240D3FE80047CD0B /* DBAccess.swift */,
 				5A72D86723F9D26700441B9B /* LaunchScreen.storyboard */,
 				5A72D86A23F9D26700441B9B /* Info.plist */,
-				5A7C5B132416C64C0047CD0B /* DataStore.swift */,
-				5A95EB1F241FB871007F2E93 /* newDatabase.swift */,
 				5A7C5B15241A7E9E0047CD0B /* MoodEntry.swift */,
-				5A95EB4F241FE1D4007F2E93 /* databaseForNewProject.db */,
-				5A95EB4D241FE1C0007F2E93 /* DataStoreRebuild.swift */,
 				5A264B9024485A2E007F3657 /* FinalDatabase.swift */,
 				5AAA9DA12451BAEB00BF3523 /* Symptom.swift */,
 				5AF92731244B133100198213 /* newGoalViewController.swift */,
@@ -243,13 +262,9 @@
 				5A264B9224485AC8007F3657 /* moodAppDatabase.db */,
 				5AA18161242BA6F200A37ED2 /* activityLog.swift */,
 				5A95EB5724218B9E007F2E93 /* activity.swift */,
-				5A95EB25241FC1EE007F2E93 /* hello.db */,
-				5A95EB1B241FB713007F2E93 /* table.db */,
-				5A95EB21241FBC4D007F2E93 /* anothertest */,
-				5A95EB23241FC130007F2E93 /* anothertest.sql */,
-				5A95EB1D241FB838007F2E93 /* new.db.sql */,
 				5A95EB5324216E70007F2E93 /* ActivityPlanViewController.swift */,
 				5AE394DD243B6A2D00544B89 /* dailyActivityTableViewCell.swift */,
+				5A204F1D246865E600F2ABB9 /* helpTableViewController.swift */,
 			);
 			path = DissTest;
 			sourceTree = "<group>";
@@ -274,6 +289,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A314631246838C700B7DBA3 /* DissTestUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A314639246838C700B7DBA3 /* Build configuration list for PBXNativeTarget "DissTestUnitTests" */;
+			buildPhases = (
+				5A31462E246838C700B7DBA3 /* Sources */,
+				5A31462F246838C700B7DBA3 /* Frameworks */,
+				5A314630246838C700B7DBA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A314638246838C700B7DBA3 /* PBXTargetDependency */,
+			);
+			name = DissTestUnitTests;
+			productName = DissTestUnitTests;
+			productReference = 5A314632246838C700B7DBA3 /* DissTestUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5A72D85823F9D25600441B9B /* DissTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A72D86D23F9D26700441B9B /* Build configuration list for PBXNativeTarget "DissTest" */;
@@ -299,10 +332,14 @@
 		5A72D85123F9D25600441B9B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Owen Malcolmson-Priest";
 				TargetAttributes = {
+					5A314631246838C700B7DBA3 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 5A72D85823F9D25600441B9B;
+					};
 					5A72D85823F9D25600441B9B = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -322,24 +359,26 @@
 			projectRoot = "";
 			targets = (
 				5A72D85823F9D25600441B9B /* DissTest */,
+				5A314631246838C700B7DBA3 /* DissTestUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A314630246838C700B7DBA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A72D85723F9D25600441B9B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A95EB26241FC1EE007F2E93 /* hello.db in Resources */,
 				5A264B9324485AC8007F3657 /* moodAppDatabase.db in Resources */,
-				5A95EB50241FE1D4007F2E93 /* databaseForNewProject.db in Resources */,
-				5A95EB22241FBC4D007F2E93 /* anothertest in Resources */,
 				5A72D86923F9D26700441B9B /* LaunchScreen.storyboard in Resources */,
-				5A95EB24241FC130007F2E93 /* anothertest.sql in Resources */,
 				5A72D86623F9D26700441B9B /* Assets.xcassets in Resources */,
-				5A95EB1C241FB713007F2E93 /* table.db in Resources */,
-				5A95EB1E241FB839007F2E93 /* new.db.sql in Resources */,
 				5A72D86423F9D25600441B9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +428,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A31462E246838C700B7DBA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A31463D2468399200B7DBA3 /* FinalDatabase.swift in Sources */,
+				5A314635246838C700B7DBA3 /* DissTestUnitTests.swift in Sources */,
+				5A31464124683B5600B7DBA3 /* activityLog.swift in Sources */,
+				5A31463C2468398300B7DBA3 /* LogsViewController.swift in Sources */,
+				5A31463F24683B4E00B7DBA3 /* Symptom.swift in Sources */,
+				5A31463E24683AF600B7DBA3 /* MoodEntry.swift in Sources */,
+				5A31464224683B5900B7DBA3 /* activity.swift in Sources */,
+				5A31464024683B5100B7DBA3 /* ActivityPlan.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A72D85523F9D25600441B9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,13 +461,13 @@
 				5AF927282449C26D00198213 /* previousPlansTableViewController.swift in Sources */,
 				5AB6FDBD24571D60002D2C32 /* ArrayExtension.swift in Sources */,
 				5ABAC1D8242A92B90019D62A /* ColorExtension.swift in Sources */,
-				5A95EB20241FB871007F2E93 /* newDatabase.swift in Sources */,
 				5AF927262449C20D00198213 /* previousPlanTableViewCell.swift in Sources */,
 				5AF9272A2449C52A00198213 /* planDetailTableViewController.swift in Sources */,
 				5A95EB5224213033007F2E93 /* TrendsViewController.swift in Sources */,
 				5AE394D424335DA600544B89 /* BarChartViewController.swift in Sources */,
 				5AAA9DA02451BA2500BF3523 /* SymptomTableViewCell.swift in Sources */,
 				5ABAC1D4242A3FD40019D62A /* EntriesTableViewController.swift in Sources */,
+				5A204F1E246865E600F2ABB9 /* helpTableViewController.swift in Sources */,
 				5AF9272E2449CB2000198213 /* ActivityPlan.swift in Sources */,
 				5A264B9124485A2E007F3657 /* FinalDatabase.swift in Sources */,
 				5AE394D624335FD400544B89 /* searchViewController.swift in Sources */,
@@ -425,7 +479,6 @@
 				5AF9272C2449C5AB00198213 /* planDetailTableViewCell.swift in Sources */,
 				5AA18162242BA6F200A37ED2 /* activityLog.swift in Sources */,
 				5AAA9DA22451BAEB00BF3523 /* Symptom.swift in Sources */,
-				5A7C5B142416C64C0047CD0B /* DataStore.swift in Sources */,
 				5ABAC1D2242903F60019D62A /* pieChartResultViewController.swift in Sources */,
 				5AE394D82434B48700544B89 /* searchTableViewCell.swift in Sources */,
 				5AAA9DA42451D4F700BF3523 /* entrySymptomsTableViewController.swift in Sources */,
@@ -435,10 +488,8 @@
 				5A7C5B1E241BCB510047CD0B /* ActivitiesViewController.swift in Sources */,
 				5AF5B9922445F87D00BF0790 /* lineChartViewController.swift in Sources */,
 				5A95EB5824218B9E007F2E93 /* activity.swift in Sources */,
-				5A7C5B10240D3FE80047CD0B /* DBAccess.swift in Sources */,
 				5AB6FDBB24571B03002D2C32 /* furtherStatsViewController.swift in Sources */,
 				5A7C5B16241A7E9E0047CD0B /* MoodEntry.swift in Sources */,
-				5A95EB4E241FE1C0007F2E93 /* DataStoreRebuild.swift in Sources */,
 				5A95EB5424216E70007F2E93 /* ActivityPlanViewController.swift in Sources */,
 				5AA1815C242B6EDB00A37ED2 /* EntryDetailViewController.swift in Sources */,
 				5A72D86123F9D25600441B9B /* LogsViewController.swift in Sources */,
@@ -447,12 +498,21 @@
 				5A72D85D23F9D25600441B9B /* AppDelegate.swift in Sources */,
 				5A72D85F23F9D25600441B9B /* SceneDelegate.swift in Sources */,
 				5AB2FBEC2428D37B009336E7 /* chartsViewController.swift in Sources */,
+				5A204F202468661D00F2ABB9 /* helpTableViewCell.swift in Sources */,
 				5A95EB562421881C007F2E93 /* ActivitiesTableViewCell.swift in Sources */,
 				5A7C5B1A241BBD190047CD0B /* LifestyleEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A314638246838C700B7DBA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A72D85823F9D25600441B9B /* DissTest */;
+			targetProxy = 5A314637246838C700B7DBA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5A72D86223F9D25600441B9B /* Main.storyboard */ = {
@@ -474,6 +534,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5A31463A246838C700B7DBA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 67CM5BK532;
+				INFOPLIST_FILE = DissTestUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = owens.DissTestUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DissTest.app/DissTest";
+			};
+			name = Debug;
+		};
+		5A31463B246838C700B7DBA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 67CM5BK532;
+				INFOPLIST_FILE = DissTestUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = owens.DissTestUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DissTest.app/DissTest";
+			};
+			name = Release;
+		};
 		5A72D86B23F9D26700441B9B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -629,6 +731,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A314639246838C700B7DBA3 /* Build configuration list for PBXNativeTarget "DissTestUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A31463A246838C700B7DBA3 /* Debug */,
+				5A31463B246838C700B7DBA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5A72D85423F9D25600441B9B /* Build configuration list for PBXProject "DissTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

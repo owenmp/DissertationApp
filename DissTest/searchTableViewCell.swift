@@ -20,6 +20,8 @@ class searchTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    //Labels to display the text
 
     @IBOutlet weak var productivityValue: UILabel!
     @IBOutlet weak var stressValue: UILabel!

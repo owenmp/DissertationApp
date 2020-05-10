@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 25/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Shows activities
 
 import UIKit
 
@@ -36,7 +36,7 @@ class EntryActivitiesTableViewController: UITableViewController {
         return activities.count
     }
 
-    
+    //populates table view with activities
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "activities", for: indexPath)as! EntryActivityTableViewCell
         let wantedName = activities[indexPath.row].name

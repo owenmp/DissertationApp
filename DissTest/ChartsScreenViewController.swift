@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 26/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Gives user option to pick which chart they want
 
 import UIKit
 
@@ -19,6 +19,7 @@ class ChartsScreenViewController: UIViewController {
 //        titleView.layer.cornerRadius = 7
 //        titleView.layer.masksToBounds = true
         
+        //formats buttons
         pieChartBtn.layer.cornerRadius = 7
         pieChartBtn.layer.masksToBounds = true
         pieChartBtn.layer.borderWidth = 0.25

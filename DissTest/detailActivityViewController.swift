@@ -4,12 +4,12 @@
 //
 //  Created by Owen Malcolmson-Priest on 06/04/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Allows the user to enter an activity to their entry
 
 import UIKit
 
 class detailActivityViewController: UIViewController {
-    
+    //fields used to create an activity log
     var valueForName = ""
     var valueForType = ""
     var valueForLength = 0
@@ -41,7 +41,7 @@ class detailActivityViewController: UIViewController {
     @IBOutlet weak var errorLbl: UILabel!
     @IBOutlet weak var errorView: UIView!
     
-    
+    //User can go back
     @IBAction func cancelBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -57,18 +57,21 @@ class detailActivityViewController: UIViewController {
     
     @IBOutlet weak var minutesTxt: UITextField!
     
+    //sets the minutes value
     @IBAction func minutesTxt(_ sender: Any) {
         var text: String = minutesTxt.text!
         var value = Int(text)
         valueForMinutes = value!
     }
     
+    //sets the description value
     @IBOutlet weak var descriptionTxt: UITextField!
     @IBAction func descriptionTxt(_ sender: Any) {
         var text: String = descriptionTxt.text!
         valueForDescription = text
     }
     
+    //adds an activity to the table view on the activities screen.
     @IBAction func addActivity(_ sender: Any) {
         guard var length = lengthTxt.text else{return}
         let valueLength = Int(length) ?? 0
@@ -85,7 +88,7 @@ class detailActivityViewController: UIViewController {
         
         
          var dailyActivitiy = activityLog(name: valueForName, length: valueForLength, description: valueForDescription,minutes: valueForMinutes)
-        
+        //Stops the user entering unbound values
         if valueForLength > 24 || valueForLength < 0{
             errorView.isHidden = false
             

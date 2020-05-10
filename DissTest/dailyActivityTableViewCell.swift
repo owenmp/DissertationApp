@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 06/04/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Shows goals the user has created
 
 import UIKit
 

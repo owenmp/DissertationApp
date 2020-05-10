@@ -38,6 +38,8 @@ class LogsViewController: UIViewController {
       
         entryTxt.text = "You have not yet completed your daily entry! It is important to complete it every day so that trends can be found to help improve your well-being."
         checkComplete()
+        //var chec = databaseStore.checkEntryComplete(date: "10-05-2020")
+        //print(chec)
 
         //Sets the title of the screen to todays date
         self.navigationController?.navigationBar.topItem?.title = dateString
@@ -82,7 +84,7 @@ class LogsViewController: UIViewController {
     func checkComplete()-> Bool {
         dateForCheck.dateFormat = "dd-MM-yyyy"
         let dateCheckString = dateForCheck.string(from:dateValue)
-        var check = databaseStore.checkEntryComplete(date: dateCheckString)
+       var check = databaseStore.checkEntryComplete(date: dateCheckString)
         if check == true {
             //Hides the start button if an entry has already been completed
             startBtn.isHidden = true
@@ -99,10 +101,10 @@ class LogsViewController: UIViewController {
      */
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
+
         if identifier == "symptom"{
             return true
-            
+
         } else {
         var check = checkComplete()
         if check == false {

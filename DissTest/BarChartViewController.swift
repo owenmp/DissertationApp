@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 31/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Creates bar charts
 
 import UIKit
 import Charts
@@ -29,7 +29,7 @@ class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerV
         setChart(dataPoints: x, values: y)
         barChart.autoScaleMinMaxEnabled = true
         barChart.dragEnabled = true
-        
+        //formats the legend
         let legend = barChart.legend
         legend.font = UIFont(name:"Verdana", size: 15.0)!
         searchView.layer.cornerRadius = 7
@@ -61,7 +61,7 @@ class BarChartViewController: UIViewController,UIPickerViewDataSource, UIPickerV
     
     @IBOutlet weak var minutesTxt: UITextField!
     
-    
+    //creates pdf, uses filter and value to name the file
     @IBAction func pdfButton(_ sender: Any) {
         let alert = UIAlertController(title: "PDF", message: "Are you sure you want to save this chart as a PDF?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {

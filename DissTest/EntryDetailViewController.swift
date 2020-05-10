@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 25/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Shows all the values associated with a mood value
 
 import UIKit
 
@@ -29,6 +29,7 @@ class EntryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = valueForDate
+        //formats the text to show the correct units
         let colour = getColourForCell(value: valueForMood)
         moodValueLbl.text = String(valueForMood)
         var alcoholText = ""
@@ -130,7 +131,7 @@ class EntryDetailViewController: UIViewController {
     
     
     
-    
+    //gets background colour based on mood value
     func getColourForCell(value: Int) -> UIColor {
            let number = value
            switch number {
@@ -158,6 +159,7 @@ class EntryDetailViewController: UIViewController {
            }
     }
     
+    //sets adjective based on mood value
     
     private func getMoodDescription(value: Int) -> String{
         var description = ""
@@ -185,6 +187,8 @@ class EntryDetailViewController: UIViewController {
         return description
     }
     
+    //sets adjective based on stress value
+       
      private func getStressDescription(value: Int) -> String{
     var description = ""
     switch value {
@@ -204,7 +208,8 @@ class EntryDetailViewController: UIViewController {
         return description
     }
     
-    
+    //sets adjective based on productivity value
+       
     private func getProductivityDescription(value: Int) -> String{
     var description = ""
     switch value {
@@ -228,6 +233,7 @@ class EntryDetailViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //opens relevant table view, to show activities, symptoms and goals
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "activities" {
             let activitiesVC = segue.destination as! EntryActivitiesTableViewController

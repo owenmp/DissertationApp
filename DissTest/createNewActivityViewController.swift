@@ -4,7 +4,7 @@
 //
 //  Created by Owen Malcolmson-Priest on 15/03/2020.
 //  Copyright © 2020 Owen Malcolmson-Priest. All rights reserved.
-//
+//  Allows user to create new activity
 
 import UIKit
 
@@ -88,12 +88,13 @@ class createNewActivityViewController: UIViewController {
     }
     
     
-    
+    //enters activity to database
     @IBAction func finishBtn(_ sender: Any) {
         print(valueForName)
         
         if valueForName == ""{
             errorView.isHidden = false
+            //stops entry if no name entered
             errorTxt.text = "Please enter an activity name"
             errorTxt.textColor = UIColor.red
             
@@ -112,7 +113,7 @@ database.databaseStore.insertNewActivity(Name: valueForName, Description: valueF
 
            
         if let presenter = presentingViewController as? ActivitiesTableViewController { presenter.activities.removeAll()
-            presenter.activities = presenter.blabla.databaseStore.getActivities()
+            presenter.activities = presenter.db.databaseStore.getActivities()
             presenter.tableView.reloadData()
             presenter.viewDidLoad()
     }

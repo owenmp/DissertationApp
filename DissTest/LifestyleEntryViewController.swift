@@ -87,7 +87,7 @@ class LifestyleEntryViewController: UIViewController{
     @IBOutlet weak var sleepHoursTxt: UITextField!
     @IBOutlet weak var exerciseHouseTxt: UITextField!
     @IBOutlet weak var waterTxt: UITextField!
-
+    @IBOutlet weak var alcoholTxt: UITextField!
     
     
     
@@ -196,7 +196,7 @@ class LifestyleEntryViewController: UIViewController{
     
     
 
-    //x
+    //Sets the exercise minutes value
    
     @IBAction func exerciseMinutes(_ sender: Any) {
         if exerciseMinutes.text == "" {
@@ -223,11 +223,11 @@ class LifestyleEntryViewController: UIViewController{
 //        }
    // }
     
-    
+    //sets the sleep minutes value
     @IBAction func sleepMinutes(_ sender: Any) {
         if sleepMinutes.text == "" {
             valueForSleepMinutes = 0
-            
+            //defaults 0 if the entry is empty
         } else {
         var text: String = sleepMinutes.text!
         var value = Int(text)!
@@ -240,8 +240,8 @@ class LifestyleEntryViewController: UIViewController{
     
     
     
-    @IBOutlet weak var alcoholTxt: UITextField!
     
+    //Sets the alcohol value
     @IBAction func AlcoholTxt(_ sender: Any) {
         if alcoholTxt.text == ""{
             valueForAlcohol = 0
@@ -260,11 +260,14 @@ class LifestyleEntryViewController: UIViewController{
 //    }
 //
    
+    //sets the location value
     @IBAction func locationTxtField(_ sender: Any) {
         var text: String = locationTxtField.text!
                valueForLocation = text
                //print(valueForLocation)
     }
+    
+    //stops the user advancing if the fields haven't been completed
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if locationTxtField.text == "" || sleepHoursTxt.text == "" || sleepMinutes.text == "" || exerciseMinutes.text == "" || exerciseHouseTxt.text == "" || alcoholTxt.text == "" {
@@ -340,6 +343,8 @@ class LifestyleEntryViewController: UIViewController{
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    //Passes the mood values into the next screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "lifestyleSegue" {
             
