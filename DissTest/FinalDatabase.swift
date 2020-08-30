@@ -46,7 +46,7 @@ class FinalDatabase {
         let documentsFolderPath =
            NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         
-        let sqliteFilePath = documentsFolderPath + "moodAppDatabase.db"
+        let sqliteFilePath = documentsFolderPath + "/moodAppDatabase.db"
         
         if !FileManager.default.fileExists(atPath: sqliteFilePath) {
             let bundle = Bundle.main
